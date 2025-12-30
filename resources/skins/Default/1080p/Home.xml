@@ -38,20 +38,9 @@
             <posx>60</posx>
             <posy>30</posy>
 
-            <!-- Logo -->
-            <control type="label">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>300</width>
-                <height>45</height>
-                <font>font_title</font>
-                <textcolor>FFE50914</textcolor>
-                <label>StreamFlix</label>
-            </control>
-
             <!-- Main Menu -->
             <control type="grouplist" id="100">
-                <posx>220</posx>
+                <posx>0</posx>
                 <posy>5</posy>
                 <width>1400</width>
                 <height>45</height>
