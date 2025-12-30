@@ -192,6 +192,7 @@
                 <ondown>9001</ondown>
                 <onleft>9000</onleft>
                 <onright>9000</onright>
+                <onclick>Info</onclick>
                 <content sortby="title" sortorder="ascending">videodb://movies/titles/</content>
                 <itemlayout width="120" height="170">
                     <control type="image">
@@ -251,6 +252,7 @@
                 <ondown>9001</ondown>
                 <onleft>9001</onleft>
                 <onright>9001</onright>
+                <onclick>ActivateWindow(Videos,$INFO[ListItem.FolderPath],return)</onclick>
                 <content sortby="title" sortorder="ascending">videodb://tvshows/titles/</content>
                 <itemlayout width="120" height="170">
                     <control type="image">

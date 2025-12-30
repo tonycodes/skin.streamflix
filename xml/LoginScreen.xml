@@ -43,7 +43,7 @@
                     <height>100</height>
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
-            </control>
+            </itemlayout>
             <focusedlayout width="200" height="200">
                 <control type="image">
                     <posx>0</posx>
