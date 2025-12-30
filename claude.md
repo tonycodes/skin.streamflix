@@ -70,3 +70,65 @@ If Kodi crashes with stack overflow in `CGUIControlGroupList::ValidateOffset()`,
    - Missing required controls
    - Invalid XML syntax
    - Undefined includes/colors
+
+## Texture Paths
+
+### DON'T use special://skin/ for media textures
+```xml
+<!-- WRONG - causes crashes on some platforms -->
+<texture>special://skin/backgrounds/default.jpg</texture>
+<texture fallback="special://skin/default_poster.png">...</texture>
+
+<!-- CORRECT - relative paths from media folder -->
+<texture>backgrounds/default.jpg</texture>
+<texture fallback="default_poster.png">...</texture>
+```
+
+### Required Textures
+These must exist in `/media/` folder:
+- `white.png`, `black.png` - Base textures for colordiffuse
+- `button-fo.png`, `button-nofo.png` - Button focus/unfocus
+- `dialog-bg.png` - Dialog backgrounds
+- `gradient-bottom.png`, `gradient-top.png`, `gradient-left.png`
+- `arrow-up.png`, `arrow-down.png` - Spin controls
+- `edit-fo.png`, `edit-nofo.png` - Edit field textures
+- `radio-on.png`, `radio-off.png` - Radio buttons
+- `scrollbar.png`, `scrollbar-bg.png` - Scrollbars
+- `slider-nib.png`, `slider-bg.png` - Sliders
+- `spinner.png` - Loading spinner
+- `default_poster.png`, `default_thumb.png` - Fallback images
+
+## Kodi Version Compatibility
+
+| Kodi Version | xbmc.gui Version |
+|--------------|------------------|
+| Kodi 20 (Nexus) | 5.17.0 |
+| Kodi 21 (Omega) | 5.18.0 |
+
+Update `addon.xml`:
+```xml
+<import addon="xbmc.gui" version="5.18.0"/>
+```
+
+## Release Workflow
+
+1. Update version in `addon.xml`
+2. Run linter: `python3 scripts/lint_skin.py`
+3. Commit changes: `git add -A && git commit -m "message"`
+4. Push: `git push origin main`
+5. Create zip: `zip -r skin.streamflix.zip skin.streamflix -x "*.git*" -x "*scripts*"`
+6. Create release: `gh release create vX.X.X --title "vX.X.X" skin.streamflix.zip`
+7. Update `repository/addons.xml` with new version
+8. Generate MD5: `md5 -q addons.xml > addons.xml.md5`
+9. Push repository update
+
+### Short URL
+- **URL**: `is.gd/93dtrd`
+- **Points to**: `https://github.com/tonycodes/skin.streamflix/releases/latest/download/skin.streamflix.zip`
+- Always upload `skin.streamflix.zip` (consistent name) to releases for the short URL to work
+
+## Android TV Notes
+
+- Test on actual device - some crashes only happen on Android
+- Missing textures cause immediate crashes (no graceful fallback)
+- Use `python3 scripts/lint_skin.py` to catch issues before deploying
