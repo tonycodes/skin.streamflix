@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fonts>
+    <fontset id="Default" idloc="31390">
+        <!-- Extra Small Fonts -->
+        <font>
+            <name>font10</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>18</size>
+        </font>
+
+        <!-- Small Fonts -->
+        <font>
+            <name>font12</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>22</size>
+        </font>
+        <font>
+            <name>font12_bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>22</size>
+        </font>
+
+        <!-- Body Fonts -->
+        <font>
+            <name>font13</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>26</size>
+        </font>
+        <font>
+            <name>font13_bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>26</size>
+        </font>
+
+        <!-- Standard Fonts -->
+        <font>
+            <name>font14</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>30</size>
+        </font>
+        <font>
+            <name>font14_bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>30</size>
+        </font>
+
+        <!-- Medium Fonts -->
+        <font>
+            <name>font16</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>34</size>
+        </font>
+        <font>
+            <name>font16_bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>34</size>
+        </font>
+
+        <!-- Large Fonts -->
+        <font>
+            <name>font20</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>40</size>
+        </font>
+        <font>
+            <name>font20_bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>40</size>
+        </font>
+
+        <!-- Title Fonts (Netflix-style) -->
+        <font>
+            <name>font_title</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>48</size>
+        </font>
+        <font>
+            <name>font_title_large</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>64</size>
+        </font>
+        <font>
+            <name>font_hero</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>80</size>
+        </font>
+
+        <!-- Button Fonts -->
+        <font>
+            <name>font_button</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>28</size>
+        </font>
+        <font>
+            <name>font_button_large</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>36</size>
+        </font>
+
+        <!-- Row Header Fonts -->
+        <font>
+            <name>font_row_header</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>32</size>
+        </font>
+
+        <!-- Metadata Fonts -->
+        <font>
+            <name>font_metadata</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font_metadata_bold</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>24</size>
+        </font>
+
+        <!-- Plot/Description Fonts -->
+        <font>
+            <name>font_plot</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>26</size>
+        </font>
+        <font>
+            <name>font_plot_large</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>30</size>
+        </font>
+
+        <!-- Symbols/Icons Font -->
+        <font>
+            <name>font_symbols</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>28</size>
+        </font>
+    </fontset>
+</fonts>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">10</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+    <controls>
+        <control type="group">
+            <posx>0</posx>
+            <posy>900</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>180</height>
+                <texture colordiffuse="CC141414">white.png</texture>
+            </control>
+            <control type="label">
+                <posx>60</posx>
+                <posy>30</posy>
+                <width>1800</width>
+                <height>35</height>
+                <font>font14_bold</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$INFO[Window.Property(Header)]</label>
+            </control>
+            <control type="label">
+                <posx>60</posx>
+                <posy>65</posy>
+                <width>1600</width>
+                <height>30</height>
+                <font>font13</font>
+                <textcolor>FF808080</textcolor>
+                <label>$INFO[Window.Property(Line1)]</label>
+            </control>
+            <control type="progress" id="10">
+                <posx>60</posx>
+                <posy>110</posy>
+                <width>1800</width>
+                <height>12</height>
+                <texturebg colordiffuse="FF333333">white.png</texturebg>
+                <lefttexture colordiffuse="FFE50914">white.png</lefttexture>
+                <midtexture colordiffuse="FFE50914">white.png</midtexture>
+                <righttexture colordiffuse="FFE50914">white.png</righttexture>
+                <overlaytexture>-</overlaytexture>
+                <info>System.Progressbar</info>
+            </control>
+            <control type="label">
+                <posx>60</posx>
+                <posy>135</posy>
+                <width>1800</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>FF808080</textcolor>
+                <align>right</align>
+                <label>$INFO[Window.Property(Line2)]</label>
+            </control>
+        </control>
+    </controls>
+</window>

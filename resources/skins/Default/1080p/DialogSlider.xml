@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">10</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+    <controls>
+        <control type="group">
+            <posx>560</posx>
+            <posy>440</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <height>200</height>
+                <texture colordiffuse="EE141414">white.png</texture>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <height>200</height>
+                <texture border="2">button-focus.png</texture>
+                <colordiffuse>FFE50914</colordiffuse>
+            </control>
+            <control type="label">
+                <posx>40</posx>
+                <posy>30</posy>
+                <width>720</width>
+                <height>40</height>
+                <font>font14_bold</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <align>center</align>
+                <label>$INFO[Slider.Header]</label>
+            </control>
+            <control type="slider" id="10">
+                <posx>60</posx>
+                <posy>90</posy>
+                <width>680</width>
+                <height>40</height>
+                <texturesliderbar colordiffuse="FF333333">white.png</texturesliderbar>
+                <textureslidernib colordiffuse="FFE50914">button-nf.png</textureslidernib>
+                <textureslidernibfocus colordiffuse="FFFFFFFF">button-focus.png</textureslidernibfocus>
+                <onleft>noop</onleft>
+                <onright>noop</onright>
+            </control>
+            <control type="label">
+                <posx>40</posx>
+                <posy>140</posy>
+                <width>720</width>
+                <height>35</height>
+                <font>font13</font>
+                <textcolor>FF808080</textcolor>
+                <align>center</align>
+                <label>$INFO[Slider.Label]</label>
+            </control>
+        </control>
+    </controls>
+</window>

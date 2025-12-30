@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Include Variables -->
+    <include file="Variables.xml"/>
+
+    <!-- ==================== GLOBAL BACKGROUND ==================== -->
+    <include name="GlobalBackground">
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="background_main">black.png</texture>
+        </control>
+    </include>
+
+    <!-- ==================== HERO SPOTLIGHT SECTION ==================== -->
+    <include name="HeroSpotlight">
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>650</height>
+            <visible>!String.IsEmpty(Container(9000).ListItem.Label)</visible>
+
+            <!-- Hero Fanart Background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>650</height>
+                <texture background="true" fallback="backgrounds/default.jpg">$VAR[BackgroundFanart]</texture>
+                <aspectratio aligny="top">scale</aspectratio>
+            </control>
+
+            <!-- Gradient Overlay (Bottom) -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>350</posy>
+                <width>1920</width>
+                <height>300</height>
+                <texture colordiffuse="FF141414">gradient-bottom.png</texture>
+            </control>
+
+            <!-- Gradient Overlay (Left) -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <height>650</height>
+                <texture colordiffuse="background_overlay">gradient-left.png</texture>
+            </control>
+
+            <!-- Hero Content -->
+            <control type="group">
+                <posx>80</posx>
+                <posy>200</posy>
+                <width>800</width>
+                <height>400</height>
+
+                <!-- Clear Logo (if available) -->
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>450</width>
+                    <height>180</height>
+                    <texture>$VAR[ClearLogoArt]</texture>
+                    <aspectratio align="left" aligny="top">keep</aspectratio>
+                    <visible>!String.IsEmpty(Container(9000).ListItem.Art(clearlogo))</visible>
+                </control>
+
+                <!-- Title (fallback if no clearlogo) -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>700</width>
+                    <height>100</height>
+                    <font>font_hero</font>
+                    <textcolor>text_white</textcolor>
+                    <label>$INFO[Container(9000).ListItem.Label]</label>
+                    <visible>String.IsEmpty(Container(9000).ListItem.Art(clearlogo))</visible>
+                </control>
+
+                <!-- Metadata Row -->
+                <control type="group">
+                    <posx>0</posx>
+                    <posy>190</posy>
+                    <width>700</width>
+                    <height>40</height>
+
+                    <!-- Match Percentage (Netflix style) -->
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>30</height>
+                        <font>font_metadata_bold</font>
+                        <textcolor>rating_good</textcolor>
+                        <label>$VAR[MatchPercentage]</label>
+                    </control>
+
+                    <!-- Year -->
+                    <control type="label">
+                        <posx>160</posx>
+                        <posy>0</posy>
+                        <width>80</width>
+                        <height>30</height>
+                        <font>font_metadata</font>
+                        <textcolor>text_gray</textcolor>
+                        <label>$INFO[Container(9000).ListItem.Year]</label>
+                    </control>
+
+                    <!-- Maturity Rating -->
+                    <control type="label">
+                        <posx>250</posx>
+                        <posy>0</posy>
+                        <width>80</width>
+                        <height>30</height>
+                        <font>font_metadata</font>
+                        <textcolor>text_gray</textcolor>
+                        <label>$VAR[MaturityRating]</label>
+                        <visible>!String.IsEmpty(Container(9000).ListItem.Mpaa)</visible>
+                    </control>
+
+                    <!-- Duration -->
+                    <control type="label">
+                        <posx>340</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>30</height>
+                        <font>font_metadata</font>
+                        <textcolor>text_gray</textcolor>
+                        <label>$INFO[Container(9000).ListItem.Duration]</label>
+                    </control>
+                </control>
+
+                <!-- Plot -->
+                <control type="textbox">
+                    <posx>0</posx>
+                    <posy>240</posy>
+                    <width>600</width>
+                    <height>100</height>
+                    <font>font_plot</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[Container(9000).ListItem.Plot]</label>
+                </control>
+
+                <!-- Action Buttons -->
+                <control type="grouplist">
+                    <posx>0</posx>
+                    <posy>350</posy>
+                    <width>500</width>
+                    <height>60</height>
+                    <orientation>horizontal</orientation>
+                    <itemgap>15</itemgap>
+
+                    <!-- Play Button -->
+                    <control type="button" id="1001">
+                        <width>160</width>
+                        <height>50</height>
+                        <font>font_button_large</font>
+                        <label>Play</label>
+                        <onclick>PlayMedia($INFO[Container(9000).ListItem.FilenameAndPath])</onclick>
+                        <texturefocus colordiffuse="button_primary">button-fo.png</texturefocus>
+                        <texturenofocus colordiffuse="button_primary">button-nofo.png</texturenofocus>
+                        <textcolor>button_primary_text</textcolor>
+                        <focusedcolor>button_primary_text</focusedcolor>
+                    </control>
+
+                    <!-- More Info Button -->
+                    <control type="button" id="1002">
+                        <width>180</width>
+                        <height>50</height>
+                        <font>font_button_large</font>
+                        <label>More Info</label>
+                        <onclick>Action(Info)</onclick>
+                        <texturefocus colordiffuse="button_secondary">button-fo.png</texturefocus>
+                        <texturenofocus colordiffuse="button_secondary">button-nofo.png</texturenofocus>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+
+    <!-- ==================== CONTENT ROW TEMPLATE ==================== -->
+    <include name="ContentRow">
+        <param name="id"/>
+        <param name="title"/>
+        <param name="content"/>
+        <param name="posy">0</param>
+        <control type="group">
+            <posx>0</posx>
+            <posy>$PARAM[posy]</posy>
+            <width>1920</width>
+            <height>280</height>
+
+            <!-- Row Title -->
+            <control type="label">
+                <posx>80</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <height>40</height>
+                <font>font_row_header</font>
+                <textcolor>text_white</textcolor>
+                <label>$PARAM[title]</label>
+            </control>
+
+            <!-- Horizontal Content List -->
+            <control type="list" id="$PARAM[id]">
+                <posx>80</posx>
+                <posy>50</posy>
+                <width>1760</width>
+                <height>220</height>
+                <orientation>horizontal</orientation>
+                <scrolltime>300</scrolltime>
+                <pagecontrol>-</pagecontrol>
+                <content>$PARAM[content]</content>
+                <itemlayout width="200" height="220">
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>185</width>
+                        <height>220</height>
+
+                        <!-- Poster Image -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>185</width>
+                            <height>278</height>
+                            <texture fallback="default_poster.png">$VAR[PosterArt]</texture>
+                            <aspectratio>scale</aspectratio>
+                            <bordertexture>-</bordertexture>
+                        </control>
+
+                        <!-- Progress Bar -->
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>265</posy>
+                            <width>185</width>
+                            <height>5</height>
+                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+
+                            <!-- Background -->
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>185</width>
+                                <height>5</height>
+                                <texture colordiffuse="progress_bg">white.png</texture>
+                            </control>
+
+                            <!-- Fill -->
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>$INFO[ListItem.PercentPlayed,,,r]</width>
+                                <height>5</height>
+                                <texture colordiffuse="progress_fill">white.png</texture>
+                            </control>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="230" height="220">
+                    <control type="group">
+                        <posx>-15</posx>
+                        <posy>-20</posy>
+                        <width>215</width>
+                        <height>260</height>
+                        <animation effect="zoom" start="100" end="115" time="150" condition="Control.HasFocus($PARAM[id])">Conditional</animation>
+
+                        <!-- White Border (Focus) -->
+                        <control type="image">
+                            <posx>-3</posx>
+                            <posy>-3</posy>
+                            <width>221</width>
+                            <height>340</height>
+                            <texture colordiffuse="focus_border">white.png</texture>
+                        </control>
+
+                        <!-- Poster Image -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>215</width>
+                            <height>334</height>
+                            <texture fallback="default_poster.png">$VAR[PosterArt]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Progress Bar -->
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>319</posy>
+                            <width>215</width>
+                            <height>6</height>
+                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>215</width>
+                                <height>6</height>
+                                <texture colordiffuse="progress_bg">white.png</texture>
+                            </control>
+
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>$INFO[ListItem.PercentPlayed,,,r]</width>
+                                <height>6</height>
+                                <texture colordiffuse="progress_fill">white.png</texture>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </include>
+
+    <!-- ==================== LANDSCAPE ROW TEMPLATE ==================== -->
+    <include name="LandscapeRow">
+        <param name="id"/>
+        <param name="title"/>
+        <param name="content"/>
+        <param name="posy">0</param>
+        <control type="group">
+            <posx>0</posx>
+            <posy>$PARAM[posy]</posy>
+            <width>1920</width>
+            <height>220</height>
+
+            <!-- Row Title -->
+            <control type="label">
+                <posx>80</posx>
+                <posy>0</posy>
+                <width>600</width>
+                <height>40</height>
+                <font>font_row_header</font>
+                <textcolor>text_white</textcolor>
+                <label>$PARAM[title]</label>
+            </control>
+
+            <!-- Horizontal Content List (Landscape) -->
+            <control type="list" id="$PARAM[id]">
+                <posx>80</posx>
+                <posy>50</posy>
+                <width>1760</width>
+                <height>160</height>
+                <orientation>horizontal</orientation>
+                <scrolltime>300</scrolltime>
+                <pagecontrol>-</pagecontrol>
+                <content>$PARAM[content]</content>
+                <itemlayout width="300" height="160">
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>285</width>
+                        <height>160</height>
+
+                        <!-- Landscape/Thumb Image -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>285</width>
+                            <height>160</height>
+                            <texture fallback="default_thumb.png">$VAR[ThumbArt]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Progress Bar -->
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>155</posy>
+                            <width>285</width>
+                            <height>5</height>
+                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>285</width>
+                                <height>5</height>
+                                <texture colordiffuse="progress_bg">white.png</texture>
+                            </control>
+
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>$INFO[ListItem.PercentPlayed,,,r]</width>
+                                <height>5</height>
+                                <texture colordiffuse="progress_fill">white.png</texture>
+                            </control>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="340" height="160">
+                    <control type="group">
+                        <posx>-15</posx>
+                        <posy>-15</posy>
+                        <width>315</width>
+                        <height>190</height>
+                        <animation effect="zoom" start="100" end="110" time="150" condition="Control.HasFocus($PARAM[id])">Conditional</animation>
+
+                        <!-- White Border (Focus) -->
+                        <control type="image">
+                            <posx>-3</posx>
+                            <posy>-3</posy>
+                            <width>321</width>
+                            <height>196</height>
+                            <texture colordiffuse="focus_border">white.png</texture>
+                        </control>
+
+                        <!-- Landscape/Thumb Image -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>315</width>
+                            <height>190</height>
+                            <texture fallback="default_thumb.png">$VAR[ThumbArt]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Progress Bar -->
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>183</posy>
+                            <width>315</width>
+                            <height>6</height>
+                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>315</width>
+                                <height>6</height>
+                                <texture colordiffuse="progress_bg">white.png</texture>
+                            </control>
+
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>$INFO[ListItem.PercentPlayed,,,r]</width>
+                                <height>6</height>
+                                <texture colordiffuse="progress_fill">white.png</texture>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </include>
+
+    <!-- ==================== SIDE MENU ==================== -->
+    <include name="SideMenu">
+        <control type="group" id="300">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>300</width>
+            <height>1080</height>
+            <visible>Control.HasFocus(300) | Control.HasFocus(301)</visible>
+            <animation effect="slide" start="-300,0" end="0,0" time="300">VisibleChange</animation>
+
+            <!-- Background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>300</width>
+                <height>1080</height>
+                <texture colordiffuse="background_dark">black.png</texture>
+            </control>
+
+            <!-- Logo -->
+            <control type="label">
+                <posx>30</posx>
+                <posy>30</posy>
+                <width>200</width>
+                <height>50</height>
+                <font>font_title</font>
+                <textcolor>FFE50914</textcolor>
+                <label>StreamFlix</label>
+            </control>
+
+            <!-- Menu Items -->
+            <control type="grouplist" id="301">
+                <posx>20</posx>
+                <posy>120</posy>
+                <width>260</width>
+                <height>800</height>
+                <orientation>vertical</orientation>
+                <itemgap>5</itemgap>
+                <onleft>-</onleft>
+                <onright>SetFocus(9000)</onright>
+                <onup>301</onup>
+                <ondown>301</ondown>
+
+                <!-- Home -->
+                <control type="button" id="3010">
+                    <width>260</width>
+                    <height>50</height>
+                    <label>Home</label>
+                    <onclick>ActivateWindow(Home)</onclick>
+                </control>
+
+                <!-- Movies -->
+                <control type="button" id="3011">
+                    <width>260</width>
+                    <height>50</height>
+                    <label>Movies</label>
+                    <onclick>ActivateWindow(Videos,videodb://movies/titles/)</onclick>
+                </control>
+
+                <!-- TV Shows -->
+                <control type="button" id="3012">
+                    <width>260</width>
+                    <height>50</height>
+                    <label>TV Shows</label>
+                    <onclick>ActivateWindow(Videos,videodb://tvshows/titles/)</onclick>
+                </control>
+
+                <!-- My List -->
+                <control type="button" id="3013">
+                    <width>260</width>
+                    <height>50</height>
+                    <label>My List</label>
+                    <onclick>ActivateWindow(Videos,special://videoplaylists/)</onclick>
+                </control>
+
+                <!-- Search -->
+                <control type="button" id="3014">
+                    <width>260</width>
+                    <height>50</height>
+                    <label>Search</label>
+                    <onclick>ActivateWindow(Videos,videodb://)</onclick>
+                </control>
+
+                <!-- Settings -->
+                <control type="button" id="3015">
+                    <width>260</width>
+                    <height>50</height>
+                    <label>Settings</label>
+                    <onclick>ActivateWindow(Settings)</onclick>
+                </control>
+            </control>
+        </control>
+
+        <!-- Menu Toggle Button -->
+        <control type="button" id="302">
+            <posx>30</posx>
+            <posy>30</posy>
+            <width>50</width>
+            <height>50</height>
+            <texturefocus>icons/menu.png</texturefocus>
+            <texturenofocus>icons/menu.png</texturenofocus>
+            <label>-</label>
+            <onclick>SetFocus(301)</onclick>
+            <visible>!Control.IsVisible(300)</visible>
+        </control>
+    </include>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <include name="TopBar">
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>80</height>
+
+            <!-- Gradient -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>100</height>
+                <texture colordiffuse="background_overlay">gradient-top.png</texture>
+            </control>
+
+            <!-- Logo -->
+            <control type="label">
+                <posx>80</posx>
+                <posy>20</posy>
+                <width>180</width>
+                <height>40</height>
+                <font>font_title</font>
+                <textcolor>FFE50914</textcolor>
+                <label>StreamFlix</label>
+            </control>
+
+            <!-- Navigation -->
+            <control type="grouplist" id="100">
+                <posx>220</posx>
+                <posy>25</posy>
+                <width>800</width>
+                <height>40</height>
+                <orientation>horizontal</orientation>
+                <itemgap>30</itemgap>
+
+                <control type="button" id="101">
+                    <width>80</width>
+                    <height>35</height>
+                    <label>Home</label>
+                    <font>font14_bold</font>
+                    <onclick>ActivateWindow(Home)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+
+                <control type="button" id="102">
+                    <width>80</width>
+                    <height>35</height>
+                    <label>Movies</label>
+                    <font>font14</font>
+                    <onclick>ActivateWindow(Videos,videodb://movies/titles/)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+
+                <control type="button" id="103">
+                    <width>100</width>
+                    <height>35</height>
+                    <label>TV Shows</label>
+                    <font>font14</font>
+                    <onclick>ActivateWindow(Videos,videodb://tvshows/titles/)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+
+                <control type="button" id="104">
+                    <width>80</width>
+                    <height>35</height>
+                    <label>My List</label>
+                    <font>font14</font>
+                    <onclick>ActivateWindow(Videos,special://videoplaylists/)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+            </control>
+
+            <!-- Search Icon -->
+            <control type="button" id="110">
+                <posx>1750</posx>
+                <posy>20</posy>
+                <width>40</width>
+                <height>40</height>
+                <texturefocus>icons/search.png</texturefocus>
+                <texturenofocus>icons/search.png</texturenofocus>
+                <label>-</label>
+                <onclick>ActivateWindow(Videos,videodb://)</onclick>
+            </control>
+
+            <!-- Profile Icon -->
+            <control type="button" id="111">
+                <posx>1820</posx>
+                <posy>20</posy>
+                <width>40</width>
+                <height>40</height>
+                <texturefocus>icons/profile.png</texturefocus>
+                <texturenofocus>icons/profile.png</texturenofocus>
+                <label>-</label>
+                <onclick>ActivateWindow(Settings)</onclick>
+            </control>
+        </control>
+    </include>
+</includes>

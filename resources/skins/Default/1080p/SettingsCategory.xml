@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol>3</defaultcontrol>
+    <controls>
+        <!-- Background -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="FF141414">white.png</texture>
+        </control>
+
+        <!-- Header -->
+        <control type="label">
+            <posx>80</posx>
+            <posy>40</posy>
+            <width>800</width>
+            <height>50</height>
+            <font>font_title</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <label>$INFO[System.CurrentWindow]</label>
+        </control>
+
+        <!-- Categories List (Left Side) -->
+        <control type="grouplist" id="3">
+            <posx>80</posx>
+            <posy>120</posy>
+            <width>350</width>
+            <height>900</height>
+            <orientation>vertical</orientation>
+            <itemgap>5</itemgap>
+            <onright>5</onright>
+        </control>
+
+        <!-- Settings List (Right Side) -->
+        <control type="grouplist" id="5">
+            <posx>480</posx>
+            <posy>120</posy>
+            <width>1360</width>
+            <height>900</height>
+            <orientation>vertical</orientation>
+            <itemgap>5</itemgap>
+            <pagecontrol>60</pagecontrol>
+            <onleft>3</onleft>
+        </control>
+
+        <!-- Scrollbar -->
+        <control type="scrollbar" id="60">
+            <posx>1860</posx>
+            <posy>120</posy>
+            <width>8</width>
+            <height>900</height>
+            <orientation>vertical</orientation>
+            <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+            <onleft>5</onleft>
+        </control>
+
+        <!-- Back Button -->
+        <control type="button" id="2">
+            <posx>1750</posx>
+            <posy>40</posy>
+            <width>100</width>
+            <height>50</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <label>Back</label>
+            <onclick>Action(Back)</onclick>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
+            <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
+        </control>
+
+        <!-- Default Button -->
+        <control type="button" id="7">
+            <width>1340</width>
+            <height>55</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <align>left</align>
+            <textoffsetx>20</textoffsetx>
+            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+        </control>
+
+        <!-- Default RadioButton -->
+        <control type="radiobutton" id="8">
+            <width>1340</width>
+            <height>55</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <align>left</align>
+            <textoffsetx>20</textoffsetx>
+            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+            <textureradioonfocus colordiffuse="FFE50914">white.png</textureradioonfocus>
+            <textureradioofffocus colordiffuse="40FFFFFF">white.png</textureradioofffocus>
+            <textureradioonnofocus colordiffuse="FFE50914">white.png</textureradioonnofocus>
+            <textureradiooffnofocus colordiffuse="40FFFFFF">white.png</textureradiooffnofocus>
+            <radiowidth>30</radiowidth>
+            <radioheight>30</radioheight>
+            <radioposx>1280</radioposx>
+        </control>
+
+        <!-- Default SpinControlEx -->
+        <control type="spincontrolex" id="9">
+            <width>1340</width>
+            <height>55</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textoffsetx>20</textoffsetx>
+            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+        </control>
+
+        <!-- Default SliderEx -->
+        <control type="sliderex" id="13">
+            <width>1340</width>
+            <height>55</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textoffsetx>20</textoffsetx>
+            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+            <sliderwidth>400</sliderwidth>
+            <sliderheight>20</sliderheight>
+            <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="FFE50914">white.png</texturesliderbarfocus>
+            <textureslidernib>-</textureslidernib>
+            <textureslidernibfocus>-</textureslidernibfocus>
+        </control>
+
+        <!-- Separator -->
+        <control type="image" id="11">
+            <width>1340</width>
+            <height>2</height>
+            <texture colordiffuse="40FFFFFF">white.png</texture>
+        </control>
+
+        <!-- Label -->
+        <control type="label" id="14">
+            <width>1340</width>
+            <height>40</height>
+            <font>font13</font>
+            <textcolor>80FFFFFF</textcolor>
+            <align>left</align>
+            <textoffsetx>20</textoffsetx>
+        </control>
+
+        <!-- Category Button -->
+        <control type="button" id="15">
+            <width>330</width>
+            <height>55</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <align>left</align>
+            <textoffsetx>20</textoffsetx>
+            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+        </control>
+
+        <!-- Edit Control -->
+        <control type="edit" id="12">
+            <width>1340</width>
+            <height>55</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FFFFFFFF</focusedcolor>
+            <align>left</align>
+            <textoffsetx>20</textoffsetx>
+            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+        </control>
+    </controls>
+</window>

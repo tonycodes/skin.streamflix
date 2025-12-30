@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="10138">
+    <defaultcontrol always="true">10</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+    <controls>
+        <!-- Dimmed Background -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="background_overlay">black.png</texture>
+        </control>
+
+        <!-- Loading Spinner Container -->
+        <control type="group">
+            <posx>860</posx>
+            <posy>440</posy>
+            <width>200</width>
+            <height>200</height>
+
+            <!-- Spinner Ring -->
+            <control type="image">
+                <posx>50</posx>
+                <posy>50</posy>
+                <width>100</width>
+                <height>100</height>
+                <texture colordiffuse="accent_red">spinner.png</texture>
+                <animation effect="rotate" start="0" end="360" time="1000" loop="true" condition="true">Conditional</animation>
+            </control>
+        </control>
+
+        <!-- Cancel Button (hidden but needed for Kodi) -->
+        <control type="button" id="10">
+            <posx>-100</posx>
+            <posy>-100</posy>
+            <width>1</width>
+            <height>1</height>
+            <onclick>Action(Close)</onclick>
+            <visible>false</visible>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="10002">
+    <defaultcontrol always="true">450</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+    <controls>
+        <!-- Dim Background -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="DD000000">white.png</texture>
+        </control>
+
+        <!-- Dialog Box -->
+        <control type="group">
+            <posx>260</posx>
+            <posy>90</posy>
+            <width>1400</width>
+            <height>900</height>
+
+            <!-- Background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1400</width>
+                <height>900</height>
+                <texture colordiffuse="FF1a1a1a">white.png</texture>
+            </control>
+
+            <!-- Red Border Top -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1400</width>
+                <height>4</height>
+                <texture colordiffuse="FFE50914">white.png</texture>
+            </control>
+
+            <!-- Header -->
+            <control type="label" id="1">
+                <posx>40</posx>
+                <posy>25</posy>
+                <width>1320</width>
+                <height>45</height>
+                <font>font_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$INFO[Window.Property(Heading)]</label>
+            </control>
+
+            <!-- Current Path -->
+            <control type="label">
+                <posx>40</posx>
+                <posy>75</posy>
+                <width>1320</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>80FFFFFF</textcolor>
+                <label>$INFO[Container(450).FolderPath]</label>
+            </control>
+
+            <!-- Left Panel - Source List -->
+            <control type="list" id="450">
+                <posx>40</posx>
+                <posy>120</posy>
+                <width>660</width>
+                <height>680</height>
+                <onright>451</onright>
+                <ondown>413</ondown>
+                <pagecontrol>460</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout width="660" height="55">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>660</width>
+                        <height>50</height>
+                        <texture colordiffuse="15FFFFFF">white.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>50</posx>
+                        <posy>0</posy>
+                        <width>600</width>
+                        <height>50</height>
+                        <font>font13</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="660" height="55">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>660</width>
+                        <height>50</height>
+                        <texture colordiffuse="FFE50914">white.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>50</posx>
+                        <posy>0</posy>
+                        <width>600</width>
+                        <height>50</height>
+                        <font>font13</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Left Scrollbar -->
+            <control type="scrollbar" id="460">
+                <posx>705</posx>
+                <posy>120</posy>
+                <width>10</width>
+                <height>680</height>
+                <orientation>vertical</orientation>
+                <onleft>450</onleft>
+                <onright>451</onright>
+                <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+            </control>
+
+            <!-- Right Panel - Folder Contents -->
+            <control type="list" id="451">
+                <posx>730</posx>
+                <posy>120</posy>
+                <width>620</width>
+                <height>680</height>
+                <onleft>450</onleft>
+                <ondown>413</ondown>
+                <pagecontrol>461</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout width="620" height="55">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>620</width>
+                        <height>50</height>
+                        <texture colordiffuse="15FFFFFF">white.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>50</posx>
+                        <posy>0</posy>
+                        <width>560</width>
+                        <height>50</height>
+                        <font>font13</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="620" height="55">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>620</width>
+                        <height>50</height>
+                        <texture colordiffuse="FFE50914">white.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>50</posx>
+                        <posy>0</posy>
+                        <width>560</width>
+                        <height>50</height>
+                        <font>font13</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Right Scrollbar -->
+            <control type="scrollbar" id="461">
+                <posx>1355</posx>
+                <posy>120</posy>
+                <width>10</width>
+                <height>680</height>
+                <orientation>vertical</orientation>
+                <onleft>451</onleft>
+                <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+            </control>
+
+            <!-- OK Button -->
+            <control type="button" id="413">
+                <posx>950</posx>
+                <posy>820</posy>
+                <width>200</width>
+                <height>55</height>
+                <font>font14</font>
+                <align>center</align>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <label>$LOCALIZE[186]</label>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+                <onup>451</onup>
+                <onright>414</onright>
+            </control>
+
+            <!-- Cancel Button -->
+            <control type="button" id="414">
+                <posx>1170</posx>
+                <posy>820</posy>
+                <width>200</width>
+                <height>55</height>
+                <font>font14</font>
+                <align>center</align>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <label>$LOCALIZE[222]</label>
+                <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+                <onup>451</onup>
+                <onleft>413</onleft>
+            </control>
+
+            <!-- New Folder Button -->
+            <control type="button" id="417">
+                <posx>40</posx>
+                <posy>820</posy>
+                <width>200</width>
+                <height>55</height>
+                <font>font14</font>
+                <align>center</align>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <label>$LOCALIZE[20309]</label>
+                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+                <onup>450</onup>
+                <onright>413</onright>
+            </control>
+        </control>
+    </controls>
+</window>

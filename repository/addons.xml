@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-    <addon id="skin.streamflix" version="1.0.8" name="StreamFlix" provider-name="StreamFlix">
+    <addon id="skin.streamflix" version="1.0.9" name="StreamFlix" provider-name="StreamFlix">
         <requires>
             <import addon="xbmc.gui" version="5.17.0"/>
         </requires>
         <extension point="xbmc.gui.skin" debugging="false">
-            <res width="1920" height="1080" aspect="16:9" default="true" folder="xml"/>
+            <res width="1920" height="1080" aspect="16:9" default="true" folder="resources/skins/Default/1080p"/>
         </extension>
         <extension point="xbmc.addon.metadata">
             <platform>all</platform>
