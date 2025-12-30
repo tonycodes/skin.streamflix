@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.streamflix" version="1.0.0" name="StreamFlix" provider-name="StreamFlix">
+  <requires>
+    <import addon="xbmc.gui" version="5.18.0"/>
+  </requires>
+  <extension point="xbmc.gui.skin" debugging="false">
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="1080p"/>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <license>GPL-2.0-or-later</license>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+    <summary lang="en_GB">Netflix-style skin for Kodi</summary>
+    <description lang="en_GB">StreamFlix brings the Netflix experience to Kodi with a dark theme, horizontal content rows, hero banners, and smooth animations. Designed for simplicity with no extra dependencies.</description>
+  </extension>
+</addon>

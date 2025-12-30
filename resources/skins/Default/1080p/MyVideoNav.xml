@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="10025" type="window">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <views>50,51,52</views>
+
+    <controls>
+        <!-- Background -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="background_main">common/black.png</texture>
+        </control>
+
+        <!-- Dynamic Fanart Background -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture background="true" fallback="special://skin/backgrounds/default.jpg">$INFO[Container(50).ListItem.Art(fanart)]</texture>
+            <aspectratio aligny="top">scale</aspectratio>
+            <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+        </control>
+
+        <!-- Dark Overlay -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="CC141414">common/black.png</texture>
+        </control>
+
+        <!-- Top Bar -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>100</height>
+
+            <!-- Top Gradient -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>120</height>
+                <texture colordiffuse="CC000000">common/gradient-top.png</texture>
+            </control>
+
+            <!-- Logo -->
+            <control type="image">
+                <posx>80</posx>
+                <posy>25</posy>
+                <width>130</width>
+                <height>50</height>
+                <texture>logo.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <!-- Page Title -->
+            <control type="label">
+                <posx>250</posx>
+                <posy>30</posy>
+                <width>400</width>
+                <height>40</height>
+                <font>font_title</font>
+                <textcolor>text_white</textcolor>
+                <label>$INFO[Container.FolderName]</label>
+            </control>
+
+            <!-- Back Button -->
+            <control type="button" id="2">
+                <posx>1750</posx>
+                <posy>25</posy>
+                <width>100</width>
+                <height>50</height>
+                <font>font14</font>
+                <label>Back</label>
+                <onclick>Action(Back)</onclick>
+                <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
+                <texturenofocus colordiffuse="40808080">common/button-rounded.png</texturenofocus>
+            </control>
+        </control>
+
+        <!-- Main Content Area -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>120</posy>
+            <width>1920</width>
+            <height>960</height>
+
+            <!-- Grid View (Poster Style) -->
+            <control type="panel" id="50">
+                <posx>80</posx>
+                <posy>20</posy>
+                <width>1760</width>
+                <height>920</height>
+                <orientation>vertical</orientation>
+                <scrolltime>300</scrolltime>
+                <onup>2</onup>
+                <itemlayout width="195" height="340">
+                    <control type="group">
+                        <posx>5</posx>
+                        <posy>10</posy>
+                        <width>185</width>
+                        <height>320</height>
+
+                        <!-- Poster -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>185</width>
+                            <height>278</height>
+                            <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Title -->
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>285</posy>
+                            <width>185</width>
+                            <height>35</height>
+                            <font>font12</font>
+                            <textcolor>text_gray</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <align>center</align>
+                        </control>
+
+                        <!-- Progress Bar -->
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>273</posy>
+                            <width>185</width>
+                            <height>5</height>
+                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>185</width>
+                                <height>5</height>
+                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                            </control>
+                            <control type="progress">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>185</width>
+                                <height>5</height>
+                                <info>ListItem.PercentPlayed</info>
+                            </control>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="220" height="340">
+                    <control type="group">
+                        <posx>-7</posx>
+                        <posy>-5</posy>
+                        <width>215</width>
+                        <height>340</height>
+                        <animation effect="zoom" start="100" end="108" time="150" condition="true">Conditional</animation>
+
+                        <!-- White Border -->
+                        <control type="image">
+                            <posx>-3</posx>
+                            <posy>-3</posy>
+                            <width>221</width>
+                            <height>340</height>
+                            <texture colordiffuse="focus_border">common/white.png</texture>
+                        </control>
+
+                        <!-- Poster -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>215</width>
+                            <height>298</height>
+                            <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Title -->
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>305</posy>
+                            <width>215</width>
+                            <height>35</height>
+                            <font>font12_bold</font>
+                            <textcolor>text_white</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <align>center</align>
+                        </control>
+
+                        <!-- Progress Bar -->
+                        <control type="group">
+                            <posx>0</posx>
+                            <posy>293</posy>
+                            <width>215</width>
+                            <height>6</height>
+                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>215</width>
+                                <height>6</height>
+                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                            </control>
+                            <control type="progress">
+                                <posx>0</posx>
+                                <posy>0</posy>
+                                <width>215</width>
+                                <height>6</height>
+                                <info>ListItem.PercentPlayed</info>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+
+        <!-- Bottom Info Bar -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>980</posy>
+            <width>1920</width>
+            <height>100</height>
+
+            <!-- Item Count -->
+            <control type="label">
+                <posx>80</posx>
+                <posy>20</posy>
+                <width>300</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>text_dim</textcolor>
+                <label>$INFO[Container.NumItems] items</label>
+            </control>
+
+            <!-- Current Position -->
+            <control type="label">
+                <posx>1540</posx>
+                <posy>20</posy>
+                <width>300</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>text_dim</textcolor>
+                <align>right</align>
+                <label>$INFO[Container.CurrentItem] / $INFO[Container.NumItems]</label>
+            </control>
+        </control>
+    </controls>
+</window>

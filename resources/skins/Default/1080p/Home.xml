@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="10000" type="window">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <views>50</views>
+
+    <controls>
+        <!-- Include Global Includes -->
+        <include>GlobalBackground</include>
+
+        <!-- ==================== MAIN CONTENT AREA ==================== -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+
+            <!-- Background Fanart (Dynamic) -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>1080</height>
+                <texture background="true" fallback="special://skin/backgrounds/default.jpg">$INFO[Container(9000).ListItem.Art(fanart)]</texture>
+                <aspectratio aligny="top">scale</aspectratio>
+                <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+            </control>
+
+            <!-- Dark Overlay -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>1080</height>
+                <texture colordiffuse="80141414">common/black.png</texture>
+            </control>
+
+            <!-- Bottom Gradient -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>400</posy>
+                <width>1920</width>
+                <height>680</height>
+                <texture colordiffuse="FF141414">common/gradient-bottom.png</texture>
+            </control>
+
+            <!-- Left Gradient -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>900</width>
+                <height>700</height>
+                <texture colordiffuse="CC000000">common/gradient-left.png</texture>
+            </control>
+        </control>
+
+        <!-- ==================== HERO SPOTLIGHT CONTENT ==================== -->
+        <control type="group">
+            <posx>80</posx>
+            <posy>200</posy>
+            <width>800</width>
+            <height>400</height>
+
+            <!-- Clear Logo -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>450</width>
+                <height>180</height>
+                <texture>$INFO[Container(9000).ListItem.Art(clearlogo)]</texture>
+                <aspectratio align="left" aligny="top">keep</aspectratio>
+                <visible>!String.IsEmpty(Container(9000).ListItem.Art(clearlogo))</visible>
+            </control>
+
+            <!-- Title (fallback) -->
+            <control type="label">
+                <posx>0</posx>
+                <posy>30</posy>
+                <width>700</width>
+                <height>100</height>
+                <font>font_hero</font>
+                <textcolor>text_white</textcolor>
+                <shadowcolor>FF000000</shadowcolor>
+                <label>$INFO[Container(9000).ListItem.Label]</label>
+                <visible>String.IsEmpty(Container(9000).ListItem.Art(clearlogo))</visible>
+            </control>
+
+            <!-- Metadata Row -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>190</posy>
+                <width>700</width>
+                <height>35</height>
+
+                <!-- Match Percentage -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>120</width>
+                    <height>30</height>
+                    <font>font_metadata_bold</font>
+                    <textcolor>rating_good</textcolor>
+                    <label>95% Match</label>
+                    <visible>!String.IsEmpty(Container(9000).ListItem.Label)</visible>
+                </control>
+
+                <!-- Year -->
+                <control type="label">
+                    <posx>130</posx>
+                    <posy>0</posy>
+                    <width>80</width>
+                    <height>30</height>
+                    <font>font_metadata</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[Container(9000).ListItem.Year]</label>
+                </control>
+
+                <!-- Rating -->
+                <control type="label">
+                    <posx>220</posx>
+                    <posy>0</posy>
+                    <width>80</width>
+                    <height>30</height>
+                    <font>font_metadata</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[Container(9000).ListItem.Mpaa]</label>
+                </control>
+
+                <!-- Duration -->
+                <control type="label">
+                    <posx>320</posx>
+                    <posy>0</posy>
+                    <width>120</width>
+                    <height>30</height>
+                    <font>font_metadata</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[Container(9000).ListItem.Duration]</label>
+                </control>
+            </control>
+
+            <!-- Plot -->
+            <control type="textbox">
+                <posx>0</posx>
+                <posy>235</posy>
+                <width>600</width>
+                <height>90</height>
+                <font>font_plot</font>
+                <textcolor>text_gray</textcolor>
+                <label>$INFO[Container(9000).ListItem.Plot]</label>
+            </control>
+
+            <!-- Action Buttons -->
+            <control type="grouplist" id="1000">
+                <posx>0</posx>
+                <posy>340</posy>
+                <width>400</width>
+                <height>60</height>
+                <orientation>horizontal</orientation>
+                <itemgap>15</itemgap>
+                <onup>9000</onup>
+                <ondown>9001</ondown>
+
+                <!-- Play Button -->
+                <control type="button" id="1001">
+                    <width>140</width>
+                    <height>48</height>
+                    <font>font_button</font>
+                    <label>  Play</label>
+                    <align>left</align>
+                    <onclick>PlayMedia($INFO[Container(9000).ListItem.FilenameAndPath])</onclick>
+                    <texturefocus colordiffuse="button_primary">common/button-rounded.png</texturefocus>
+                    <texturenofocus colordiffuse="button_primary">common/button-rounded.png</texturenofocus>
+                    <textcolor>button_primary_text</textcolor>
+                    <focusedcolor>button_primary_text</focusedcolor>
+                </control>
+
+                <!-- More Info Button -->
+                <control type="button" id="1002">
+                    <width>160</width>
+                    <height>48</height>
+                    <font>font_button</font>
+                    <label>  More Info</label>
+                    <align>left</align>
+                    <onclick>Action(Info)</onclick>
+                    <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
+                    <texturenofocus colordiffuse="60808080">common/button-rounded.png</texturenofocus>
+                    <textcolor>text_white</textcolor>
+                    <focusedcolor>text_white</focusedcolor>
+                </control>
+            </control>
+        </control>
+
+        <!-- ==================== CONTENT ROWS ==================== -->
+        <control type="grouplist" id="9999">
+            <posx>0</posx>
+            <posy>520</posy>
+            <width>1920</width>
+            <height>560</height>
+            <orientation>vertical</orientation>
+            <itemgap>0</itemgap>
+            <scrolltime>200</scrolltime>
+
+            <!-- Featured/Spotlight Row (Hidden list for hero data) -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>0</height>
+
+                <control type="list" id="9000">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1</width>
+                    <height>1</height>
+                    <visible>false</visible>
+                    <content sortby="random" sortorder="descending" limit="10">videodb://movies/titles/</content>
+                    <itemlayout width="1" height="1"/>
+                    <focusedlayout width="1" height="1"/>
+                </control>
+            </control>
+
+            <!-- Continue Watching Row -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>250</height>
+                <visible>!String.IsEmpty(Container(9001).NumItems)</visible>
+
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>0</posy>
+                    <width>600</width>
+                    <height>40</height>
+                    <font>font_row_header</font>
+                    <textcolor>text_white</textcolor>
+                    <label>Continue Watching</label>
+                </control>
+
+                <control type="list" id="9001">
+                    <posx>80</posx>
+                    <posy>50</posy>
+                    <width>1760</width>
+                    <height>190</height>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>300</scrolltime>
+                    <pagecontrol>-</pagecontrol>
+                    <onup>1000</onup>
+                    <ondown>9002</ondown>
+                    <onleft>9001</onleft>
+                    <onright>9001</onright>
+                    <content sortby="lastplayed" sortorder="descending" limit="20">videodb://inprogressepisodes/</content>
+                    <include>LandscapeItemLayout</include>
+                </control>
+            </control>
+
+            <!-- Recently Added Movies -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>310</height>
+
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>0</posy>
+                    <width>600</width>
+                    <height>40</height>
+                    <font>font_row_header</font>
+                    <textcolor>text_white</textcolor>
+                    <label>Recently Added Movies</label>
+                </control>
+
+                <control type="list" id="9002">
+                    <posx>80</posx>
+                    <posy>50</posy>
+                    <width>1760</width>
+                    <height>250</height>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>300</scrolltime>
+                    <pagecontrol>-</pagecontrol>
+                    <onup>9001</onup>
+                    <ondown>9003</ondown>
+                    <onleft>9002</onleft>
+                    <onright>9002</onright>
+                    <content sortby="dateadded" sortorder="descending" limit="20">videodb://movies/titles/</content>
+                    <include>PosterItemLayout</include>
+                </control>
+            </control>
+
+            <!-- Recently Added TV Shows -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>310</height>
+
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>0</posy>
+                    <width>600</width>
+                    <height>40</height>
+                    <font>font_row_header</font>
+                    <textcolor>text_white</textcolor>
+                    <label>Recently Added TV Shows</label>
+                </control>
+
+                <control type="list" id="9003">
+                    <posx>80</posx>
+                    <posy>50</posy>
+                    <width>1760</width>
+                    <height>250</height>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>300</scrolltime>
+                    <pagecontrol>-</pagecontrol>
+                    <onup>9002</onup>
+                    <ondown>9004</ondown>
+                    <onleft>9003</onleft>
+                    <onright>9003</onright>
+                    <content sortby="dateadded" sortorder="descending" limit="20">videodb://tvshows/titles/</content>
+                    <include>PosterItemLayout</include>
+                </control>
+            </control>
+
+            <!-- Popular Movies (Random) -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>310</height>
+
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>0</posy>
+                    <width>600</width>
+                    <height>40</height>
+                    <font>font_row_header</font>
+                    <textcolor>text_white</textcolor>
+                    <label>Popular on StreamFlix</label>
+                </control>
+
+                <control type="list" id="9004">
+                    <posx>80</posx>
+                    <posy>50</posy>
+                    <width>1760</width>
+                    <height>250</height>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>300</scrolltime>
+                    <pagecontrol>-</pagecontrol>
+                    <onup>9003</onup>
+                    <ondown>9005</ondown>
+                    <onleft>9004</onleft>
+                    <onright>9004</onright>
+                    <content sortby="playcount" sortorder="descending" limit="20">videodb://movies/titles/</content>
+                    <include>PosterItemLayout</include>
+                </control>
+            </control>
+
+            <!-- Top Rated -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>310</height>
+
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>0</posy>
+                    <width>600</width>
+                    <height>40</height>
+                    <font>font_row_header</font>
+                    <textcolor>text_white</textcolor>
+                    <label>Top Rated</label>
+                </control>
+
+                <control type="list" id="9005">
+                    <posx>80</posx>
+                    <posy>50</posy>
+                    <width>1760</width>
+                    <height>250</height>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>300</scrolltime>
+                    <pagecontrol>-</pagecontrol>
+                    <onup>9004</onup>
+                    <ondown>-</ondown>
+                    <onleft>9005</onleft>
+                    <onright>9005</onright>
+                    <content sortby="rating" sortorder="descending" limit="20">videodb://movies/titles/</content>
+                    <include>PosterItemLayout</include>
+                </control>
+            </control>
+        </control>
+
+        <!-- ==================== TOP BAR ==================== -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>80</height>
+
+            <!-- Top Gradient -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>120</height>
+                <texture colordiffuse="CC000000">common/gradient-top.png</texture>
+            </control>
+
+            <!-- Logo -->
+            <control type="image">
+                <posx>80</posx>
+                <posy>20</posy>
+                <width>130</width>
+                <height>40</height>
+                <texture>logo.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+
+            <!-- Navigation Menu -->
+            <control type="grouplist" id="100">
+                <posx>230</posx>
+                <posy>25</posy>
+                <width>800</width>
+                <height>40</height>
+                <orientation>horizontal</orientation>
+                <itemgap>25</itemgap>
+                <ondown>9000</ondown>
+
+                <control type="button" id="101">
+                    <width>70</width>
+                    <height>35</height>
+                    <label>Home</label>
+                    <font>font14_bold</font>
+                    <textcolor>text_white</textcolor>
+                    <focusedcolor>text_white</focusedcolor>
+                    <onclick>ActivateWindow(Home)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+
+                <control type="button" id="102">
+                    <width>80</width>
+                    <height>35</height>
+                    <label>Movies</label>
+                    <font>font14</font>
+                    <textcolor>text_gray</textcolor>
+                    <focusedcolor>text_white</focusedcolor>
+                    <onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+
+                <control type="button" id="103">
+                    <width>100</width>
+                    <height>35</height>
+                    <label>TV Shows</label>
+                    <font>font14</font>
+                    <textcolor>text_gray</textcolor>
+                    <focusedcolor>text_white</focusedcolor>
+                    <onclick>ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+
+                <control type="button" id="104">
+                    <width>80</width>
+                    <height>35</height>
+                    <label>My List</label>
+                    <font>font14</font>
+                    <textcolor>text_gray</textcolor>
+                    <focusedcolor>text_white</focusedcolor>
+                    <onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                </control>
+            </control>
+
+            <!-- Search -->
+            <control type="button" id="110">
+                <posx>1750</posx>
+                <posy>20</posy>
+                <width>40</width>
+                <height>40</height>
+                <font>font20</font>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <label>$LOCALIZE[137]</label>
+                <onclick>ActivateWindow(Videos)</onclick>
+            </control>
+        </control>
+    </controls>
+
+    <!-- ==================== ITEM LAYOUT INCLUDES ==================== -->
+    <include name="PosterItemLayout">
+        <itemlayout width="200" height="300">
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>185</width>
+                <height>278</height>
+                <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                <aspectratio>scale</aspectratio>
+                <bordertexture>-</bordertexture>
+            </control>
+            <!-- Progress Bar -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>273</posy>
+                <width>185</width>
+                <height>5</height>
+                <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>185</width>
+                    <height>5</height>
+                    <texture colordiffuse="progress_bg">common/white.png</texture>
+                </control>
+                <control type="progress">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>185</width>
+                    <height>5</height>
+                    <info>ListItem.PercentPlayed</info>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout width="220" height="300">
+            <control type="group">
+                <posx>-10</posx>
+                <posy>-15</posy>
+                <animation effect="zoom" start="100" end="110" time="150" condition="true">Conditional</animation>
+                <!-- Border -->
+                <control type="image">
+                    <posx>-3</posx>
+                    <posy>-3</posy>
+                    <width>211</width>
+                    <height>304</height>
+                    <texture colordiffuse="focus_border">common/white.png</texture>
+                </control>
+                <!-- Poster -->
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>205</width>
+                    <height>298</height>
+                    <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+                <!-- Progress -->
+                <control type="group">
+                    <posx>0</posx>
+                    <posy>292</posy>
+                    <width>205</width>
+                    <height>6</height>
+                    <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>205</width>
+                        <height>6</height>
+                        <texture colordiffuse="progress_bg">common/white.png</texture>
+                    </control>
+                    <control type="progress">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>205</width>
+                        <height>6</height>
+                        <info>ListItem.PercentPlayed</info>
+                    </control>
+                </control>
+            </control>
+        </focusedlayout>
+    </include>
+
+    <include name="LandscapeItemLayout">
+        <itemlayout width="320" height="180">
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>305</width>
+                <height>172</height>
+                <texture fallback="special://skin/media/default_landscape.png">$INFO[ListItem.Art(thumb)]</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+            <control type="group">
+                <posx>0</posx>
+                <posy>167</posy>
+                <width>305</width>
+                <height>5</height>
+                <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>305</width>
+                    <height>5</height>
+                    <texture colordiffuse="progress_bg">common/white.png</texture>
+                </control>
+                <control type="progress">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>305</width>
+                    <height>5</height>
+                    <info>ListItem.PercentPlayed</info>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout width="350" height="180">
+            <control type="group">
+                <posx>-10</posx>
+                <posy>-10</posy>
+                <animation effect="zoom" start="100" end="108" time="150" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>-3</posx>
+                    <posy>-3</posy>
+                    <width>331</width>
+                    <height>198</height>
+                    <texture colordiffuse="focus_border">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>325</width>
+                    <height>192</height>
+                    <texture fallback="special://skin/media/default_landscape.png">$INFO[ListItem.Art(thumb)]</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+                <control type="group">
+                    <posx>0</posx>
+                    <posy>186</posy>
+                    <width>325</width>
+                    <height>6</height>
+                    <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>325</width>
+                        <height>6</height>
+                        <texture colordiffuse="progress_bg">common/white.png</texture>
+                    </control>
+                    <control type="progress">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>325</width>
+                        <height>6</height>
+                        <info>ListItem.PercentPlayed</info>
+                    </control>
+                </control>
+            </control>
+        </focusedlayout>
+    </include>
+</window>

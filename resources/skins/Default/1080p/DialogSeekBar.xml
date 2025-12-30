@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="10115">
+    <defaultcontrol always="true">1</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+    <animation effect="slide" start="0,200" end="0,0" time="200">WindowOpen</animation>
+    <animation effect="slide" start="0,0" end="0,200" time="200">WindowClose</animation>
+
+    <controls>
+        <!-- Bottom Overlay -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>880</posy>
+            <width>1920</width>
+            <height>200</height>
+
+            <!-- Gradient Background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>200</height>
+                <texture colordiffuse="CC000000">common/gradient-bottom.png</texture>
+            </control>
+
+            <!-- Progress Bar -->
+            <control type="group">
+                <posx>80</posx>
+                <posy>20</posy>
+                <width>1760</width>
+                <height>40</height>
+
+                <!-- Seek Slider -->
+                <control type="slider" id="1">
+                    <posx>0</posx>
+                    <posy>10</posy>
+                    <width>1760</width>
+                    <height>20</height>
+                    <texturesliderbar colordiffuse="progress_bg">common/slider-bg.png</texturesliderbar>
+                    <textureslidernib colordiffuse="text_white">common/slider-nib.png</textureslidernib>
+                    <textureslidernibfocus colordiffuse="accent_red">common/slider-nib.png</textureslidernibfocus>
+                    <action>seek</action>
+                </control>
+            </control>
+
+            <!-- Time Info -->
+            <control type="group">
+                <posx>80</posx>
+                <posy>70</posy>
+                <width>1760</width>
+                <height>40</height>
+
+                <!-- Current Time -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>150</width>
+                    <height>30</height>
+                    <font>font14</font>
+                    <textcolor>text_white</textcolor>
+                    <label>$INFO[Player.Time]</label>
+                </control>
+
+                <!-- Duration -->
+                <control type="label">
+                    <posx>1610</posx>
+                    <posy>0</posy>
+                    <width>150</width>
+                    <height>30</height>
+                    <font>font14</font>
+                    <textcolor>text_gray</textcolor>
+                    <align>right</align>
+                    <label>$INFO[Player.Duration]</label>
+                </control>
+            </control>
+
+            <!-- Now Playing Info -->
+            <control type="group">
+                <posx>80</posx>
+                <posy>120</posy>
+                <width>1000</width>
+                <height>60</height>
+
+                <!-- Title -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>800</width>
+                    <height>35</height>
+                    <font>font16_bold</font>
+                    <textcolor>text_white</textcolor>
+                    <label>$INFO[Player.Title]</label>
+                </control>
+
+                <!-- Season/Episode for TV -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>35</posy>
+                    <width>400</width>
+                    <height>25</height>
+                    <font>font12</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,]</label>
+                    <visible>!String.IsEmpty(VideoPlayer.Season)</visible>
+                </control>
+            </control>
+
+            <!-- Playback Controls -->
+            <control type="grouplist" id="100">
+                <posx>1400</posx>
+                <posy>120</posy>
+                <width>440</width>
+                <height>60</height>
+                <orientation>horizontal</orientation>
+                <itemgap>20</itemgap>
+                <align>right</align>
+
+                <!-- Rewind -->
+                <control type="button" id="101">
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus>icons/rewind.png</texturefocus>
+                    <texturenofocus>icons/rewind.png</texturenofocus>
+                    <label>-</label>
+                    <onclick>PlayerControl(Rewind)</onclick>
+                </control>
+
+                <!-- Play/Pause -->
+                <control type="button" id="102">
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus>icons/pause.png</texturefocus>
+                    <texturenofocus>icons/pause.png</texturenofocus>
+                    <label>-</label>
+                    <onclick>PlayerControl(Play)</onclick>
+                </control>
+
+                <!-- Fast Forward -->
+                <control type="button" id="103">
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus>icons/forward.png</texturefocus>
+                    <texturenofocus>icons/forward.png</texturenofocus>
+                    <label>-</label>
+                    <onclick>PlayerControl(Forward)</onclick>
+                </control>
+
+                <!-- Next Episode -->
+                <control type="button" id="104">
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus>icons/next.png</texturefocus>
+                    <texturenofocus>icons/next.png</texturenofocus>
+                    <label>-</label>
+                    <onclick>PlayerControl(Next)</onclick>
+                </control>
+
+                <!-- Subtitles -->
+                <control type="button" id="105">
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus>icons/subtitles.png</texturefocus>
+                    <texturenofocus>icons/subtitles.png</texturenofocus>
+                    <label>-</label>
+                    <onclick>ActivateWindow(SubtitleSearch)</onclick>
+                </control>
+
+                <!-- Audio -->
+                <control type="button" id="106">
+                    <width>50</width>
+                    <height>50</height>
+                    <texturefocus>icons/audio.png</texturefocus>
+                    <texturenofocus>icons/audio.png</texturenofocus>
+                    <label>-</label>
+                    <onclick>ActivateWindow(AudioDSPManager)</onclick>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>
