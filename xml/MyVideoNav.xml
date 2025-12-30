@@ -51,13 +51,14 @@
             </control>
 
             <!-- Logo -->
-            <control type="image">
+            <control type="label">
                 <posx>80</posx>
                 <posy>25</posy>
-                <width>130</width>
+                <width>200</width>
                 <height>50</height>
-                <texture>logo.png</texture>
-                <aspectratio>keep</aspectratio>
+                <font>font_title</font>
+                <textcolor>FFE50914</textcolor>
+                <label>StreamFlix</label>
             </control>
 
             <!-- Page Title -->

@@ -471,13 +471,14 @@
             </control>
 
             <!-- Logo -->
-            <control type="image">
+            <control type="label">
                 <posx>30</posx>
                 <posy>30</posy>
-                <width>150</width>
+                <width>200</width>
                 <height>50</height>
-                <texture>logo.png</texture>
-                <aspectratio>keep</aspectratio>
+                <font>font_title</font>
+                <textcolor>FFE50914</textcolor>
+                <label>StreamFlix</label>
             </control>
 
             <!-- Menu Items -->
@@ -575,13 +576,14 @@
             </control>
 
             <!-- Logo -->
-            <control type="image">
+            <control type="label">
                 <posx>80</posx>
                 <posy>20</posy>
-                <width>120</width>
+                <width>180</width>
                 <height>40</height>
-                <texture>logo.png</texture>
-                <aspectratio>keep</aspectratio>
+                <font>font_title</font>
+                <textcolor>FFE50914</textcolor>
+                <label>StreamFlix</label>
             </control>
 
             <!-- Navigation -->

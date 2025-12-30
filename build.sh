@@ -1,7 +1,7 @@
 #!/bin/bash
 # Build script for StreamFlix Kodi Skin
 
-VERSION="1.0.5"
+VERSION="1.0.6"
 SKIN_NAME="skin.streamflix"
 
 # Navigate to parent directory
