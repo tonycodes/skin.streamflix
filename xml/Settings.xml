@@ -3,87 +3,126 @@
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
     <controls>
+        <!-- Background -->
         <control type="image">
             <posx>0</posx>
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_main">black.png</texture>
+            <texture colordiffuse="FF141414">white.png</texture>
         </control>
+
+        <!-- Title -->
         <control type="label">
             <posx>80</posx>
             <posy>40</posy>
             <width>600</width>
             <height>50</height>
             <font>font_title</font>
-            <textcolor>text_white</textcolor>
-            <label>$LOCALIZE[5]</label>
+            <textcolor>FFFFFFFF</textcolor>
+            <label>Settings</label>
         </control>
+
+        <!-- Settings Categories -->
         <control type="grouplist" id="9000">
             <posx>80</posx>
             <posy>120</posy>
             <width>400</width>
             <height>900</height>
             <orientation>vertical</orientation>
-            <itemgap>5</itemgap>
-            <onright>9001</onright>
-            <include>SettingsCategoryButton</include>
+            <itemgap>10</itemgap>
+
+            <!-- Media -->
+            <control type="button" id="9012">
+                <width>380</width>
+                <height>60</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>Media</label>
+                <onclick>ActivateWindow(MediaSettings)</onclick>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            </control>
+
+            <!-- Player -->
+            <control type="button" id="9013">
+                <width>380</width>
+                <height>60</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>Player</label>
+                <onclick>ActivateWindow(PlayerSettings)</onclick>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            </control>
+
+            <!-- Interface -->
+            <control type="button" id="9011">
+                <width>380</width>
+                <height>60</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>Interface</label>
+                <onclick>ActivateWindow(InterfaceSettings)</onclick>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            </control>
+
+            <!-- System -->
+            <control type="button" id="9010">
+                <width>380</width>
+                <height>60</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>System</label>
+                <onclick>ActivateWindow(SystemSettings)</onclick>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            </control>
+
+            <!-- Add-ons -->
+            <control type="button" id="9014">
+                <width>380</width>
+                <height>60</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>Add-ons</label>
+                <onclick>ActivateWindow(AddonBrowser)</onclick>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            </control>
+
+            <!-- File Manager -->
+            <control type="button" id="9015">
+                <width>380</width>
+                <height>60</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FFFFFFFF</focusedcolor>
+                <label>File Manager</label>
+                <onclick>ActivateWindow(FileManager)</onclick>
+                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            </control>
         </control>
-        <control type="grouplist" id="9001">
-            <posx>520</posx>
-            <posy>120</posy>
-            <width>1320</width>
-            <height>900</height>
-            <orientation>vertical</orientation>
-            <itemgap>5</itemgap>
-            <onleft>9000</onleft>
+
+        <!-- Back Button -->
+        <control type="button" id="2">
+            <posx>1750</posx>
+            <posy>40</posy>
+            <width>100</width>
+            <height>50</height>
+            <font>font14</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <label>Back</label>
+            <onclick>Action(Back)</onclick>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
+            <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
         </control>
     </controls>
-    <include name="SettingsCategoryButton">
-        <control type="button" id="9010">
-            <width>380</width>
-            <height>60</height>
-            <font>font14</font>
-            <label>$LOCALIZE[14081]</label>
-            <onclick>ActivateWindow(SystemSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-            <texturenofocus>-</texturenofocus>
-        </control>
-        <control type="button" id="9011">
-            <width>380</width>
-            <height>60</height>
-            <font>font14</font>
-            <label>$LOCALIZE[14077]</label>
-            <onclick>ActivateWindow(InterfaceSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-            <texturenofocus>-</texturenofocus>
-        </control>
-        <control type="button" id="9012">
-            <width>380</width>
-            <height>60</height>
-            <font>font14</font>
-            <label>$LOCALIZE[14098]</label>
-            <onclick>ActivateWindow(MediaSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-            <texturenofocus>-</texturenofocus>
-        </control>
-        <control type="button" id="9013">
-            <width>380</width>
-            <height>60</height>
-            <font>font14</font>
-            <label>$LOCALIZE[14078]</label>
-            <onclick>ActivateWindow(PlayerSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-            <texturenofocus>-</texturenofocus>
-        </control>
-        <control type="button" id="9014">
-            <width>380</width>
-            <height>60</height>
-            <font>font14</font>
-            <label>$LOCALIZE[24001]</label>
-            <onclick>ActivateWindow(AddonBrowser)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-            <texturenofocus>-</texturenofocus>
-        </control>
-    </include>
 </window>

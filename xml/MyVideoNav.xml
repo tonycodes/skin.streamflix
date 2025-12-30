@@ -20,7 +20,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture background="true" fallback="special://skin/backgrounds/default.jpg">$INFO[Container(50).ListItem.Art(fanart)]</texture>
+            <texture background="true">$INFO[Container(50).ListItem.Art(fanart)]</texture>
             <aspectratio aligny="top">scale</aspectratio>
             <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
         </control>
@@ -72,17 +72,42 @@
                 <label>$INFO[Container.FolderName]</label>
             </control>
 
+            <!-- Add Source Button -->
+            <control type="button" id="9990">
+                <posx>1300</posx>
+                <posy>25</posy>
+                <width>180</width>
+                <height>50</height>
+                <font>font13</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>FF000000</textcolor>
+                <focusedcolor>FFE50914</focusedcolor>
+                <label>+ Add Source</label>
+                <onclick>ActivateWindow(Videos,sources://video/)</onclick>
+                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
+                <onright>9991</onright>
+                <ondown>50</ondown>
+            </control>
+
             <!-- Back Button -->
-            <control type="button" id="2">
-                <posx>1750</posx>
+            <control type="button" id="9991">
+                <posx>1500</posx>
                 <posy>25</posy>
                 <width>100</width>
                 <height>50</height>
-                <font>font14</font>
+                <font>font13</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
                 <label>Back</label>
                 <onclick>Action(Back)</onclick>
-                <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
-                <texturenofocus colordiffuse="40808080">button-rounded.png</texturenofocus>
+                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
+                <onleft>9990</onleft>
+                <ondown>50</ondown>
             </control>
         </control>
 
@@ -109,14 +134,33 @@
                         <width>185</width>
                         <height>320</height>
 
-                        <!-- Poster -->
+                        <!-- Card Background -->
                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
                             <width>185</width>
                             <height>278</height>
-                            <texture fallback="special://skin/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <texture colordiffuse="FF333333">white.png</texture>
+                        </control>
+
+                        <!-- Poster/Icon -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>185</width>
+                            <height>278</height>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>String.IsEmpty(ListItem.Art(poster))</visible>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>185</width>
+                            <height>278</height>
+                            <texture>$INFO[ListItem.Art(poster)]</texture>
                             <aspectratio>scale</aspectratio>
+                            <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
                         </control>
 
                         <!-- Title -->
@@ -126,7 +170,7 @@
                             <width>185</width>
                             <height>35</height>
                             <font>font12</font>
-                            <textcolor>text_gray</textcolor>
+                            <textcolor>FFFFFFFF</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <align>center</align>
                         </control>
@@ -161,25 +205,44 @@
                         <posy>-5</posy>
                         <width>215</width>
                         <height>340</height>
-                        <animation effect="zoom" start="100" end="108" time="150" condition="true">Conditional</animation>
+                        <animation effect="fade" start="80" end="100" time="200">Focus</animation>
 
                         <!-- White Border -->
                         <control type="image">
                             <posx>-3</posx>
                             <posy>-3</posy>
                             <width>221</width>
-                            <height>340</height>
-                            <texture colordiffuse="focus_border">white.png</texture>
+                            <height>310</height>
+                            <texture colordiffuse="FFFFFFFF">white.png</texture>
                         </control>
 
-                        <!-- Poster -->
+                        <!-- Card Background -->
                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
                             <width>215</width>
                             <height>298</height>
-                            <texture fallback="special://skin/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <texture colordiffuse="FF333333">white.png</texture>
+                        </control>
+
+                        <!-- Poster/Icon -->
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>215</width>
+                            <height>298</height>
+                            <texture>$INFO[ListItem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>String.IsEmpty(ListItem.Art(poster))</visible>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>215</width>
+                            <height>298</height>
+                            <texture>$INFO[ListItem.Art(poster)]</texture>
                             <aspectratio>scale</aspectratio>
+                            <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
                         </control>
 
                         <!-- Title -->
@@ -189,7 +252,7 @@
                             <width>215</width>
                             <height>35</height>
                             <font>font12_bold</font>
-                            <textcolor>text_white</textcolor>
+                            <textcolor>FFFFFFFF</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <align>center</align>
                         </control>
@@ -218,6 +281,59 @@
                         </control>
                     </control>
                 </focusedlayout>
+            </control>
+        </control>
+
+        <!-- Empty Library Message -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>400</posy>
+            <visible>Container.NumItems(50) &lt; 2</visible>
+            <control type="label">
+                <posx>960</posx>
+                <posy>0</posy>
+                <width>800</width>
+                <height>50</height>
+                <font>font_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <align>center</align>
+                <label>No content found</label>
+            </control>
+            <control type="label">
+                <posx>960</posx>
+                <posy>60</posy>
+                <width>800</width>
+                <height>40</height>
+                <font>font14</font>
+                <textcolor>80FFFFFF</textcolor>
+                <align>center</align>
+                <label>Go to Settings → Media to add your video folders</label>
+            </control>
+            <control type="button" id="8888">
+                <posx>710</posx>
+                <posy>130</posy>
+                <width>250</width>
+                <height>50</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <label>Add Videos</label>
+                <onclick>ActivateWindow(Videos,sources://video/)</onclick>
+                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="FFE50914">white.png</texturenofocus>
+            </control>
+            <control type="button" id="8889">
+                <posx>980</posx>
+                <posy>130</posy>
+                <width>250</width>
+                <height>50</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <label>Scan Library</label>
+                <onclick>UpdateLibrary(video)</onclick>
+                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
         </control>
 
