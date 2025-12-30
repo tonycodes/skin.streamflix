@@ -1,0 +1,26 @@
+# Kodi Media Center language file
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgctxt "#31000"
+msgid "StreamFlix"
+msgstr ""
+
+msgctxt "#31001"
+msgid "Home"
+msgstr ""
+
+msgctxt "#31002"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#31003"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#31004"
+msgid "Settings"
+msgstr ""

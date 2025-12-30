@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <controls>
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="FF141414">white.png</texture>
+        </control>
+        <control type="label">
+            <posx>0</posx>
+            <posy>400</posy>
+            <width>1920</width>
+            <height>60</height>
+            <font>font_title</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <align>center</align>
+            <label>$LOCALIZE[20068]</label>
+        </control>
+        <control type="list" id="50">
+            <posx>460</posx>
+            <posy>500</posy>
+            <width>1000</width>
+            <height>400</height>
+            <orientation>horizontal</orientation>
+            <onleft>50</onleft>
+            <onright>50</onright>
+            <scrolltime>200</scrolltime>
+            <itemlayout width="200" height="200">
+                <control type="image">
+                    <posx>10</posx>
+                    <posy>10</posy>
+                    <width>180</width>
+                    <height>180</height>
+                    <texture colordiffuse="FF333333">white.png</texture>
+                </control>
+                <control type="image">
+                    <posx>50</posx>
+                    <posy>50</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                </control>
+            </control>
+            <focusedlayout width="200" height="200">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>200</width>
+                    <height>200</height>
+                    <texture border="3">button-focus.png</texture>
+                    <colordiffuse>FFE50914</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>10</posx>
+                    <posy>10</posy>
+                    <width>180</width>
+                    <height>180</height>
+                    <texture colordiffuse="FF333333">white.png</texture>
+                </control>
+                <control type="image">
+                    <posx>50</posx>
+                    <posy>50</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                </control>
+            </focusedlayout>
+        </control>
+    </controls>
+</window>
