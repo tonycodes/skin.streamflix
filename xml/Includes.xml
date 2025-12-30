@@ -29,7 +29,7 @@
                 <posy>0</posy>
                 <width>1920</width>
                 <height>650</height>
-                <texture background="true" fallback="special://skin/backgrounds/default.jpg">$VAR[BackgroundFanart]</texture>
+                <texture background="true" fallback="backgrounds/default.jpg">$VAR[BackgroundFanart]</texture>
                 <aspectratio aligny="top">scale</aspectratio>
             </control>
 
@@ -228,7 +228,7 @@
                             <posy>0</posy>
                             <width>185</width>
                             <height>278</height>
-                            <texture fallback="special://skin/default_poster.png">$VAR[PosterArt]</texture>
+                            <texture fallback="default_poster.png">$VAR[PosterArt]</texture>
                             <aspectratio>scale</aspectratio>
                             <bordertexture>-</bordertexture>
                         </control>
@@ -284,7 +284,7 @@
                             <posy>0</posy>
                             <width>215</width>
                             <height>334</height>
-                            <texture fallback="special://skin/default_poster.png">$VAR[PosterArt]</texture>
+                            <texture fallback="default_poster.png">$VAR[PosterArt]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -364,7 +364,7 @@
                             <posy>0</posy>
                             <width>285</width>
                             <height>160</height>
-                            <texture fallback="special://skin/default_thumb.png">$VAR[ThumbArt]</texture>
+                            <texture fallback="default_thumb.png">$VAR[ThumbArt]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -417,7 +417,7 @@
                             <posy>0</posy>
                             <width>315</width>
                             <height>190</height>
-                            <texture fallback="special://skin/default_thumb.png">$VAR[ThumbArt]</texture>
+                            <texture fallback="default_thumb.png">$VAR[ThumbArt]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 

@@ -2,7 +2,7 @@
 <window id="10025" type="window">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,51</views>
+    <views>50</views>
 
     <controls>
         <!-- ============================================== -->
@@ -37,7 +37,7 @@
             <texture colordiffuse="E0141414">white.png</texture>
         </control>
 
-        <!-- Bottom gradient for episode list -->
+        <!-- Bottom gradient for content list -->
         <control type="image">
             <posx>0</posx>
             <posy>500</posy>
@@ -122,7 +122,7 @@
                 <font>font_hero</font>
                 <textcolor>FFFFFFFF</textcolor>
                 <label>$INFO[Container(50).TVShowTitle]</label>
-                <visible>String.IsEmpty(Container(50).Art(tvshow.clearlogo))</visible>
+                <visible>String.IsEmpty(Container(50).Art(tvshow.clearlogo)) + !String.IsEmpty(Container(50).TVShowTitle)</visible>
             </control>
 
             <!-- Folder name fallback for non-TV content -->
@@ -155,7 +155,7 @@
                     <label>$INFO[Container(50).ListItem.Year]</label>
                 </control>
 
-                <!-- Number of Seasons/Episodes -->
+                <!-- Number of items -->
                 <control type="label">
                     <posx>100</posx>
                     <posy>0</posy>
@@ -192,7 +192,7 @@
                 </control>
             </control>
 
-            <!-- Plot -->
+            <!-- Plot - Show episode plot when viewing episodes, otherwise folder plot -->
             <control type="textbox">
                 <posx>0</posx>
                 <posy>220</posy>
@@ -224,6 +224,26 @@
                 <label>Episodes</label>
                 <visible>Container.Content(episodes)</visible>
             </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>360</posy>
+                <width>300</width>
+                <height>35</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>TV Shows</label>
+                <visible>Container.Content(tvshows)</visible>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>360</posy>
+                <width>300</width>
+                <height>35</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>Movies</label>
+                <visible>Container.Content(movies)</visible>
+            </control>
         </control>
 
         <!-- ============================================== -->
@@ -236,14 +256,24 @@
             <height>380</height>
             <visible>Container.Content(episodes)</visible>
 
-            <!-- Episode Thumbnail -->
+            <!-- Video Preview Window (shows when preview is playing) -->
+            <control type="videowindow">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>550</width>
+                <height>310</height>
+                <visible>Player.Playing + !String.IsEmpty(Window(Home).Property(StreamflixPreviewActive))</visible>
+            </control>
+
+            <!-- Episode Thumbnail (shows when preview NOT playing) -->
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>550</width>
                 <height>310</height>
-                <texture>$INFO[Container(50).ListItem.Art(thumb)]</texture>
+                <texture background="true">$INFO[Container(50).ListItem.Art(thumb)]</texture>
                 <aspectratio>scale</aspectratio>
+                <visible>!Player.Playing | String.IsEmpty(Window(Home).Property(StreamflixPreviewActive))</visible>
             </control>
 
             <!-- Episode placeholder if no thumb -->
@@ -253,7 +283,44 @@
                 <width>550</width>
                 <height>310</height>
                 <texture colordiffuse="FF333333">white.png</texture>
-                <visible>String.IsEmpty(Container(50).ListItem.Art(thumb))</visible>
+                <visible>String.IsEmpty(Container(50).ListItem.Art(thumb)) + [!Player.Playing | String.IsEmpty(Window(Home).Property(StreamflixPreviewActive))]</visible>
+            </control>
+
+            <!-- Play icon overlay (hidden when preview playing) -->
+            <control type="group">
+                <posx>240</posx>
+                <posy>120</posy>
+                <visible>!Player.Playing | String.IsEmpty(Window(Home).Property(StreamflixPreviewActive))</visible>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>70</width>
+                    <height>70</height>
+                    <texture colordiffuse="CC000000">white.png</texture>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>70</width>
+                    <height>70</height>
+                    <font>font_title</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>></label>
+                </control>
+            </control>
+
+            <!-- Preview indicator -->
+            <control type="label">
+                <posx>10</posx>
+                <posy>10</posy>
+                <width>100</width>
+                <height>25</height>
+                <font>font10</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>PREVIEW</label>
+                <visible>Player.Playing + !String.IsEmpty(Window(Home).Property(StreamflixPreviewActive))</visible>
             </control>
 
             <!-- Episode Number & Title -->
@@ -264,7 +331,7 @@
                 <height>30</height>
                 <font>font13</font>
                 <textcolor>FFFFFFFF</textcolor>
-                <label>$INFO[Container(50).ListItem.Episode,E, - ]$INFO[Container(50).ListItem.Title]</label>
+                <label>$INFO[Container(50).ListItem.Episode,Episode , - ]$INFO[Container(50).ListItem.Title]</label>
             </control>
 
             <!-- Episode Duration -->
@@ -280,10 +347,8 @@
         </control>
 
         <!-- ============================================== -->
-        <!-- CONTENT LISTS -->
+        <!-- MAIN CONTENT LIST (Single list for all content types) -->
         <!-- ============================================== -->
-
-        <!-- SEASONS LIST (Vertical posters) -->
         <control type="list" id="50">
             <posx>60</posx>
             <posy>530</posy>
@@ -293,9 +358,9 @@
             <scrolltime>300</scrolltime>
             <onup>9000</onup>
             <pagecontrol>-</pagecontrol>
-            <visible>!Container.Content(episodes)</visible>
 
-            <itemlayout width="160" height="280">
+            <!-- POSTER LAYOUT (for movies, shows, seasons) -->
+            <itemlayout width="160" height="280" condition="!Container.Content(episodes)">
                 <control type="group">
                     <posx>5</posx>
                     <posy>10</posy>
@@ -332,6 +397,29 @@
                         <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     </control>
 
+                    <!-- Progress Bar -->
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>220</posy>
+                        <width>150</width>
+                        <height>5</height>
+                        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>150</width>
+                            <height>5</height>
+                            <texture colordiffuse="40FFFFFF">white.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>150</width>
+                            <height>5</height>
+                            <texture colordiffuse="FFE50914">white.png</texture>
+                        </control>
+                    </control>
+
                     <!-- Title -->
                     <control type="label">
                         <posx>0</posx>
@@ -346,7 +434,7 @@
                 </control>
             </itemlayout>
 
-            <focusedlayout width="180" height="280">
+            <focusedlayout width="180" height="280" condition="!Container.Content(episodes)">
                 <control type="group">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -405,21 +493,9 @@
                     </control>
                 </control>
             </focusedlayout>
-        </control>
 
-        <!-- EPISODES LIST (Horizontal thumbnails - Netflix style) -->
-        <control type="list" id="51">
-            <posx>60</posx>
-            <posy>530</posy>
-            <width>1800</width>
-            <height>500</height>
-            <orientation>horizontal</orientation>
-            <scrolltime>300</scrolltime>
-            <onup>9000</onup>
-            <pagecontrol>-</pagecontrol>
-            <visible>Container.Content(episodes)</visible>
-
-            <itemlayout width="320" height="240">
+            <!-- EPISODE LAYOUT (landscape thumbnails) -->
+            <itemlayout width="320" height="240" condition="Container.Content(episodes)">
                 <control type="group">
                     <posx>5</posx>
                     <posy>10</posy>
@@ -498,7 +574,7 @@
                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
-                            <width>$INFO[ListItem.PercentPlayed,310,0.01]</width>
+                            <width>310</width>
                             <height>5</height>
                             <texture colordiffuse="FFE50914">white.png</texture>
                         </control>
@@ -527,7 +603,7 @@
                 </control>
             </itemlayout>
 
-            <focusedlayout width="340" height="240">
+            <focusedlayout width="340" height="240" condition="Container.Content(episodes)">
                 <control type="group">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -653,7 +729,7 @@
         <control type="group">
             <posx>0</posx>
             <posy>400</posy>
-            <visible>Integer.IsEqual(Container(50).NumItems,0) + Integer.IsEqual(Container(51).NumItems,0)</visible>
+            <visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
             <control type="label">
                 <posx>960</posx>
                 <posy>0</posy>

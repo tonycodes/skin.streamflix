@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="script.streamflix.helper"
+       name="Streamflix Helper"
+       version="1.0.0"
+       provider-name="Streamflix">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="startup"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Streamflix skin helper for auto-preview</summary>
+        <description lang="en_GB">Provides Netflix-style auto-preview functionality for the Streamflix skin. Automatically plays episode previews after hovering for a few seconds.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+    </extension>
+</addon>

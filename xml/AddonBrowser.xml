@@ -4,98 +4,177 @@
     <allowoverlay>yes</allowoverlay>
     <views>50</views>
     <controls>
+        <!-- Dark Background -->
         <control type="image">
             <posx>0</posx>
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_main">black.png</texture>
+            <texture colordiffuse="FF141414">white.png</texture>
         </control>
-        <control type="label">
-            <posx>80</posx>
-            <posy>40</posy>
-            <width>600</width>
-            <height>50</height>
-            <font>font_title</font>
-            <textcolor>text_white</textcolor>
-            <label>$LOCALIZE[24001]</label>
+
+        <!-- Header -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>120</height>
+
+            <!-- Header Background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>120</height>
+                <texture colordiffuse="FF1a1a1a">white.png</texture>
+            </control>
+
+            <!-- Title -->
+            <control type="label">
+                <posx>80</posx>
+                <posy>30</posy>
+                <width>600</width>
+                <height>50</height>
+                <font>font_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$LOCALIZE[24001]</label>
+            </control>
+
+            <!-- Path -->
+            <control type="label">
+                <posx>80</posx>
+                <posy>80</posy>
+                <width>1200</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>80FFFFFF</textcolor>
+                <label>$INFO[Container.FolderPath]</label>
+            </control>
+
+            <!-- Back Button -->
+            <control type="button" id="9000">
+                <posx>1700</posx>
+                <posy>35</posy>
+                <width>140</width>
+                <height>50</height>
+                <font>font13</font>
+                <align>center</align>
+                <textcolor>FFFFFFFF</textcolor>
+                <focusedcolor>FF000000</focusedcolor>
+                <label>Back</label>
+                <onclick>Action(Back)</onclick>
+                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+                <ondown>50</ondown>
+            </control>
         </control>
-        <control type="label">
-            <posx>80</posx>
-            <posy>90</posy>
-            <width>1000</width>
-            <height>30</height>
-            <font>font13</font>
-            <textcolor>text_gray</textcolor>
-            <label>$INFO[Container.FolderPath]</label>
-        </control>
+
+        <!-- Addon List -->
         <control type="list" id="50">
             <posx>80</posx>
             <posy>140</posy>
             <width>1760</width>
-            <height>880</height>
+            <height>900</height>
             <scrolltime>200</scrolltime>
-            <itemlayout width="1760" height="70">
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>5</posy>
-                    <width>60</width>
-                    <height>60</height>
-                    <texture>$INFO[ListItem.Icon]</texture>
-                    <aspectratio>keep</aspectratio>
-                </control>
-                <control type="label">
-                    <posx>80</posx>
-                    <posy>10</posy>
-                    <width>1600</width>
-                    <height>30</height>
-                    <font>font14</font>
-                    <textcolor>text_gray</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-                <control type="label">
-                    <posx>80</posx>
-                    <posy>40</posy>
-                    <width>1600</width>
-                    <height>25</height>
-                    <font>font12</font>
-                    <textcolor>text_dim</textcolor>
-                    <label>$INFO[ListItem.Label2]</label>
-                </control>
-            </itemlayout>
-            <focusedlayout width="1760" height="70">
-                <control type="image">
+            <onup>9000</onup>
+
+            <itemlayout width="1760" height="80">
+                <control type="group">
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>1760</width>
-                    <height>70</height>
-                    <texture colordiffuse="40FFFFFF">white.png</texture>
+                    <height>75</height>
+
+                    <!-- Row Background -->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1760</width>
+                        <height>75</height>
+                        <texture colordiffuse="20FFFFFF">white.png</texture>
+                    </control>
+
+                    <!-- Icon -->
+                    <control type="image">
+                        <posx>15</posx>
+                        <posy>7</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+
+                    <!-- Label -->
+                    <control type="label">
+                        <posx>95</posx>
+                        <posy>12</posy>
+                        <width>1600</width>
+                        <height>30</height>
+                        <font>font14</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+
+                    <!-- Label2 (Description) -->
+                    <control type="label">
+                        <posx>95</posx>
+                        <posy>42</posy>
+                        <width>1600</width>
+                        <height>25</height>
+                        <font>font12</font>
+                        <textcolor>80FFFFFF</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
                 </control>
-                <control type="image">
+            </itemlayout>
+
+            <focusedlayout width="1760" height="80">
+                <control type="group">
                     <posx>0</posx>
-                    <posy>5</posy>
-                    <width>60</width>
-                    <height>60</height>
-                    <texture>$INFO[ListItem.Icon]</texture>
-                    <aspectratio>keep</aspectratio>
-                </control>
-                <control type="label">
-                    <posx>80</posx>
-                    <posy>10</posy>
-                    <width>1600</width>
-                    <height>30</height>
-                    <font>font14_bold</font>
-                    <textcolor>text_white</textcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-                <control type="label">
-                    <posx>80</posx>
-                    <posy>40</posy>
-                    <width>1600</width>
-                    <height>25</height>
-                    <font>font12</font>
-                    <textcolor>text_gray</textcolor>
-                    <label>$INFO[ListItem.Label2]</label>
+                    <posy>0</posy>
+                    <width>1760</width>
+                    <height>75</height>
+
+                    <!-- Focused Row Background (Red) -->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1760</width>
+                        <height>75</height>
+                        <texture colordiffuse="FFE50914">white.png</texture>
+                    </control>
+
+                    <!-- Icon -->
+                    <control type="image">
+                        <posx>15</posx>
+                        <posy>7</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+
+                    <!-- Label (White on Red) -->
+                    <control type="label">
+                        <posx>95</posx>
+                        <posy>12</posy>
+                        <width>1600</width>
+                        <height>30</height>
+                        <font>font14</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+
+                    <!-- Label2 (Light on Red) -->
+                    <control type="label">
+                        <posx>95</posx>
+                        <posy>42</posy>
+                        <width>1600</width>
+                        <height>25</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
                 </control>
             </focusedlayout>
         </control>
