@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+    <addon id="skin.streamflix" version="1.0.9" name="StreamFlix" provider-name="StreamFlix">
+        <requires>
+            <import addon="xbmc.gui" version="5.17.0"/>
+        </requires>
+        <extension point="xbmc.gui.skin" debugging="false">
+            <res width="1920" height="1080" aspect="16:9" default="true" folder="resources/skins/Default/1080p"/>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <platform>all</platform>
+            <license>GPL-2.0-or-later</license>
+            <assets>
+                <icon>icon.png</icon>
+                <fanart>fanart.jpg</fanart>
+            </assets>
+            <summary lang="en_GB">Netflix-style skin for Kodi</summary>
+            <description lang="en_GB">StreamFlix brings the Netflix experience to Kodi with a dark theme, horizontal content rows, hero banners, and smooth animations.</description>
+        </extension>
+    </addon>
+    <addon id="repository.streamflix" name="StreamFlix Repository" version="1.0.0" provider-name="StreamFlix">
+        <requires>
+            <import addon="xbmc.addon" version="17.9.910"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="StreamFlix Repository">
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <platform>all</platform>
+            <summary lang="en_GB">StreamFlix Repository</summary>
+            <description lang="en_GB">Official repository for StreamFlix skin. Install this to get automatic updates.</description>
+        </extension>
+    </addon>
+</addons>
