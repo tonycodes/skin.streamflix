@@ -2,19 +2,12 @@
 <window id="10025" type="window">
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50</views>
+    <views>50,51</views>
 
     <controls>
-        <!-- Background -->
-        <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1920</width>
-            <height>1080</height>
-            <texture colordiffuse="FF141414">white.png</texture>
-        </control>
-
-        <!-- Dynamic Fanart Background -->
+        <!-- ============================================== -->
+        <!-- FULL SCREEN FANART BACKGROUND -->
+        <!-- ============================================== -->
         <control type="image">
             <posx>0</posx>
             <posy>0</posy>
@@ -24,13 +17,33 @@
             <aspectratio aligny="top">scale</aspectratio>
         </control>
 
-        <!-- Dark Gradient Overlay -->
+        <!-- Fallback to TV Show fanart -->
         <control type="image">
             <posx>0</posx>
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
+            <texture background="true">$INFO[Container(50).Art(tvshow.fanart)]</texture>
+            <aspectratio aligny="top">scale</aspectratio>
+            <visible>String.IsEmpty(Container(50).ListItem.Art(fanart))</visible>
+        </control>
+
+        <!-- Dark gradient overlay - heavier on left for text -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1100</width>
+            <height>1080</height>
             <texture colordiffuse="E0141414">white.png</texture>
+        </control>
+
+        <!-- Bottom gradient for episode list -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>500</posy>
+            <width>1920</width>
+            <height>580</height>
+            <texture colordiffuse="F0141414">white.png</texture>
         </control>
 
         <!-- ============================================== -->
@@ -41,6 +54,15 @@
             <posy>0</posy>
             <width>1920</width>
             <height>80</height>
+
+            <!-- Semi-transparent header background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1920</width>
+                <height>80</height>
+                <texture colordiffuse="80000000">white.png</texture>
+            </control>
 
             <!-- Logo -->
             <control type="label">
@@ -53,22 +75,11 @@
                 <label>STREAMFLIX</label>
             </control>
 
-            <!-- Current Location -->
-            <control type="label">
-                <posx>280</posx>
-                <posy>25</posy>
-                <width>800</width>
-                <height>35</height>
-                <font>font13</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <label>$INFO[Container(50).FolderName]</label>
-            </control>
-
             <!-- Back Button -->
-            <control type="button" id="9991">
-                <posx>1700</posx>
+            <control type="button" id="9000">
+                <posx>1750</posx>
                 <posy>15</posy>
-                <width>150</width>
+                <width>110</width>
                 <height>50</height>
                 <font>font13</font>
                 <align>center</align>
@@ -83,61 +94,120 @@
         </control>
 
         <!-- ============================================== -->
-        <!-- SHOW INFO PANEL (for Seasons/Episodes view) -->
+        <!-- SHOW INFO (Left Side - Netflix Style) -->
         <!-- ============================================== -->
         <control type="group">
             <posx>60</posx>
-            <posy>100</posy>
-            <width>1800</width>
-            <height>280</height>
-            <visible>Container.Content(seasons) | Container.Content(episodes)</visible>
+            <posy>120</posy>
+            <width>700</width>
+            <height>400</height>
 
-            <!-- Show Poster Background -->
+            <!-- Clear Logo (if available) -->
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>150</width>
-                <height>225</height>
-                <texture colordiffuse="FF333333">white.png</texture>
+                <width>450</width>
+                <height>150</height>
+                <texture>$INFO[Container(50).Art(tvshow.clearlogo)]</texture>
+                <aspectratio align="left" aligny="center">keep</aspectratio>
+                <visible>!String.IsEmpty(Container(50).Art(tvshow.clearlogo))</visible>
             </control>
 
-            <!-- Show Poster -->
-            <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>150</width>
-                <height>225</height>
-                <texture fallback="white.png">$INFO[Container(50).Art(tvshow.poster)]</texture>
-                <aspectratio>scale</aspectratio>
-            </control>
-
-            <!-- Show Title -->
+            <!-- Show Title (fallback) -->
             <control type="label">
-                <posx>180</posx>
-                <posy>10</posy>
-                <width>1000</width>
-                <height>50</height>
-                <font>font_title</font>
+                <posx>0</posx>
+                <posy>30</posy>
+                <width>650</width>
+                <height>100</height>
+                <font>font_hero</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$INFO[Container(50).TVShowTitle]</label>
+                <visible>String.IsEmpty(Container(50).Art(tvshow.clearlogo))</visible>
+            </control>
+
+            <!-- Folder name fallback for non-TV content -->
+            <control type="label">
+                <posx>0</posx>
+                <posy>30</posy>
+                <width>650</width>
+                <height>100</height>
+                <font>font_hero</font>
                 <textcolor>FFFFFFFF</textcolor>
                 <label>$INFO[Container(50).FolderName]</label>
+                <visible>String.IsEmpty(Container(50).TVShowTitle) + String.IsEmpty(Container(50).Art(tvshow.clearlogo))</visible>
             </control>
 
-            <!-- Show Metadata -->
-            <control type="label">
-                <posx>180</posx>
-                <posy>65</posy>
-                <width>800</width>
-                <height>30</height>
-                <font>font12</font>
-                <textcolor>80FFFFFF</textcolor>
-                <label>$INFO[Container(50).NumItems] items</label>
+            <!-- Metadata Row -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>170</posy>
+                <width>650</width>
+                <height>40</height>
+
+                <!-- Year -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>100</width>
+                    <height>35</height>
+                    <font>font14</font>
+                    <textcolor>FF46D369</textcolor>
+                    <label>$INFO[Container(50).ListItem.Year]</label>
+                </control>
+
+                <!-- Number of Seasons/Episodes -->
+                <control type="label">
+                    <posx>100</posx>
+                    <posy>0</posy>
+                    <width>200</width>
+                    <height>35</height>
+                    <font>font14</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label>$INFO[Container(50).NumItems] items</label>
+                </control>
+
+                <!-- Rating Badge -->
+                <control type="group">
+                    <posx>320</posx>
+                    <posy>3</posy>
+                    <visible>!String.IsEmpty(Container(50).ListItem.Mpaa)</visible>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>50</width>
+                        <height>28</height>
+                        <texture colordiffuse="60FFFFFF">white.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>50</width>
+                        <height>28</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[Container(50).ListItem.Mpaa]</label>
+                    </control>
+                </control>
+            </control>
+
+            <!-- Plot -->
+            <control type="textbox">
+                <posx>0</posx>
+                <posy>220</posy>
+                <width>650</width>
+                <height>120</height>
+                <font>font13</font>
+                <textcolor>CCFFFFFF</textcolor>
+                <label>$INFO[Container(50).ListItem.Plot]</label>
             </control>
 
             <!-- Section Label -->
             <control type="label">
-                <posx>180</posx>
-                <posy>110</posy>
-                <width>400</width>
+                <posx>0</posx>
+                <posy>360</posy>
+                <width>300</width>
                 <height>35</height>
                 <font>font14</font>
                 <textcolor>FFFFFFFF</textcolor>
@@ -145,9 +215,9 @@
                 <visible>Container.Content(seasons)</visible>
             </control>
             <control type="label">
-                <posx>180</posx>
-                <posy>110</posy>
-                <width>400</width>
+                <posx>0</posx>
+                <posy>360</posy>
+                <width>300</width>
                 <height>35</height>
                 <font>font14</font>
                 <textcolor>FFFFFFFF</textcolor>
@@ -157,30 +227,87 @@
         </control>
 
         <!-- ============================================== -->
-        <!-- MAIN CONTENT LIST -->
+        <!-- SELECTED EPISODE INFO (Right side, for episodes) -->
         <!-- ============================================== -->
-        <control type="panel" id="50">
-            <posx>60</posx>
-            <posy>100</posy>
-            <width>1800</width>
-            <height>920</height>
-            <orientation>vertical</orientation>
-            <scrolltime>300</scrolltime>
-            <onup>9991</onup>
+        <control type="group">
+            <posx>800</posx>
+            <posy>120</posy>
+            <width>550</width>
+            <height>380</height>
+            <visible>Container.Content(episodes)</visible>
 
-            <itemlayout width="195" height="340">
+            <!-- Episode Thumbnail -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>550</width>
+                <height>310</height>
+                <texture>$INFO[Container(50).ListItem.Art(thumb)]</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+
+            <!-- Episode placeholder if no thumb -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>550</width>
+                <height>310</height>
+                <texture colordiffuse="FF333333">white.png</texture>
+                <visible>String.IsEmpty(Container(50).ListItem.Art(thumb))</visible>
+            </control>
+
+            <!-- Episode Number & Title -->
+            <control type="label">
+                <posx>0</posx>
+                <posy>320</posy>
+                <width>550</width>
+                <height>30</height>
+                <font>font13</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$INFO[Container(50).ListItem.Episode,E, - ]$INFO[Container(50).ListItem.Title]</label>
+            </control>
+
+            <!-- Episode Duration -->
+            <control type="label">
+                <posx>0</posx>
+                <posy>350</posy>
+                <width>550</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>80FFFFFF</textcolor>
+                <label>$INFO[Container(50).ListItem.Duration]</label>
+            </control>
+        </control>
+
+        <!-- ============================================== -->
+        <!-- CONTENT LISTS -->
+        <!-- ============================================== -->
+
+        <!-- SEASONS LIST (Vertical posters) -->
+        <control type="list" id="50">
+            <posx>60</posx>
+            <posy>530</posy>
+            <width>1800</width>
+            <height>500</height>
+            <orientation>horizontal</orientation>
+            <scrolltime>300</scrolltime>
+            <onup>9000</onup>
+            <pagecontrol>-</pagecontrol>
+            <visible>!Container.Content(episodes)</visible>
+
+            <itemlayout width="160" height="280">
                 <control type="group">
                     <posx>5</posx>
                     <posy>10</posy>
-                    <width>185</width>
-                    <height>320</height>
+                    <width>150</width>
+                    <height>260</height>
 
-                    <!-- Card Background -->
+                    <!-- Poster Background -->
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>185</width>
-                        <height>278</height>
+                        <width>150</width>
+                        <height>225</height>
                         <texture colordiffuse="FF333333">white.png</texture>
                     </control>
 
@@ -188,229 +315,336 @@
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>185</width>
-                        <height>278</height>
-                        <texture>$INFO[ListItem.Art(poster)]</texture>
+                        <width>150</width>
+                        <height>225</height>
+                        <texture fallback="white.png">$INFO[ListItem.Art(poster)]</texture>
                         <aspectratio>scale</aspectratio>
                     </control>
 
-                    <!-- Fallback to Thumb for episodes -->
+                    <!-- Fallback to thumb -->
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>185</width>
-                        <height>278</height>
+                        <width>150</width>
+                        <height>225</height>
                         <texture>$INFO[ListItem.Art(thumb)]</texture>
                         <aspectratio>scale</aspectratio>
                         <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     </control>
 
-                    <!-- Fallback to Icon -->
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>185</width>
-                        <height>278</height>
-                        <texture>$INFO[ListItem.Icon]</texture>
-                        <aspectratio>keep</aspectratio>
-                        <visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(thumb))</visible>
-                    </control>
-
                     <!-- Title -->
                     <control type="label">
                         <posx>0</posx>
-                        <posy>285</posy>
-                        <width>185</width>
-                        <height>35</height>
+                        <posy>230</posy>
+                        <width>150</width>
+                        <height>30</height>
                         <font>font12</font>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>CCFFFFFF</textcolor>
                         <align>center</align>
-                    </control>
-
-                    <!-- Progress Bar -->
-                    <control type="group">
-                        <posx>0</posx>
-                        <posy>273</posy>
-                        <width>185</width>
-                        <height>5</height>
-                        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>185</width>
-                            <height>5</height>
-                            <texture colordiffuse="60FFFFFF">white.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>185</width>
-                            <height>5</height>
-                            <texture colordiffuse="FFE50914">white.png</texture>
-                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-                        </control>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                 </control>
             </itemlayout>
-            <focusedlayout width="220" height="340">
+
+            <focusedlayout width="180" height="280">
                 <control type="group">
-                    <posx>-7</posx>
-                    <posy>-5</posy>
-                    <width>215</width>
-                    <height>340</height>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>170</width>
+                    <height>270</height>
 
                     <!-- White Border -->
                     <control type="image">
                         <posx>-4</posx>
-                        <posy>-4</posy>
-                        <width>223</width>
-                        <height>310</height>
+                        <posy>2</posy>
+                        <width>178</width>
+                        <height>237</height>
                         <texture colordiffuse="FFFFFFFF">white.png</texture>
                     </control>
 
-                    <!-- Card Background -->
+                    <!-- Poster Background -->
                     <control type="image">
                         <posx>0</posx>
-                        <posy>0</posy>
-                        <width>215</width>
-                        <height>298</height>
+                        <posy>6</posy>
+                        <width>170</width>
+                        <height>229</height>
                         <texture colordiffuse="FF333333">white.png</texture>
                     </control>
 
                     <!-- Poster -->
                     <control type="image">
                         <posx>0</posx>
-                        <posy>0</posy>
-                        <width>215</width>
-                        <height>298</height>
-                        <texture>$INFO[ListItem.Art(poster)]</texture>
+                        <posy>6</posy>
+                        <width>170</width>
+                        <height>229</height>
+                        <texture fallback="white.png">$INFO[ListItem.Art(poster)]</texture>
                         <aspectratio>scale</aspectratio>
                     </control>
 
-                    <!-- Fallback to Thumb -->
+                    <!-- Fallback to thumb -->
                     <control type="image">
                         <posx>0</posx>
-                        <posy>0</posy>
-                        <width>215</width>
-                        <height>298</height>
+                        <posy>6</posy>
+                        <width>170</width>
+                        <height>229</height>
                         <texture>$INFO[ListItem.Art(thumb)]</texture>
                         <aspectratio>scale</aspectratio>
                         <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                     </control>
 
-                    <!-- Fallback to Icon -->
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>215</width>
-                        <height>298</height>
-                        <texture>$INFO[ListItem.Icon]</texture>
-                        <aspectratio>keep</aspectratio>
-                        <visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(thumb))</visible>
-                    </control>
-
                     <!-- Title -->
                     <control type="label">
                         <posx>0</posx>
-                        <posy>305</posy>
-                        <width>215</width>
-                        <height>35</height>
-                        <font>font12</font>
+                        <posy>240</posy>
+                        <width>170</width>
+                        <height>30</height>
+                        <font>font13</font>
                         <textcolor>FFFFFFFF</textcolor>
-                        <label>$INFO[ListItem.Label]</label>
                         <align>center</align>
-                    </control>
-
-                    <!-- Progress Bar -->
-                    <control type="group">
-                        <posx>0</posx>
-                        <posy>293</posy>
-                        <width>215</width>
-                        <height>6</height>
-                        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>215</width>
-                            <height>6</height>
-                            <texture colordiffuse="60FFFFFF">white.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>215</width>
-                            <height>6</height>
-                            <texture colordiffuse="FFE50914">white.png</texture>
-                            <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-                        </control>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                 </control>
             </focusedlayout>
         </control>
 
-        <!-- ============================================== -->
-        <!-- SELECTED ITEM INFO (Bottom Panel) -->
-        <!-- ============================================== -->
-        <control type="group">
+        <!-- EPISODES LIST (Horizontal thumbnails - Netflix style) -->
+        <control type="list" id="51">
             <posx>60</posx>
-            <posy>920</posy>
+            <posy>530</posy>
             <width>1800</width>
-            <height>140</height>
+            <height>500</height>
+            <orientation>horizontal</orientation>
+            <scrolltime>300</scrolltime>
+            <onup>9000</onup>
+            <pagecontrol>-</pagecontrol>
+            <visible>Container.Content(episodes)</visible>
 
-            <!-- Info Background -->
-            <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1800</width>
-                <height>140</height>
-                <texture colordiffuse="80000000">white.png</texture>
-            </control>
+            <itemlayout width="320" height="240">
+                <control type="group">
+                    <posx>5</posx>
+                    <posy>10</posy>
+                    <width>310</width>
+                    <height>220</height>
 
-            <!-- Selected Item Title -->
-            <control type="label">
-                <posx>20</posx>
-                <posy>15</posy>
-                <width>1000</width>
-                <height>40</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <label>$INFO[Container(50).ListItem.Label]</label>
-            </control>
+                    <!-- Episode Thumbnail Background -->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>310</width>
+                        <height>175</height>
+                        <texture colordiffuse="FF333333">white.png</texture>
+                    </control>
 
-            <!-- Year/Rating Row -->
-            <control type="label">
-                <posx>20</posx>
-                <posy>55</posy>
-                <width>800</width>
-                <height>25</height>
-                <font>font12</font>
-                <textcolor>80FFFFFF</textcolor>
-                <label>$INFO[Container(50).ListItem.Year]  $INFO[Container(50).ListItem.Rating,Rating: ]  $INFO[Container(50).ListItem.Duration]</label>
-            </control>
+                    <!-- Episode Thumbnail -->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>310</width>
+                        <height>175</height>
+                        <texture>$INFO[ListItem.Art(thumb)]</texture>
+                        <aspectratio>scale</aspectratio>
+                    </control>
 
-            <!-- Plot -->
-            <control type="textbox">
-                <posx>20</posx>
-                <posy>85</posy>
-                <width>1760</width>
-                <height>50</height>
-                <font>font12</font>
-                <textcolor>AAFFFFFF</textcolor>
-                <label>$INFO[Container(50).ListItem.Plot]</label>
-            </control>
+                    <!-- Episode Number Badge -->
+                    <control type="group">
+                        <posx>10</posx>
+                        <posy>140</posy>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>35</width>
+                            <height>25</height>
+                            <texture colordiffuse="CC000000">white.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>35</width>
+                            <height>25</height>
+                            <font>font12</font>
+                            <textcolor>FFFFFFFF</textcolor>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Episode]</label>
+                        </control>
+                    </control>
 
-            <!-- Item Count -->
-            <control type="label">
-                <posx>1500</posx>
-                <posy>15</posy>
-                <width>280</width>
-                <height>30</height>
-                <font>font12</font>
-                <textcolor>60FFFFFF</textcolor>
-                <align>right</align>
-                <label>$INFO[Container(50).CurrentItem] / $INFO[Container(50).NumItems]</label>
-            </control>
+                    <!-- Duration Badge -->
+                    <control type="label">
+                        <posx>250</posx>
+                        <posy>145</posy>
+                        <width>55</width>
+                        <height>25</height>
+                        <font>font10</font>
+                        <textcolor>CCFFFFFF</textcolor>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Duration]</label>
+                    </control>
+
+                    <!-- Progress Bar -->
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>170</posy>
+                        <width>310</width>
+                        <height>5</height>
+                        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>310</width>
+                            <height>5</height>
+                            <texture colordiffuse="40FFFFFF">white.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>$INFO[ListItem.PercentPlayed,310,0.01]</width>
+                            <height>5</height>
+                            <texture colordiffuse="FFE50914">white.png</texture>
+                        </control>
+                    </control>
+
+                    <!-- Episode Title -->
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>180</posy>
+                        <width>310</width>
+                        <height>25</height>
+                        <font>font12</font>
+                        <textcolor>CCFFFFFF</textcolor>
+                        <label>$INFO[ListItem.Title]</label>
+                    </control>
+
+                    <!-- Watched Indicator -->
+                    <control type="image">
+                        <posx>280</posx>
+                        <posy>10</posy>
+                        <width>20</width>
+                        <height>20</height>
+                        <texture colordiffuse="FF46D369">white.png</texture>
+                        <visible>Integer.IsEqual(ListItem.PercentPlayed,100)</visible>
+                    </control>
+                </control>
+            </itemlayout>
+
+            <focusedlayout width="340" height="240">
+                <control type="group">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>330</width>
+                    <height>230</height>
+
+                    <!-- White Border -->
+                    <control type="image">
+                        <posx>-4</posx>
+                        <posy>2</posy>
+                        <width>338</width>
+                        <height>187</height>
+                        <texture colordiffuse="FFFFFFFF">white.png</texture>
+                    </control>
+
+                    <!-- Episode Thumbnail Background -->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>6</posy>
+                        <width>330</width>
+                        <height>179</height>
+                        <texture colordiffuse="FF333333">white.png</texture>
+                    </control>
+
+                    <!-- Episode Thumbnail -->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>6</posy>
+                        <width>330</width>
+                        <height>179</height>
+                        <texture>$INFO[ListItem.Art(thumb)]</texture>
+                        <aspectratio>scale</aspectratio>
+                    </control>
+
+                    <!-- Play Icon Overlay -->
+                    <control type="group">
+                        <posx>140</posx>
+                        <posy>70</posy>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>50</width>
+                            <height>50</height>
+                            <texture colordiffuse="E0000000">white.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>50</width>
+                            <height>50</height>
+                            <font>font20</font>
+                            <textcolor>FFFFFFFF</textcolor>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <label>></label>
+                        </control>
+                    </control>
+
+                    <!-- Episode Number Badge -->
+                    <control type="group">
+                        <posx>10</posx>
+                        <posy>150</posy>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>35</width>
+                            <height>25</height>
+                            <texture colordiffuse="CC000000">white.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>35</width>
+                            <height>25</height>
+                            <font>font12</font>
+                            <textcolor>FFFFFFFF</textcolor>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Episode]</label>
+                        </control>
+                    </control>
+
+                    <!-- Progress Bar -->
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>180</posy>
+                        <width>330</width>
+                        <height>5</height>
+                        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>5</height>
+                            <texture colordiffuse="40FFFFFF">white.png</texture>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>5</height>
+                            <texture colordiffuse="FFE50914">white.png</texture>
+                        </control>
+                    </control>
+
+                    <!-- Episode Title -->
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>190</posy>
+                        <width>330</width>
+                        <height>30</height>
+                        <font>font13</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <label>$INFO[ListItem.Title]</label>
+                    </control>
+                </control>
+            </focusedlayout>
         </control>
 
         <!-- ============================================== -->
@@ -419,7 +653,7 @@
         <control type="group">
             <posx>0</posx>
             <posy>400</posy>
-            <visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
+            <visible>Integer.IsEqual(Container(50).NumItems,0) + Integer.IsEqual(Container(51).NumItems,0)</visible>
             <control type="label">
                 <posx>960</posx>
                 <posy>0</posy>
@@ -439,36 +673,6 @@
                 <textcolor>80FFFFFF</textcolor>
                 <align>center</align>
                 <label>Add your video sources to get started</label>
-            </control>
-            <control type="button" id="8888">
-                <posx>760</posx>
-                <posy>130</posy>
-                <width>200</width>
-                <height>50</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FF000000</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
-                <label>Add Videos</label>
-                <onclick>ActivateWindow(Videos,sources://video/)</onclick>
-                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="FFE50914">white.png</texturenofocus>
-                <onright>8889</onright>
-            </control>
-            <control type="button" id="8889">
-                <posx>980</posx>
-                <posy>130</posy>
-                <width>200</width>
-                <height>50</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
-                <label>Scan Library</label>
-                <onclick>UpdateLibrary(video)</onclick>
-                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
-                <onleft>8888</onleft>
             </control>
         </control>
     </controls>

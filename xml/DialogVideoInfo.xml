@@ -4,346 +4,339 @@
     <coordinates>
         <system>1</system>
     </coordinates>
-    <animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+    <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
     <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 
     <controls>
-        <!-- Background Fanart -->
+        <!-- ============================================== -->
+        <!-- FULL SCREEN FANART BACKGROUND -->
+        <!-- ============================================== -->
         <control type="image">
             <posx>0</posx>
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture background="true" fallback="special://skin/backgrounds/default.jpg">$INFO[ListItem.Art(fanart)]</texture>
+            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
             <aspectratio aligny="top">scale</aspectratio>
         </control>
 
-        <!-- Dark Overlay -->
+        <!-- Gradient Overlay - Dark at bottom, transparent at top (Netflix style) -->
         <control type="image">
             <posx>0</posx>
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="DD141414">black.png</texture>
+            <texture>special://skin/extras/gradient-bottom.png</texture>
+            <colordiffuse>FF000000</colordiffuse>
         </control>
 
-        <!-- Close Button -->
+        <!-- Fallback solid overlay if gradient missing -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>540</posy>
+            <width>1920</width>
+            <height>540</height>
+            <texture colordiffuse="E0141414">white.png</texture>
+        </control>
+
+        <!-- Left side gradient for text readability -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1200</width>
+            <height>1080</height>
+            <texture colordiffuse="C0141414">white.png</texture>
+        </control>
+
+        <!-- ============================================== -->
+        <!-- CLOSE BUTTON (Top Right) -->
+        <!-- ============================================== -->
         <control type="button" id="10">
-            <posx>1800</posx>
-            <posy>30</posy>
-            <width>50</width>
-            <height>50</height>
-            <font>font20</font>
-            <texturefocus>-</texturefocus>
-            <texturenofocus>-</texturenofocus>
-            <textcolor>text_white</textcolor>
+            <posx>1820</posx>
+            <posy>40</posy>
+            <width>60</width>
+            <height>60</height>
+            <font>font_title</font>
+            <align>center</align>
+            <textcolor>FFFFFFFF</textcolor>
+            <focusedcolor>FF000000</focusedcolor>
             <label>X</label>
             <onclick>Action(Close)</onclick>
+            <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+            <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+            <ondown>50</ondown>
         </control>
 
-        <!-- Main Content Area -->
+        <!-- ============================================== -->
+        <!-- MAIN CONTENT (Left Side - Netflix Style) -->
+        <!-- ============================================== -->
         <control type="group">
-            <posx>100</posx>
-            <posy>100</posy>
-            <width>1720</width>
-            <height>880</height>
+            <posx>80</posx>
+            <posy>180</posy>
+            <width>900</width>
+            <height>800</height>
 
-            <!-- Left Column: Poster and Actions -->
-            <control type="group">
+            <!-- Clear Logo (if available) -->
+            <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>400</width>
-                <height>880</height>
-
-                <!-- Poster -->
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>350</width>
-                    <height>525</height>
-                    <texture fallback="special://skin/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
-                    <aspectratio>scale</aspectratio>
-                    <bordertexture colordiffuse="20FFFFFF">border.png</bordertexture>
-                    <bordersize>2</bordersize>
-                </control>
-
-                <!-- Action Buttons -->
-                <control type="grouplist" id="50">
-                    <posx>0</posx>
-                    <posy>550</posy>
-                    <width>350</width>
-                    <height>300</height>
-                    <orientation>vertical</orientation>
-                    <itemgap>10</itemgap>
-                    <onright>5</onright>
-
-                    <!-- Play Button -->
-                    <control type="button" id="51">
-                        <width>350</width>
-                        <height>55</height>
-                        <font>font_button_large</font>
-                        <label>  Play</label>
-                        <align>center</align>
-                        <onclick>Action(Play)</onclick>
-                        <texturefocus colordiffuse="button_primary">button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="button_primary">button-rounded.png</texturenofocus>
-                        <textcolor>button_primary_text</textcolor>
-                        <focusedcolor>button_primary_text</focusedcolor>
-                    </control>
-
-                    <!-- Resume (if applicable) -->
-                    <control type="button" id="52">
-                        <width>350</width>
-                        <height>55</height>
-                        <font>font_button</font>
-                        <label>  Resume from $INFO[ListItem.Property(ResumeTime)]</label>
-                        <align>center</align>
-                        <onclick>Action(Resume)</onclick>
-                        <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="60808080">button-rounded.png</texturenofocus>
-                        <visible>!String.IsEmpty(ListItem.Property(ResumeTime))</visible>
-                    </control>
-
-                    <!-- Trailer -->
-                    <control type="button" id="53">
-                        <width>350</width>
-                        <height>55</height>
-                        <font>font_button</font>
-                        <label>  Watch Trailer</label>
-                        <align>center</align>
-                        <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-                        <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="60808080">button-rounded.png</texturenofocus>
-                        <visible>!String.IsEmpty(ListItem.Trailer)</visible>
-                    </control>
-
-                    <!-- Add to My List -->
-                    <control type="button" id="54">
-                        <width>350</width>
-                        <height>55</height>
-                        <font>font_button</font>
-                        <label>+ Add to My List</label>
-                        <align>center</align>
-                        <onclick>Action(Queue)</onclick>
-                        <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="60808080">button-rounded.png</texturenofocus>
-                    </control>
-                </control>
+                <width>500</width>
+                <height>180</height>
+                <texture>$INFO[ListItem.Art(clearlogo)]</texture>
+                <aspectratio align="left" aligny="center">keep</aspectratio>
+                <visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
             </control>
 
-            <!-- Right Column: Info -->
+            <!-- Title (fallback if no clearlogo) -->
+            <control type="label">
+                <posx>0</posx>
+                <posy>40</posy>
+                <width>800</width>
+                <height>120</height>
+                <font>font_hero</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$INFO[ListItem.Title]</label>
+                <visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+            </control>
+
+            <!-- ============================================== -->
+            <!-- METADATA ROW -->
+            <!-- ============================================== -->
             <control type="group">
-                <posx>420</posx>
-                <posy>0</posy>
-                <width>1280</width>
-                <height>880</height>
+                <posx>0</posx>
+                <posy>200</posy>
+                <width>800</width>
+                <height>40</height>
 
-                <!-- Clear Logo or Title -->
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>500</width>
-                    <height>150</height>
-                    <texture>$INFO[ListItem.Art(clearlogo)]</texture>
-                    <aspectratio align="left" aligny="top">keep</aspectratio>
-                    <visible>!String.IsEmpty(ListItem.Art(clearlogo))</visible>
-                </control>
-
+                <!-- Rating Match (Green) -->
                 <control type="label">
                     <posx>0</posx>
-                    <posy>20</posy>
-                    <width>1000</width>
-                    <height>80</height>
-                    <font>font_title_large</font>
-                    <textcolor>text_white</textcolor>
-                    <label>$INFO[ListItem.Title]</label>
-                    <visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+                    <posy>0</posy>
+                    <width>130</width>
+                    <height>35</height>
+                    <font>font14</font>
+                    <textcolor>FF46D369</textcolor>
+                    <label>$INFO[ListItem.Rating,, Match]</label>
                 </control>
 
-                <!-- Metadata Row -->
-                <control type="group">
-                    <posx>0</posx>
-                    <posy>170</posy>
-                    <width>1000</width>
-                    <height>40</height>
+                <!-- Year -->
+                <control type="label">
+                    <posx>140</posx>
+                    <posy>0</posy>
+                    <width>80</width>
+                    <height>35</height>
+                    <font>font14</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label>$INFO[ListItem.Year]</label>
+                </control>
 
-                    <!-- Match Percentage -->
+                <!-- MPAA Rating Badge -->
+                <control type="group">
+                    <posx>230</posx>
+                    <posy>3</posy>
+                    <visible>!String.IsEmpty(ListItem.Mpaa)</visible>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>50</width>
+                        <height>28</height>
+                        <texture colordiffuse="60FFFFFF">white.png</texture>
+                    </control>
                     <control type="label">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>120</width>
-                        <height>30</height>
-                        <font>font14_bold</font>
-                        <textcolor>rating_good</textcolor>
-                        <label>95% Match</label>
-                    </control>
-
-                    <!-- Year -->
-                    <control type="label">
-                        <posx>140</posx>
-                        <posy>0</posy>
-                        <width>80</width>
-                        <height>30</height>
-                        <font>font14</font>
-                        <textcolor>text_gray</textcolor>
-                        <label>$INFO[ListItem.Year]</label>
-                    </control>
-
-                    <!-- Maturity Rating -->
-                    <control type="label">
-                        <posx>240</posx>
-                        <posy>0</posy>
-                        <width>80</width>
-                        <height>30</height>
-                        <font>font14</font>
-                        <textcolor>text_gray</textcolor>
+                        <width>50</width>
+                        <height>28</height>
+                        <font>font12</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
                         <label>$INFO[ListItem.Mpaa]</label>
                     </control>
-
-                    <!-- Duration -->
-                    <control type="label">
-                        <posx>340</posx>
-                        <posy>0</posy>
-                        <width>150</width>
-                        <height>30</height>
-                        <font>font14</font>
-                        <textcolor>text_gray</textcolor>
-                        <label>$INFO[ListItem.Duration]</label>
-                    </control>
-
-                    <!-- Rating -->
-                    <control type="label">
-                        <posx>510</posx>
-                        <posy>0</posy>
-                        <width>150</width>
-                        <height>30</height>
-                        <font>font14</font>
-                        <textcolor>accent_yellow</textcolor>
-                        <label>$INFO[ListItem.Rating,, /10]</label>
-                    </control>
                 </control>
 
-                <!-- Plot -->
-                <control type="textbox" id="5">
-                    <posx>0</posx>
-                    <posy>230</posy>
-                    <width>800</width>
-                    <height>250</height>
-                    <font>font_plot_large</font>
-                    <textcolor>text_gray</textcolor>
-                    <label>$INFO[ListItem.Plot]</label>
-                    <autoscroll delay="5000" time="2500" repeat="5000">true</autoscroll>
-                    <onleft>50</onleft>
+                <!-- Duration -->
+                <control type="label">
+                    <posx>300</posx>
+                    <posy>0</posy>
+                    <width>150</width>
+                    <height>35</height>
+                    <font>font14</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <label>$INFO[ListItem.Duration]</label>
                 </control>
 
-                <!-- Additional Info -->
+                <!-- HD Badge -->
                 <control type="group">
-                    <posx>0</posx>
-                    <posy>500</posy>
-                    <width>800</width>
-                    <height>200</height>
-
-                    <!-- Director -->
-                    <control type="group">
+                    <posx>460</posx>
+                    <posy>3</posy>
+                    <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <visible>!String.IsEmpty(ListItem.Director)</visible>
-                        <control type="label">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>120</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_dim</textcolor>
-                            <label>Director:</label>
-                        </control>
-                        <control type="label">
-                            <posx>120</posx>
-                            <posy>0</posy>
-                            <width>600</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_white</textcolor>
-                            <label>$INFO[ListItem.Director]</label>
-                        </control>
+                        <width>35</width>
+                        <height>28</height>
+                        <texture colordiffuse="60FFFFFF">white.png</texture>
                     </control>
-
-                    <!-- Cast -->
-                    <control type="group">
+                    <control type="label">
                         <posx>0</posx>
-                        <posy>40</posy>
-                        <visible>!String.IsEmpty(ListItem.Cast)</visible>
-                        <control type="label">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>120</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_dim</textcolor>
-                            <label>Cast:</label>
-                        </control>
-                        <control type="label">
-                            <posx>120</posx>
-                            <posy>0</posy>
-                            <width>600</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_white</textcolor>
-                            <label>$INFO[ListItem.Cast]</label>
-                        </control>
-                    </control>
-
-                    <!-- Genre -->
-                    <control type="group">
-                        <posx>0</posx>
-                        <posy>80</posy>
-                        <visible>!String.IsEmpty(ListItem.Genre)</visible>
-                        <control type="label">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>120</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_dim</textcolor>
-                            <label>Genres:</label>
-                        </control>
-                        <control type="label">
-                            <posx>120</posx>
-                            <posy>0</posy>
-                            <width>600</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_white</textcolor>
-                            <label>$INFO[ListItem.Genre]</label>
-                        </control>
-                    </control>
-
-                    <!-- Studio -->
-                    <control type="group">
-                        <posx>0</posx>
-                        <posy>120</posy>
-                        <visible>!String.IsEmpty(ListItem.Studio)</visible>
-                        <control type="label">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>120</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_dim</textcolor>
-                            <label>Studio:</label>
-                        </control>
-                        <control type="label">
-                            <posx>120</posx>
-                            <posy>0</posy>
-                            <width>600</width>
-                            <height>30</height>
-                            <font>font13</font>
-                            <textcolor>text_white</textcolor>
-                            <label>$INFO[ListItem.Studio]</label>
-                        </control>
+                        <posy>0</posy>
+                        <width>35</width>
+                        <height>28</height>
+                        <font>font10</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>HD</label>
                     </control>
                 </control>
             </control>
+
+            <!-- ============================================== -->
+            <!-- PLOT DESCRIPTION -->
+            <!-- ============================================== -->
+            <control type="textbox">
+                <posx>0</posx>
+                <posy>260</posy>
+                <width>700</width>
+                <height>150</height>
+                <font>font14</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>$INFO[ListItem.Plot]</label>
+            </control>
+
+            <!-- ============================================== -->
+            <!-- ACTION BUTTONS (Horizontal - Netflix Style) -->
+            <!-- ============================================== -->
+            <control type="grouplist" id="50">
+                <posx>0</posx>
+                <posy>430</posy>
+                <width>800</width>
+                <height>70</height>
+                <orientation>horizontal</orientation>
+                <itemgap>15</itemgap>
+                <onup>10</onup>
+
+                <!-- PLAY BUTTON (White, prominent) -->
+                <control type="button" id="51">
+                    <width>180</width>
+                    <height>55</height>
+                    <font>font14</font>
+                    <align>center</align>
+                    <label>Play</label>
+                    <onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>Action(Play)</onclick>
+                    <textcolor>FF000000</textcolor>
+                    <focusedcolor>FF000000</focusedcolor>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
+                </control>
+
+                <!-- RESUME BUTTON (if applicable) -->
+                <control type="button" id="52">
+                    <width>220</width>
+                    <height>55</height>
+                    <font>font14</font>
+                    <align>center</align>
+                    <label>Resume</label>
+                    <onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>Action(Resume)</onclick>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FF000000</focusedcolor>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
+                    <visible>!String.IsEmpty(ListItem.Property(ResumeTime))</visible>
+                </control>
+
+                <!-- TRAILER BUTTON -->
+                <control type="button" id="53">
+                    <width>160</width>
+                    <height>55</height>
+                    <font>font14</font>
+                    <align>center</align>
+                    <label>Trailer</label>
+                    <onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FF000000</focusedcolor>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
+                    <visible>!String.IsEmpty(ListItem.Trailer)</visible>
+                </control>
+
+                <!-- MY LIST BUTTON -->
+                <control type="button" id="54">
+                    <width>160</width>
+                    <height>55</height>
+                    <font>font14</font>
+                    <align>center</align>
+                    <label>+ My List</label>
+                    <onclick>Action(Queue)</onclick>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FF000000</focusedcolor>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
+                </control>
+            </control>
+
+            <!-- ============================================== -->
+            <!-- CAST & CREW INFO -->
+            <!-- ============================================== -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>520</posy>
+                <width>800</width>
+                <height>200</height>
+
+                <!-- Cast -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>700</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>80FFFFFF</textcolor>
+                    <label>Cast: $INFO[ListItem.Cast]</label>
+                    <visible>!String.IsEmpty(ListItem.Cast)</visible>
+                </control>
+
+                <!-- Director -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>40</posy>
+                    <width>700</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>80FFFFFF</textcolor>
+                    <label>Director: $INFO[ListItem.Director]</label>
+                    <visible>!String.IsEmpty(ListItem.Director)</visible>
+                </control>
+
+                <!-- Genres -->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>80</posy>
+                    <width>700</width>
+                    <height>30</height>
+                    <font>font12</font>
+                    <textcolor>80FFFFFF</textcolor>
+                    <label>Genres: $INFO[ListItem.Genre]</label>
+                    <visible>!String.IsEmpty(ListItem.Genre)</visible>
+                </control>
+            </control>
+        </control>
+
+        <!-- ============================================== -->
+        <!-- RIGHT SIDE - POSTER (Subtle) -->
+        <!-- ============================================== -->
+        <control type="image">
+            <posx>1500</posx>
+            <posy>300</posy>
+            <width>300</width>
+            <height>450</height>
+            <texture>$INFO[ListItem.Art(poster)]</texture>
+            <aspectratio>scale</aspectratio>
+            <colordiffuse>80FFFFFF</colordiffuse>
+            <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
         </control>
     </controls>
 </window>
