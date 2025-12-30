@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="repository.streamflix" name="StreamFlix Repository" version="1.0.0" provider-name="StreamFlix">
     <requires>
-        <import addon="xbmc.addon" version="17.9.910"/>
+        <import addon="xbmc.addon" version="12.0.0"/>
     </requires>
     <extension point="xbmc.addon.repository" name="StreamFlix Repository">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/</datadir>
-        </dir>
+        <info compressed="false">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/</datadir>
     </extension>
     <extension point="xbmc.addon.metadata">
+        <summary lang="en">StreamFlix Repository</summary>
+        <description lang="en">Official repository for StreamFlix skin.</description>
         <platform>all</platform>
-        <summary lang="en_GB">StreamFlix Repository</summary>
-        <description lang="en_GB">Official repository for StreamFlix skin. Install this to get automatic updates.</description>
     </extension>
 </addon>
