@@ -13,9 +13,23 @@ A clean, minimalist Kodi skin that brings the Netflix experience to your media c
 
 ## Requirements
 
-- Kodi 21 (Omega) or later
+- Kodi 21 (Omega) or Kodi 20 (Nexus)
 
-## Quick Install
+## Installation (with Auto-Updates)
+
+**Step 1:** Download the repository: [repository.streamflix.zip](https://github.com/tonycodes/skin.streamflix/releases/latest/download/repository.streamflix.zip)
+
+**Step 2:** In Kodi:
+1. Go to **Settings → Add-ons → Install from zip file**
+2. Navigate to the downloaded `repository.streamflix.zip` and install
+3. Go to **Settings → Add-ons → Install from repository**
+4. Select **StreamFlix Repository**
+5. Go to **Look & feel → Skins**
+6. Select **StreamFlix** and install
+
+Now the skin will automatically update when new versions are released!
+
+## Quick Install (Manual)
 
 **Download:** [is.gd/93dtrd](https://is.gd/93dtrd)
 
@@ -24,15 +38,7 @@ A clean, minimalist Kodi skin that brings the Netflix experience to your media c
 3. Navigate to the downloaded zip and install
 4. Go to **Settings → Interface → Skin** and select "StreamFlix"
 
-## Manual Install
-
-1. Download or clone this repository
-2. Copy the `skin.streamflix` folder to your Kodi addons directory:
-   - **Windows**: `%APPDATA%\Kodi\addons\`
-   - **macOS**: `~/Library/Application Support/Kodi/addons/`
-   - **Linux**: `~/.kodi/addons/`
-3. Restart Kodi
-4. Go to Settings → Interface → Skin and select "StreamFlix"
+*Note: Manual installs won't receive automatic updates.*
 
 ## Home Screen Rows
 
