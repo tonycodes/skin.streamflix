@@ -10,7 +10,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="DD000000">common/black.png</texture>
+            <texture colordiffuse="DD000000">black.png</texture>
         </control>
         <control type="group">
             <posx>310</posx>
@@ -22,7 +22,7 @@
                 <posy>0</posy>
                 <width>1300</width>
                 <height>900</height>
-                <texture colordiffuse="background_card">common/dialog-bg.png</texture>
+                <texture colordiffuse="background_card">dialog-bg.png</texture>
             </control>
             <control type="label" id="1">
                 <posx>40</posx>
@@ -49,8 +49,8 @@
                 <font>font_button</font>
                 <label>Close</label>
                 <onclick>Action(Close)</onclick>
-                <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
-                <texturenofocus colordiffuse="40808080">common/button-rounded.png</texturenofocus>
+                <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
+                <texturenofocus colordiffuse="40808080">button-rounded.png</texturenofocus>
             </control>
         </control>
     </controls>

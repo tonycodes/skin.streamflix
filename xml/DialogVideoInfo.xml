@@ -24,7 +24,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="DD141414">common/black.png</texture>
+            <texture colordiffuse="DD141414">black.png</texture>
         </control>
 
         <!-- Close Button -->
@@ -61,9 +61,9 @@
                     <posy>0</posy>
                     <width>350</width>
                     <height>525</height>
-                    <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                    <texture fallback="special://skin/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
                     <aspectratio>scale</aspectratio>
-                    <bordertexture colordiffuse="20FFFFFF">common/border.png</bordertexture>
+                    <bordertexture colordiffuse="20FFFFFF">border.png</bordertexture>
                     <bordersize>2</bordersize>
                 </control>
 
@@ -85,8 +85,8 @@
                         <label>  Play</label>
                         <align>center</align>
                         <onclick>Action(Play)</onclick>
-                        <texturefocus colordiffuse="button_primary">common/button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="button_primary">common/button-rounded.png</texturenofocus>
+                        <texturefocus colordiffuse="button_primary">button-rounded.png</texturefocus>
+                        <texturenofocus colordiffuse="button_primary">button-rounded.png</texturenofocus>
                         <textcolor>button_primary_text</textcolor>
                         <focusedcolor>button_primary_text</focusedcolor>
                     </control>
@@ -99,8 +99,8 @@
                         <label>  Resume from $INFO[ListItem.Property(ResumeTime)]</label>
                         <align>center</align>
                         <onclick>Action(Resume)</onclick>
-                        <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="60808080">common/button-rounded.png</texturenofocus>
+                        <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
+                        <texturenofocus colordiffuse="60808080">button-rounded.png</texturenofocus>
                         <visible>!String.IsEmpty(ListItem.Property(ResumeTime))</visible>
                     </control>
 
@@ -112,8 +112,8 @@
                         <label>  Watch Trailer</label>
                         <align>center</align>
                         <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-                        <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="60808080">common/button-rounded.png</texturenofocus>
+                        <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
+                        <texturenofocus colordiffuse="60808080">button-rounded.png</texturenofocus>
                         <visible>!String.IsEmpty(ListItem.Trailer)</visible>
                     </control>
 
@@ -125,8 +125,8 @@
                         <label>+ Add to My List</label>
                         <align>center</align>
                         <onclick>Action(Queue)</onclick>
-                        <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
-                        <texturenofocus colordiffuse="60808080">common/button-rounded.png</texturenofocus>
+                        <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
+                        <texturenofocus colordiffuse="60808080">button-rounded.png</texturenofocus>
                     </control>
                 </control>
             </control>

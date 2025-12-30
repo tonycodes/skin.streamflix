@@ -11,7 +11,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_overlay">common/black.png</texture>
+            <texture colordiffuse="background_overlay">black.png</texture>
         </control>
 
         <!-- Loading Spinner Container -->
@@ -27,7 +27,7 @@
                 <posy>50</posy>
                 <width>100</width>
                 <height>100</height>
-                <texture colordiffuse="accent_red">common/spinner.png</texture>
+                <texture colordiffuse="accent_red">spinner.png</texture>
                 <animation effect="rotate" start="0" end="360" time="1000" loop="true" condition="true">Conditional</animation>
             </control>
         </control>

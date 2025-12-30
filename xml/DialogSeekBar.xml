@@ -21,7 +21,7 @@
                 <posy>0</posy>
                 <width>1920</width>
                 <height>200</height>
-                <texture colordiffuse="CC000000">common/gradient-bottom.png</texture>
+                <texture colordiffuse="CC000000">gradient-bottom.png</texture>
             </control>
 
             <!-- Progress Bar -->
@@ -37,9 +37,9 @@
                     <posy>10</posy>
                     <width>1760</width>
                     <height>20</height>
-                    <texturesliderbar colordiffuse="progress_bg">common/slider-bg.png</texturesliderbar>
-                    <textureslidernib colordiffuse="text_white">common/slider-nib.png</textureslidernib>
-                    <textureslidernibfocus colordiffuse="accent_red">common/slider-nib.png</textureslidernibfocus>
+                    <texturesliderbar colordiffuse="progress_bg">slider-bg.png</texturesliderbar>
+                    <textureslidernib colordiffuse="text_white">slider-nib.png</textureslidernib>
+                    <textureslidernibfocus colordiffuse="accent_red">slider-nib.png</textureslidernibfocus>
                     <action>seek</action>
                 </control>
             </control>

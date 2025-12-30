@@ -8,7 +8,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_main">common/black.png</texture>
+            <texture colordiffuse="background_main">black.png</texture>
         </control>
         <control type="label">
             <posx>80</posx>
@@ -46,7 +46,7 @@
             <font>font14</font>
             <label>$LOCALIZE[14081]</label>
             <onclick>ActivateWindow(SystemSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">common/white.png</texturefocus>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
         <control type="button" id="9011">
@@ -55,7 +55,7 @@
             <font>font14</font>
             <label>$LOCALIZE[14077]</label>
             <onclick>ActivateWindow(InterfaceSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">common/white.png</texturefocus>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
         <control type="button" id="9012">
@@ -64,7 +64,7 @@
             <font>font14</font>
             <label>$LOCALIZE[14098]</label>
             <onclick>ActivateWindow(MediaSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">common/white.png</texturefocus>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
         <control type="button" id="9013">
@@ -73,7 +73,7 @@
             <font>font14</font>
             <label>$LOCALIZE[14078]</label>
             <onclick>ActivateWindow(PlayerSettings)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">common/white.png</texturefocus>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
         <control type="button" id="9014">
@@ -82,7 +82,7 @@
             <font>font14</font>
             <label>$LOCALIZE[24001]</label>
             <onclick>ActivateWindow(AddonBrowser)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">common/white.png</texturefocus>
+            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
     </include>

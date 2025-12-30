@@ -19,7 +19,7 @@
                 <posy>0</posy>
                 <width>400</width>
                 <height>80</height>
-                <texture colordiffuse="EE181818">common/dialog-bg.png</texture>
+                <texture colordiffuse="EE181818">dialog-bg.png</texture>
             </control>
             <control type="label">
                 <posx>20</posx>

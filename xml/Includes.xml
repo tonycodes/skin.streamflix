@@ -10,7 +10,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_main">common/black.png</texture>
+            <texture colordiffuse="background_main">black.png</texture>
         </control>
     </include>
 
@@ -39,7 +39,7 @@
                 <posy>350</posy>
                 <width>1920</width>
                 <height>300</height>
-                <texture colordiffuse="FF141414">common/gradient-bottom.png</texture>
+                <texture colordiffuse="FF141414">gradient-bottom.png</texture>
             </control>
 
             <!-- Gradient Overlay (Left) -->
@@ -48,7 +48,7 @@
                 <posy>0</posy>
                 <width>800</width>
                 <height>650</height>
-                <texture colordiffuse="background_overlay">common/gradient-left.png</texture>
+                <texture colordiffuse="background_overlay">gradient-left.png</texture>
             </control>
 
             <!-- Hero Content -->
@@ -161,8 +161,8 @@
                         <font>font_button_large</font>
                         <label>Play</label>
                         <onclick>PlayMedia($INFO[Container(9000).ListItem.FilenameAndPath])</onclick>
-                        <texturefocus colordiffuse="button_primary">common/button-fo.png</texturefocus>
-                        <texturenofocus colordiffuse="button_primary">common/button-nofo.png</texturenofocus>
+                        <texturefocus colordiffuse="button_primary">button-fo.png</texturefocus>
+                        <texturenofocus colordiffuse="button_primary">button-nofo.png</texturenofocus>
                         <textcolor>button_primary_text</textcolor>
                         <focusedcolor>button_primary_text</focusedcolor>
                     </control>
@@ -174,8 +174,8 @@
                         <font>font_button_large</font>
                         <label>More Info</label>
                         <onclick>Action(Info)</onclick>
-                        <texturefocus colordiffuse="button_secondary">common/button-fo.png</texturefocus>
-                        <texturenofocus colordiffuse="button_secondary">common/button-nofo.png</texturenofocus>
+                        <texturefocus colordiffuse="button_secondary">button-fo.png</texturefocus>
+                        <texturenofocus colordiffuse="button_secondary">button-nofo.png</texturenofocus>
                     </control>
                 </control>
             </control>
@@ -228,7 +228,7 @@
                             <posy>0</posy>
                             <width>185</width>
                             <height>278</height>
-                            <texture fallback="special://skin/media/default_poster.png">$VAR[PosterArt]</texture>
+                            <texture fallback="special://skin/default_poster.png">$VAR[PosterArt]</texture>
                             <aspectratio>scale</aspectratio>
                             <bordertexture>-</bordertexture>
                         </control>
@@ -247,7 +247,7 @@
                                 <posy>0</posy>
                                 <width>185</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                                <texture colordiffuse="progress_bg">white.png</texture>
                             </control>
 
                             <!-- Fill -->
@@ -256,7 +256,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_fill">common/white.png</texture>
+                                <texture colordiffuse="progress_fill">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -275,7 +275,7 @@
                             <posy>-3</posy>
                             <width>221</width>
                             <height>340</height>
-                            <texture colordiffuse="focus_border">common/white.png</texture>
+                            <texture colordiffuse="focus_border">white.png</texture>
                         </control>
 
                         <!-- Poster Image -->
@@ -284,7 +284,7 @@
                             <posy>0</posy>
                             <width>215</width>
                             <height>334</height>
-                            <texture fallback="special://skin/media/default_poster.png">$VAR[PosterArt]</texture>
+                            <texture fallback="special://skin/default_poster.png">$VAR[PosterArt]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -301,7 +301,7 @@
                                 <posy>0</posy>
                                 <width>215</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                                <texture colordiffuse="progress_bg">white.png</texture>
                             </control>
 
                             <control type="image">
@@ -309,7 +309,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_fill">common/white.png</texture>
+                                <texture colordiffuse="progress_fill">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -364,7 +364,7 @@
                             <posy>0</posy>
                             <width>285</width>
                             <height>160</height>
-                            <texture fallback="special://skin/media/default_thumb.png">$VAR[ThumbArt]</texture>
+                            <texture fallback="special://skin/default_thumb.png">$VAR[ThumbArt]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -381,7 +381,7 @@
                                 <posy>0</posy>
                                 <width>285</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                                <texture colordiffuse="progress_bg">white.png</texture>
                             </control>
 
                             <control type="image">
@@ -389,7 +389,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_fill">common/white.png</texture>
+                                <texture colordiffuse="progress_fill">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -408,7 +408,7 @@
                             <posy>-3</posy>
                             <width>321</width>
                             <height>196</height>
-                            <texture colordiffuse="focus_border">common/white.png</texture>
+                            <texture colordiffuse="focus_border">white.png</texture>
                         </control>
 
                         <!-- Landscape/Thumb Image -->
@@ -417,7 +417,7 @@
                             <posy>0</posy>
                             <width>315</width>
                             <height>190</height>
-                            <texture fallback="special://skin/media/default_thumb.png">$VAR[ThumbArt]</texture>
+                            <texture fallback="special://skin/default_thumb.png">$VAR[ThumbArt]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -434,7 +434,7 @@
                                 <posy>0</posy>
                                 <width>315</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                                <texture colordiffuse="progress_bg">white.png</texture>
                             </control>
 
                             <control type="image">
@@ -442,7 +442,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_fill">common/white.png</texture>
+                                <texture colordiffuse="progress_fill">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -467,7 +467,7 @@
                 <posy>0</posy>
                 <width>300</width>
                 <height>1080</height>
-                <texture colordiffuse="background_dark">common/black.png</texture>
+                <texture colordiffuse="background_dark">black.png</texture>
             </control>
 
             <!-- Logo -->
@@ -571,7 +571,7 @@
                 <posy>0</posy>
                 <width>1920</width>
                 <height>100</height>
-                <texture colordiffuse="background_overlay">common/gradient-top.png</texture>
+                <texture colordiffuse="background_overlay">gradient-top.png</texture>
             </control>
 
             <!-- Logo -->

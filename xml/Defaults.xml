@@ -2,8 +2,8 @@
 <controls>
     <!-- Default Button -->
     <default type="button">
-        <texturefocus colordiffuse="button_primary">common/button-fo.png</texturefocus>
-        <texturenofocus colordiffuse="button_secondary">common/button-nofo.png</texturenofocus>
+        <texturefocus colordiffuse="button_primary">button-fo.png</texturefocus>
+        <texturenofocus colordiffuse="button_secondary">button-nofo.png</texturenofocus>
         <font>font_button</font>
         <textcolor>text_white</textcolor>
         <focusedcolor>button_primary_text</focusedcolor>
@@ -38,7 +38,7 @@
     <!-- Default List -->
     <default type="list">
         <texturenofocus>-</texturenofocus>
-        <texturefocus colordiffuse="focus_border">common/focus.png</texturefocus>
+        <texturefocus colordiffuse="focus_border">focus.png</texturefocus>
         <font>font13</font>
         <textcolor>text_white</textcolor>
         <focusedcolor>text_white</focusedcolor>
@@ -48,7 +48,7 @@
     <!-- Default WrapList -->
     <default type="wraplist">
         <texturenofocus>-</texturenofocus>
-        <texturefocus colordiffuse="focus_border">common/focus.png</texturefocus>
+        <texturefocus colordiffuse="focus_border">focus.png</texturefocus>
         <font>font13</font>
         <textcolor>text_white</textcolor>
         <focusedcolor>text_white</focusedcolor>
@@ -57,7 +57,7 @@
     <!-- Default FixedList -->
     <default type="fixedlist">
         <texturenofocus>-</texturenofocus>
-        <texturefocus colordiffuse="focus_border">common/focus.png</texturefocus>
+        <texturefocus colordiffuse="focus_border">focus.png</texturefocus>
         <font>font13</font>
         <textcolor>text_white</textcolor>
         <focusedcolor>text_white</focusedcolor>
@@ -66,14 +66,14 @@
     <!-- Default Panel -->
     <default type="panel">
         <texturenofocus>-</texturenofocus>
-        <texturefocus colordiffuse="focus_border">common/focus.png</texturefocus>
+        <texturefocus colordiffuse="focus_border">focus.png</texturefocus>
     </default>
 
     <!-- Default Scrollbar -->
     <default type="scrollbar">
-        <texturesliderbackground colordiffuse="progress_bg">common/scrollbar-bg.png</texturesliderbackground>
-        <texturesliderbar colordiffuse="accent_red">common/scrollbar.png</texturesliderbar>
-        <texturesliderbarfocus colordiffuse="accent_red">common/scrollbar.png</texturesliderbarfocus>
+        <texturesliderbackground colordiffuse="progress_bg">scrollbar-bg.png</texturesliderbackground>
+        <texturesliderbar colordiffuse="accent_red">scrollbar.png</texturesliderbar>
+        <texturesliderbarfocus colordiffuse="accent_red">scrollbar.png</texturesliderbarfocus>
         <textureslidernib>-</textureslidernib>
         <textureslidernibfocus>-</textureslidernibfocus>
         <orientation>vertical</orientation>
@@ -82,16 +82,16 @@
 
     <!-- Default Slider -->
     <default type="slider">
-        <texturesliderbar colordiffuse="progress_bg">common/slider-bg.png</texturesliderbar>
-        <textureslidernib colordiffuse="text_white">common/slider-nib.png</textureslidernib>
-        <textureslidernibfocus colordiffuse="accent_red">common/slider-nib.png</textureslidernibfocus>
+        <texturesliderbar colordiffuse="progress_bg">slider-bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="text_white">slider-nib.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="accent_red">slider-nib.png</textureslidernibfocus>
     </default>
 
     <!-- Default Progress -->
     <default type="progress">
-        <texturebg colordiffuse="progress_bg">common/progress-bg.png</texturebg>
+        <texturebg colordiffuse="progress_bg">progress-bg.png</texturebg>
         <lefttexture>-</lefttexture>
-        <midtexture colordiffuse="progress_fill">common/progress.png</midtexture>
+        <midtexture colordiffuse="progress_fill">progress.png</midtexture>
         <righttexture>-</righttexture>
         <overlaytexture>-</overlaytexture>
     </default>
@@ -114,8 +114,8 @@
     <default type="edit">
         <font>font13</font>
         <textcolor>text_white</textcolor>
-        <texturefocus colordiffuse="focus_border">common/edit-fo.png</texturefocus>
-        <texturenofocus colordiffuse="button_secondary">common/edit-nofo.png</texturenofocus>
+        <texturefocus colordiffuse="focus_border">edit-fo.png</texturefocus>
+        <texturenofocus colordiffuse="button_secondary">edit-nofo.png</texturenofocus>
     </default>
 
     <!-- Default RadioButton -->
@@ -123,12 +123,12 @@
         <font>font13</font>
         <textcolor>text_white</textcolor>
         <focusedcolor>text_white</focusedcolor>
-        <texturefocus colordiffuse="focus_border">common/button-fo.png</texturefocus>
-        <texturenofocus colordiffuse="button_secondary">common/button-nofo.png</texturenofocus>
-        <textureradioonfocus colordiffuse="accent_red">common/radio-on.png</textureradioonfocus>
-        <textureradioofffocus>common/radio-off.png</textureradioofffocus>
-        <textureradioonnofocus colordiffuse="accent_red">common/radio-on.png</textureradioonnofocus>
-        <textureradiooffnofocus>common/radio-off.png</textureradiooffnofocus>
+        <texturefocus colordiffuse="focus_border">button-fo.png</texturefocus>
+        <texturenofocus colordiffuse="button_secondary">button-nofo.png</texturenofocus>
+        <textureradioonfocus colordiffuse="accent_red">radio-on.png</textureradioonfocus>
+        <textureradioofffocus>radio-off.png</textureradioofffocus>
+        <textureradioonnofocus colordiffuse="accent_red">radio-on.png</textureradioonnofocus>
+        <textureradiooffnofocus>radio-off.png</textureradiooffnofocus>
     </default>
 
     <!-- Default Toggle Button -->
@@ -136,19 +136,19 @@
         <font>font13</font>
         <textcolor>text_white</textcolor>
         <focusedcolor>text_white</focusedcolor>
-        <texturefocus colordiffuse="focus_border">common/button-fo.png</texturefocus>
-        <texturenofocus colordiffuse="button_secondary">common/button-nofo.png</texturenofocus>
-        <alttexturefocus colordiffuse="accent_red">common/button-fo.png</alttexturefocus>
-        <alttexturenofocus colordiffuse="accent_red">common/button-nofo.png</alttexturenofocus>
+        <texturefocus colordiffuse="focus_border">button-fo.png</texturefocus>
+        <texturenofocus colordiffuse="button_secondary">button-nofo.png</texturenofocus>
+        <alttexturefocus colordiffuse="accent_red">button-fo.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="accent_red">button-nofo.png</alttexturenofocus>
     </default>
 
     <!-- Default Spin -->
     <default type="spincontrol">
         <font>font13</font>
         <textcolor>text_white</textcolor>
-        <textureup>common/arrow-up.png</textureup>
-        <texturedown>common/arrow-down.png</texturedown>
-        <textureupfocus colordiffuse="accent_red">common/arrow-up.png</textureupfocus>
-        <texturedownfocus colordiffuse="accent_red">common/arrow-down.png</texturedownfocus>
+        <textureup>arrow-up.png</textureup>
+        <texturedown>arrow-down.png</texturedown>
+        <textureupfocus colordiffuse="accent_red">arrow-up.png</textureupfocus>
+        <texturedownfocus colordiffuse="accent_red">arrow-down.png</texturedownfocus>
     </default>
 </controls>

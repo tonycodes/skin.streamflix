@@ -11,7 +11,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_main">common/black.png</texture>
+            <texture colordiffuse="background_main">black.png</texture>
         </control>
 
         <!-- Dynamic Fanart Background -->
@@ -31,7 +31,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="CC141414">common/black.png</texture>
+            <texture colordiffuse="CC141414">black.png</texture>
         </control>
 
         <!-- Top Bar -->
@@ -47,7 +47,7 @@
                 <posy>0</posy>
                 <width>1920</width>
                 <height>120</height>
-                <texture colordiffuse="CC000000">common/gradient-top.png</texture>
+                <texture colordiffuse="CC000000">gradient-top.png</texture>
             </control>
 
             <!-- Logo -->
@@ -80,8 +80,8 @@
                 <font>font14</font>
                 <label>Back</label>
                 <onclick>Action(Back)</onclick>
-                <texturefocus colordiffuse="60808080">common/button-rounded.png</texturefocus>
-                <texturenofocus colordiffuse="40808080">common/button-rounded.png</texturenofocus>
+                <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
+                <texturenofocus colordiffuse="40808080">button-rounded.png</texturenofocus>
             </control>
         </control>
 
@@ -114,7 +114,7 @@
                             <posy>0</posy>
                             <width>185</width>
                             <height>278</height>
-                            <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <texture fallback="special://skin/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -142,7 +142,7 @@
                                 <posy>0</posy>
                                 <width>185</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                                <texture colordiffuse="progress_bg">white.png</texture>
                             </control>
                             <control type="progress">
                                 <posx>0</posx>
@@ -168,7 +168,7 @@
                             <posy>-3</posy>
                             <width>221</width>
                             <height>340</height>
-                            <texture colordiffuse="focus_border">common/white.png</texture>
+                            <texture colordiffuse="focus_border">white.png</texture>
                         </control>
 
                         <!-- Poster -->
@@ -177,7 +177,7 @@
                             <posy>0</posy>
                             <width>215</width>
                             <height>298</height>
-                            <texture fallback="special://skin/media/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <texture fallback="special://skin/default_poster.png">$INFO[ListItem.Art(poster)]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
 
@@ -205,7 +205,7 @@
                                 <posy>0</posy>
                                 <width>215</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_bg">common/white.png</texture>
+                                <texture colordiffuse="progress_bg">white.png</texture>
                             </control>
                             <control type="progress">
                                 <posx>0</posx>
