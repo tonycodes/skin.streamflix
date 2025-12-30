@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keymap>
+    <FullscreenVideo>
+        <keyboard>
+            <backspace>Stop</backspace>
+            <escape>Stop</escape>
+        </keyboard>
+        <remote>
+            <back>Stop</back>
+        </remote>
+    </FullscreenVideo>
+</keymap>

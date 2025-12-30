@@ -2,6 +2,7 @@
 <!-- Video On-Screen Display - Shows when pressing up/down during playback -->
 <window id="12901">
     <defaultcontrol always="true">503</defaultcontrol>
+    <onback>PlayerControl(Stop)</onback>
     <controls>
         <!-- ============================================== -->
         <!-- TOP BAR - Title and Info -->

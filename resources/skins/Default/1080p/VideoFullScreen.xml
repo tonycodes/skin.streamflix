@@ -2,7 +2,7 @@
 <window id="12005" type="window">
     <defaultcontrol always="true">-</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <onback>PlayerControl(Stop)</onback>
+    <onback>Action(Stop)</onback>
     <controls>
     </controls>
 </window>
