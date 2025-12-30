@@ -11,12 +11,16 @@ cd "$(dirname "$0")/.."
 mkdir -p build
 
 # Create zip file (excluding build artifacts and git files)
+# Create both versioned and non-versioned zips
 zip -r "build/${SKIN_NAME}-${VERSION}.zip" "${SKIN_NAME}" \
     -x "*.git*" \
     -x "*build.sh" \
     -x "*__pycache__*" \
     -x "*.DS_Store" \
     -x "*repository/*"
+
+# Copy to non-versioned name for "latest" URL
+cp "build/${SKIN_NAME}-${VERSION}.zip" "build/${SKIN_NAME}.zip"
 
 # Create repository addon zip
 zip -r "build/repository.streamflix-${VERSION}.zip" "repository.streamflix" \

@@ -17,7 +17,7 @@ A clean, minimalist Kodi skin that brings the Netflix experience to your media c
 
 ## Quick Install
 
-**Download:** [bit.ly/4sgz54k](https://bit.ly/4sgz54k)
+**Download:** [is.gd/93dtrd](https://is.gd/93dtrd)
 
 1. Download the zip from the link above
 2. In Kodi: **Settings → Add-ons → Install from zip file**
