@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="10104">
+    <defaultcontrol always="true">-</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+        <posx>760</posx>
+        <posy>920</posy>
+    </coordinates>
+    <animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+    <controls>
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>400</width>
+            <height>80</height>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>400</width>
+                <height>80</height>
+                <texture colordiffuse="EE181818">common/dialog-bg.png</texture>
+            </control>
+            <control type="label">
+                <posx>20</posx>
+                <posy>10</posy>
+                <width>360</width>
+                <height>25</height>
+                <font>font12</font>
+                <textcolor>text_white</textcolor>
+                <align>center</align>
+                <label>Volume: $INFO[Player.Volume]</label>
+            </control>
+            <control type="slider" id="1">
+                <posx>20</posx>
+                <posy>45</posy>
+                <width>360</width>
+                <height>20</height>
+                <info>Player.Volume</info>
+            </control>
+        </control>
+    </controls>
+</window>

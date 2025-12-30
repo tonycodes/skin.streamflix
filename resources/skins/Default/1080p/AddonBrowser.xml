@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="10040" type="window">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <views>50</views>
+    <controls>
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="background_main">common/black.png</texture>
+        </control>
+        <control type="label">
+            <posx>80</posx>
+            <posy>40</posy>
+            <width>600</width>
+            <height>50</height>
+            <font>font_title</font>
+            <textcolor>text_white</textcolor>
+            <label>$LOCALIZE[24001]</label>
+        </control>
+        <control type="label">
+            <posx>80</posx>
+            <posy>90</posy>
+            <width>1000</width>
+            <height>30</height>
+            <font>font13</font>
+            <textcolor>text_gray</textcolor>
+            <label>$INFO[Container.FolderPath]</label>
+        </control>
+        <control type="list" id="50">
+            <posx>80</posx>
+            <posy>140</posy>
+            <width>1760</width>
+            <height>880</height>
+            <scrolltime>200</scrolltime>
+            <itemlayout width="1760" height="70">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>5</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>10</posy>
+                    <width>1600</width>
+                    <height>30</height>
+                    <font>font14</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>40</posy>
+                    <width>1600</width>
+                    <height>25</height>
+                    <font>font12</font>
+                    <textcolor>text_dim</textcolor>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout width="1760" height="70">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1760</width>
+                    <height>70</height>
+                    <texture colordiffuse="40FFFFFF">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>5</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>10</posy>
+                    <width>1600</width>
+                    <height>30</height>
+                    <font>font14_bold</font>
+                    <textcolor>text_white</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <posx>80</posx>
+                    <posy>40</posy>
+                    <width>1600</width>
+                    <height>25</height>
+                    <font>font12</font>
+                    <textcolor>text_gray</textcolor>
+                    <label>$INFO[ListItem.Label2]</label>
+                </control>
+            </focusedlayout>
+        </control>
+    </controls>
+</window>
