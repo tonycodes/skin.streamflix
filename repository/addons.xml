@@ -24,9 +24,9 @@
         </requires>
         <extension point="xbmc.addon.repository" name="StreamFlix Repository">
             <dir>
-                <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME/skin.streamflix/main/repository/addons.xml</info>
-                <checksum>https://raw.githubusercontent.com/YOUR_USERNAME/skin.streamflix/main/repository/addons.xml.md5</checksum>
-                <datadir zip="true">https://github.com/YOUR_USERNAME/skin.streamflix/releases/download/</datadir>
+                <info compressed="false">https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/repository/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/tonycodes/skin.streamflix/main/repository/addons.xml.md5</checksum>
+                <datadir zip="true">https://github.com/tonycodes/skin.streamflix/releases/download/</datadir>
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
