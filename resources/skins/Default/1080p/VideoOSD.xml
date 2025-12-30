@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Video On-Screen Display - Shows when pressing up/down during playback -->
 <window id="12901">
-    <defaultcontrol always="true">501</defaultcontrol>
+    <defaultcontrol always="true">503</defaultcontrol>
     <controls>
         <!-- ============================================== -->
         <!-- TOP BAR - Title and Info -->
@@ -143,6 +143,8 @@
                 <orientation>horizontal</orientation>
                 <itemgap>10</itemgap>
                 <align>center</align>
+                <onleft>506</onleft>
+                <onright>600</onright>
 
                 <!-- Previous -->
                 <control type="button" id="501">
@@ -152,6 +154,7 @@
                     <font>font16</font>
                     <label>|&lt;</label>
                     <onclick>PlayerControl(Previous)</onclick>
+                    <onleft>506</onleft>
                 </control>
 
                 <!-- Rewind 10s -->
@@ -189,18 +192,20 @@
                     <font>font16</font>
                     <label>>|</label>
                     <onclick>PlayerControl(Next)</onclick>
+                    <onright>601</onright>
                 </control>
             </control>
 
             <!-- Stop Button (Left side) -->
             <control type="button" id="506">
-                <include>ButtonClose</include>
+                <include>ButtonRed</include>
                 <posx>60</posx>
                 <posy>100</posy>
                 <width>100</width>
+                <height>70</height>
                 <label>Stop</label>
                 <onclick>PlayerControl(Stop)</onclick>
-                <onright>500</onright>
+                <onright>501</onright>
             </control>
 
             <!-- Audio/Subtitle Buttons (Right side) -->
@@ -208,24 +213,27 @@
                 <posx>1550</posx>
                 <posy>100</posy>
                 <width>320</width>
-                <height>55</height>
+                <height>70</height>
                 <orientation>horizontal</orientation>
                 <itemgap>10</itemgap>
-                <onleft>500</onleft>
+                <onleft>505</onleft>
 
                 <!-- Subtitles -->
                 <control type="button" id="601">
                     <include>ButtonClose</include>
                     <width>100</width>
+                    <height>70</height>
                     <font>font12</font>
                     <label>Subs</label>
                     <onclick>Action(ShowSubtitles)</onclick>
+                    <onleft>505</onleft>
                 </control>
 
                 <!-- Audio -->
                 <control type="button" id="602">
                     <include>ButtonClose</include>
                     <width>100</width>
+                    <height>70</height>
                     <font>font12</font>
                     <label>Audio</label>
                     <onclick>Action(AudioNextLanguage)</onclick>
@@ -235,6 +243,7 @@
                 <control type="button" id="603">
                     <include>ButtonClose</include>
                     <width>100</width>
+                    <height>70</height>
                     <font>font12</font>
                     <label>Info</label>
                     <onclick>Action(CodecInfo)</onclick>
