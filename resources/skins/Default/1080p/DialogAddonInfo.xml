@@ -59,7 +59,7 @@
                 <height>30</height>
                 <font>font14</font>
                 <textcolor>FFB3B3B3</textcolor>
-                <label>$INFO[ListItem.Property(Addon.Creator)]</label>
+                <label>$INFO[ListItem.AddonCreator]</label>
             </control>
 
             <!-- Version -->
@@ -70,7 +70,7 @@
                 <height>30</height>
                 <font>font13</font>
                 <textcolor>FF808080</textcolor>
-                <label>Version: $INFO[ListItem.Property(Addon.Version)]</label>
+                <label>Version: $INFO[ListItem.AddonVersion]</label>
             </control>
 
             <!-- Description -->
@@ -81,11 +81,11 @@
                 <height>380</height>
                 <font>font13</font>
                 <textcolor>FFB3B3B3</textcolor>
-                <label>$INFO[ListItem.Property(Addon.Description)]</label>
+                <label>$INFO[ListItem.AddonDescription]</label>
             </control>
 
             <!-- Buttons -->
-            <control type="grouplist" id="9">
+            <control type="grouplist" id="9000">
                 <posx>40</posx>
                 <posy>700</posy>
                 <width>1120</width>
@@ -93,54 +93,56 @@
                 <orientation>horizontal</orientation>
                 <itemgap>20</itemgap>
 
-                <!-- Install/Enable button -->
+                <!-- Install/Uninstall button -->
                 <control type="button" id="6">
                     <width>180</width>
                     <height>50</height>
-                    <font>font_button</font>
-                    <label>$LOCALIZE[24069]</label>
-                    <texturefocus colordiffuse="FFFFFFFF">button-rounded.png</texturefocus>
-                    <texturenofocus colordiffuse="FFE50914">button-rounded.png</texturenofocus>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="FFE50914">white.png</texturenofocus>
                     <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
+                    <focusedcolor>FF141414</focusedcolor>
                 </control>
 
                 <!-- Update button -->
-                <control type="button" id="5">
+                <control type="button" id="14">
                     <width>180</width>
                     <height>50</height>
-                    <font>font_button</font>
-                    <label>$LOCALIZE[24061]</label>
-                    <texturefocus colordiffuse="FFFFFFFF">button-rounded.png</texturefocus>
-                    <texturenofocus colordiffuse="FF46D369">button-rounded.png</texturenofocus>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="FF46D369">white.png</texturenofocus>
                     <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <visible>ListItem.Property(Addon.HasUpdate)</visible>
+                    <focusedcolor>FF141414</focusedcolor>
                 </control>
 
-                <!-- Disable button -->
-                <control type="button" id="8">
-                    <width>180</width>
-                    <height>50</height>
-                    <font>font_button</font>
-                    <label>$LOCALIZE[24070]</label>
-                    <texturefocus colordiffuse="FFFFFFFF">button-rounded.png</texturefocus>
-                    <texturenofocus colordiffuse="FFE50914">button-rounded.png</texturenofocus>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                </control>
-
-                <!-- Close button -->
+                <!-- Enable/Disable button -->
                 <control type="button" id="7">
                     <width>180</width>
                     <height>50</height>
-                    <font>font_button</font>
-                    <label>$LOCALIZE[222]</label>
-                    <onclick>Action(Close)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">button-rounded.png</texturefocus>
-                    <texturenofocus colordiffuse="FF404040">button-rounded.png</texturenofocus>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="FF505050">white.png</texturenofocus>
                     <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
+                    <focusedcolor>FF141414</focusedcolor>
+                </control>
+
+                <!-- Settings button -->
+                <control type="button" id="9">
+                    <width>180</width>
+                    <height>50</height>
+                    <font>font13</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+                    <texturenofocus colordiffuse="FF505050">white.png</texturenofocus>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <focusedcolor>FF141414</focusedcolor>
                 </control>
             </control>
         </control>

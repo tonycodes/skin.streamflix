@@ -3,6 +3,292 @@
     <!-- Include Variables -->
     <include file="Variables.xml"/>
 
+    <!-- ==================== BUTTON STYLE VARIANTS ==================== -->
+    <!-- Use these includes to create colored buttons while keeping DRY -->
+    <!-- Each variant is a complete button control with all required properties -->
+
+    <!-- Red Button (Install, Delete, etc.) - white text on red bg -->
+    <include name="ButtonRed">
+        <width>180</width>
+        <height>50</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="FFE50914">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF141414</focusedcolor>
+    </include>
+
+    <!-- Green Button (Update, Success, etc.) - white text on green bg -->
+    <include name="ButtonGreen">
+        <width>180</width>
+        <height>50</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="FF46D369">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF141414</focusedcolor>
+    </include>
+
+    <!-- Gray Button (Close, Cancel, etc.) - white text on gray bg -->
+    <include name="ButtonGray">
+        <width>180</width>
+        <height>50</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="FF505050">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF141414</focusedcolor>
+    </include>
+
+    <!-- White Button (Primary action) - dark text on white bg -->
+    <include name="ButtonWhite">
+        <width>180</width>
+        <height>50</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
+        <textcolor>FF141414</textcolor>
+        <focusedcolor>FF141414</focusedcolor>
+    </include>
+
+    <!-- Default Button - white text on gray bg -->
+    <include name="ButtonDefault">
+        <width>180</width>
+        <height>50</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="FF404040">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF141414</focusedcolor>
+    </include>
+
+    <!-- Primary Action Button (for OK/Confirm dialogs) - red when focused, transparent unfocused -->
+    <include name="ButtonPrimary">
+        <width>170</width>
+        <height>55</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Secondary Button (for Cancel dialogs) - transparent focus/unfocused -->
+    <include name="ButtonSecondary">
+        <width>170</width>
+        <height>55</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Transparent Navigation Button (for menu items without background) -->
+    <include name="ButtonNav">
+        <width>100</width>
+        <height>40</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <textcolor>FFB3B3B3</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Numpad Button (for number pad dialogs) - red focus, transparent unfocused -->
+    <include name="ButtonNumpad">
+        <width>180</width>
+        <height>70</height>
+        <font>font16_bold</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Numpad Cancel Button - gray transparent -->
+    <include name="ButtonNumpadCancel">
+        <width>180</width>
+        <height>70</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="60808080">white.png</texturefocus>
+        <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Numpad OK Button - red focus, white unfocused, dark text -->
+    <include name="ButtonNumpadOK">
+        <width>180</width>
+        <height>70</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
+        <textcolor>FF000000</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Close Button (white focus, transparent unfocused) -->
+    <include name="ButtonClose">
+        <width>200</width>
+        <height>55</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF000000</focusedcolor>
+    </include>
+
+    <!-- Keyboard Key Button - red focus, transparent unfocused -->
+    <include name="ButtonKey">
+        <width>110</width>
+        <height>55</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Keyboard Action Button - gray transparent -->
+    <include name="ButtonKeyAction">
+        <width>150</width>
+        <height>55</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Done/OK Button (white unfocused, dark text) -->
+    <include name="ButtonDone">
+        <width>200</width>
+        <height>55</height>
+        <font>font14</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
+        <textcolor>FF000000</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Settings List Button - red focus, semi-transparent unfocused -->
+    <include name="ButtonSettingsItem">
+        <font>font13</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <textoffsetx>15</textoffsetx>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+    </include>
+
+    <!-- Side/Browse Button - white focus, transparent unfocused -->
+    <include name="ButtonSide">
+        <width>240</width>
+        <height>50</height>
+        <font>font13</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
+        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FF000000</focusedcolor>
+    </include>
+
+    <!-- ==================== SETTINGS CONTROL TEMPLATES ==================== -->
+    <!-- These are used by Kodi's settings system for dynamic settings rendering -->
+
+    <!-- Settings Item Base Style - red focus, semi-transparent unfocused -->
+    <include name="SettingsItemStyle">
+        <font>font14</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <align>left</align>
+        <textoffsetx>20</textoffsetx>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+    </include>
+
+    <!-- Settings Category Style - for left-side category buttons -->
+    <include name="SettingsCategoryStyle">
+        <font>font14</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <align>left</align>
+        <textoffsetx>20</textoffsetx>
+        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
+        <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
+    </include>
+
+    <!-- Settings RadioButton Style - includes radio button textures -->
+    <include name="SettingsRadioStyle">
+        <textureradioonfocus colordiffuse="FFE50914">white.png</textureradioonfocus>
+        <textureradioofffocus colordiffuse="40FFFFFF">white.png</textureradioofffocus>
+        <textureradioonnofocus colordiffuse="FFE50914">white.png</textureradioonnofocus>
+        <textureradiooffnofocus colordiffuse="40FFFFFF">white.png</textureradiooffnofocus>
+    </include>
+
+    <!-- Settings Slider Style - includes slider textures -->
+    <include name="SettingsSliderStyle">
+        <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+        <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+        <texturesliderbarfocus colordiffuse="FFE50914">white.png</texturesliderbarfocus>
+        <textureslidernib>-</textureslidernib>
+        <textureslidernibfocus>-</textureslidernibfocus>
+    </include>
+
+    <!-- Settings Scrollbar Style -->
+    <include name="SettingsScrollbarStyle">
+        <orientation>vertical</orientation>
+        <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+        <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+    </include>
+
+    <!-- Settings Separator Style -->
+    <include name="SettingsSeparatorStyle">
+        <height>2</height>
+        <texture colordiffuse="40FFFFFF">white.png</texture>
+    </include>
+
+    <!-- Settings Label/Group Header Style -->
+    <include name="SettingsLabelStyle">
+        <font>font13</font>
+        <textcolor>80FFFFFF</textcolor>
+        <align>left</align>
+    </include>
+
     <!-- ==================== GLOBAL BACKGROUND ==================== -->
     <include name="GlobalBackground">
         <control type="image">
@@ -10,7 +296,7 @@
             <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
-            <texture colordiffuse="background_main">black.png</texture>
+            <texture colordiffuse="FF141414">black.png</texture>
         </control>
     </include>
 
@@ -48,7 +334,7 @@
                 <posy>0</posy>
                 <width>800</width>
                 <height>650</height>
-                <texture colordiffuse="background_overlay">gradient-left.png</texture>
+                <texture colordiffuse="CC000000">gradient-left.png</texture>
             </control>
 
             <!-- Hero Content -->
@@ -76,7 +362,7 @@
                     <width>700</width>
                     <height>100</height>
                     <font>font_hero</font>
-                    <textcolor>text_white</textcolor>
+                    <textcolor>FFFFFFFF</textcolor>
                     <label>$INFO[Container(9000).ListItem.Label]</label>
                     <visible>String.IsEmpty(Container(9000).ListItem.Art(clearlogo))</visible>
                 </control>
@@ -95,7 +381,7 @@
                         <width>150</width>
                         <height>30</height>
                         <font>font_metadata_bold</font>
-                        <textcolor>rating_good</textcolor>
+                        <textcolor>FF46D369</textcolor>
                         <label>$VAR[MatchPercentage]</label>
                     </control>
 
@@ -106,7 +392,7 @@
                         <width>80</width>
                         <height>30</height>
                         <font>font_metadata</font>
-                        <textcolor>text_gray</textcolor>
+                        <textcolor>FFB3B3B3</textcolor>
                         <label>$INFO[Container(9000).ListItem.Year]</label>
                     </control>
 
@@ -117,7 +403,7 @@
                         <width>80</width>
                         <height>30</height>
                         <font>font_metadata</font>
-                        <textcolor>text_gray</textcolor>
+                        <textcolor>FFB3B3B3</textcolor>
                         <label>$VAR[MaturityRating]</label>
                         <visible>!String.IsEmpty(Container(9000).ListItem.Mpaa)</visible>
                     </control>
@@ -129,7 +415,7 @@
                         <width>150</width>
                         <height>30</height>
                         <font>font_metadata</font>
-                        <textcolor>text_gray</textcolor>
+                        <textcolor>FFB3B3B3</textcolor>
                         <label>$INFO[Container(9000).ListItem.Duration]</label>
                     </control>
                 </control>
@@ -141,7 +427,7 @@
                     <width>600</width>
                     <height>100</height>
                     <font>font_plot</font>
-                    <textcolor>text_gray</textcolor>
+                    <textcolor>FFB3B3B3</textcolor>
                     <label>$INFO[Container(9000).ListItem.Plot]</label>
                 </control>
 
@@ -156,26 +442,20 @@
 
                     <!-- Play Button -->
                     <control type="button" id="1001">
+                        <include>ButtonWhite</include>
                         <width>160</width>
-                        <height>50</height>
                         <font>font_button_large</font>
                         <label>Play</label>
                         <onclick>PlayMedia($INFO[Container(9000).ListItem.FilenameAndPath])</onclick>
-                        <texturefocus colordiffuse="button_primary">button-fo.png</texturefocus>
-                        <texturenofocus colordiffuse="button_primary">button-nofo.png</texturenofocus>
-                        <textcolor>button_primary_text</textcolor>
-                        <focusedcolor>button_primary_text</focusedcolor>
                     </control>
 
                     <!-- More Info Button -->
                     <control type="button" id="1002">
+                        <include>ButtonDefault</include>
                         <width>180</width>
-                        <height>50</height>
                         <font>font_button_large</font>
                         <label>More Info</label>
                         <onclick>Action(Info)</onclick>
-                        <texturefocus colordiffuse="button_secondary">button-fo.png</texturefocus>
-                        <texturenofocus colordiffuse="button_secondary">button-nofo.png</texturenofocus>
                     </control>
                 </control>
             </control>
@@ -201,7 +481,7 @@
                 <width>600</width>
                 <height>40</height>
                 <font>font_row_header</font>
-                <textcolor>text_white</textcolor>
+                <textcolor>FFFFFFFF</textcolor>
                 <label>$PARAM[title]</label>
             </control>
 
@@ -247,7 +527,7 @@
                                 <posy>0</posy>
                                 <width>185</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_bg">white.png</texture>
+                                <texture colordiffuse="FF333333">white.png</texture>
                             </control>
 
                             <!-- Fill -->
@@ -256,7 +536,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_fill">white.png</texture>
+                                <texture colordiffuse="FFE50914">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -275,7 +555,7 @@
                             <posy>-3</posy>
                             <width>221</width>
                             <height>340</height>
-                            <texture colordiffuse="focus_border">white.png</texture>
+                            <texture colordiffuse="FFFFFFFF">white.png</texture>
                         </control>
 
                         <!-- Poster Image -->
@@ -301,7 +581,7 @@
                                 <posy>0</posy>
                                 <width>215</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_bg">white.png</texture>
+                                <texture colordiffuse="FF333333">white.png</texture>
                             </control>
 
                             <control type="image">
@@ -309,7 +589,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_fill">white.png</texture>
+                                <texture colordiffuse="FFE50914">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -337,7 +617,7 @@
                 <width>600</width>
                 <height>40</height>
                 <font>font_row_header</font>
-                <textcolor>text_white</textcolor>
+                <textcolor>FFFFFFFF</textcolor>
                 <label>$PARAM[title]</label>
             </control>
 
@@ -381,7 +661,7 @@
                                 <posy>0</posy>
                                 <width>285</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_bg">white.png</texture>
+                                <texture colordiffuse="FF333333">white.png</texture>
                             </control>
 
                             <control type="image">
@@ -389,7 +669,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>5</height>
-                                <texture colordiffuse="progress_fill">white.png</texture>
+                                <texture colordiffuse="FFE50914">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -408,7 +688,7 @@
                             <posy>-3</posy>
                             <width>321</width>
                             <height>196</height>
-                            <texture colordiffuse="focus_border">white.png</texture>
+                            <texture colordiffuse="FFFFFFFF">white.png</texture>
                         </control>
 
                         <!-- Landscape/Thumb Image -->
@@ -434,7 +714,7 @@
                                 <posy>0</posy>
                                 <width>315</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_bg">white.png</texture>
+                                <texture colordiffuse="FF333333">white.png</texture>
                             </control>
 
                             <control type="image">
@@ -442,7 +722,7 @@
                                 <posy>0</posy>
                                 <width>$INFO[ListItem.PercentPlayed,,,r]</width>
                                 <height>6</height>
-                                <texture colordiffuse="progress_fill">white.png</texture>
+                                <texture colordiffuse="FFE50914">white.png</texture>
                             </control>
                         </control>
                     </control>
@@ -467,7 +747,7 @@
                 <posy>0</posy>
                 <width>300</width>
                 <height>1080</height>
-                <texture colordiffuse="background_dark">black.png</texture>
+                <texture colordiffuse="FF0A0A0A">black.png</texture>
             </control>
 
             <!-- Logo -->
@@ -572,7 +852,7 @@
                 <posy>0</posy>
                 <width>1920</width>
                 <height>100</height>
-                <texture colordiffuse="background_overlay">gradient-top.png</texture>
+                <texture colordiffuse="CC000000">gradient-top.png</texture>
             </control>
 
             <!-- Logo -->

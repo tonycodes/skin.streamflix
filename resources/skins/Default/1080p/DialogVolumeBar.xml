@@ -27,7 +27,7 @@
                 <width>360</width>
                 <height>25</height>
                 <font>font12</font>
-                <textcolor>text_white</textcolor>
+                <textcolor>FFFFFFFF</textcolor>
                 <align>center</align>
                 <label>Volume: $INFO[Player.Volume]</label>
             </control>

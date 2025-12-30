@@ -22,7 +22,7 @@
                 <posy>0</posy>
                 <width>800</width>
                 <height>300</height>
-                <texture colordiffuse="background_card">dialog-bg.png</texture>
+                <texture colordiffuse="FF1A1A1A">dialog-bg.png</texture>
             </control>
             <control type="label" id="1">
                 <posx>40</posx>
@@ -30,7 +30,7 @@
                 <width>720</width>
                 <height>40</height>
                 <font>font_title</font>
-                <textcolor>text_white</textcolor>
+                <textcolor>FFFFFFFF</textcolor>
                 <align>center</align>
                 <label>$INFO[Window.Property(Heading)]</label>
             </control>
@@ -40,7 +40,7 @@
                 <width>720</width>
                 <height>30</height>
                 <font>font14</font>
-                <textcolor>text_gray</textcolor>
+                <textcolor>FFB3B3B3</textcolor>
                 <align>center</align>
                 <label>$INFO[Window.Property(Line1)]</label>
             </control>
@@ -51,15 +51,13 @@
                 <height>20</height>
             </control>
             <control type="button" id="10">
+                <include>ButtonSecondary</include>
                 <posx>300</posx>
                 <posy>200</posy>
                 <width>200</width>
                 <height>50</height>
-                <font>font_button</font>
                 <label>Cancel</label>
                 <onclick>Action(Close)</onclick>
-                <texturefocus colordiffuse="60808080">button-rounded.png</texturefocus>
-                <texturenofocus colordiffuse="40808080">button-rounded.png</texturenofocus>
             </control>
         </control>
     </controls>

@@ -202,18 +202,11 @@
 
             <!-- Close Button -->
             <control type="button" id="7">
+                <include>ButtonClose</include>
                 <posx>350</posx>
                 <posy>620</posy>
-                <width>200</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>$LOCALIZE[222]</label>
                 <onclick>Action(Close)</onclick>
-                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onup>3</onup>
                 <onleft>3</onleft>
             </control>

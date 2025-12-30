@@ -52,18 +52,14 @@
         <!-- CLOSE BUTTON (Top Right) -->
         <!-- ============================================== -->
         <control type="button" id="10">
+            <include>ButtonClose</include>
             <posx>1820</posx>
             <posy>40</posy>
             <width>60</width>
             <height>60</height>
             <font>font_title</font>
-            <align>center</align>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FF000000</focusedcolor>
             <label>X</label>
             <onclick>Action(Close)</onclick>
-            <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-            <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             <ondown>50</ondown>
         </control>
 
@@ -218,63 +214,40 @@
 
                 <!-- PLAY BUTTON (White, prominent) -->
                 <control type="button" id="51">
+                    <include>ButtonWhite</include>
                     <width>180</width>
                     <height>55</height>
-                    <font>font14</font>
-                    <align>center</align>
                     <label>Play</label>
                     <onclick>Dialog.Close(all,true)</onclick>
                     <onclick>Action(Play)</onclick>
-                    <textcolor>FF000000</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- RESUME BUTTON (if applicable) -->
                 <control type="button" id="52">
+                    <include>ButtonClose</include>
                     <width>220</width>
-                    <height>55</height>
-                    <font>font14</font>
-                    <align>center</align>
                     <label>Resume</label>
                     <onclick>Dialog.Close(all,true)</onclick>
                     <onclick>Action(Resume)</onclick>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
                     <visible>!String.IsEmpty(ListItem.Property(ResumeTime))</visible>
                 </control>
 
                 <!-- TRAILER BUTTON -->
                 <control type="button" id="53">
+                    <include>ButtonClose</include>
                     <width>160</width>
-                    <height>55</height>
-                    <font>font14</font>
-                    <align>center</align>
                     <label>Trailer</label>
                     <onclick>Dialog.Close(all,true)</onclick>
                     <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
                     <visible>!String.IsEmpty(ListItem.Trailer)</visible>
                 </control>
 
                 <!-- MY LIST BUTTON -->
                 <control type="button" id="54">
+                    <include>ButtonClose</include>
                     <width>160</width>
-                    <height>55</height>
-                    <font>font14</font>
-                    <align>center</align>
                     <label>+ My List</label>
                     <onclick>Action(Queue)</onclick>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="60FFFFFF">white.png</texturenofocus>
                 </control>
             </control>
 

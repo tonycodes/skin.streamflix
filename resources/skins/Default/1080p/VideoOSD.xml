@@ -146,89 +146,60 @@
 
                 <!-- Previous -->
                 <control type="button" id="501">
+                    <include>ButtonClose</include>
                     <width>70</width>
                     <height>70</height>
                     <font>font16</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>|&lt;</label>
                     <onclick>PlayerControl(Previous)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Rewind 10s -->
                 <control type="button" id="502">
+                    <include>ButtonClose</include>
                     <width>70</width>
                     <height>70</height>
-                    <font>font14</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>-10</label>
                     <onclick>Seek(-10)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Play/Pause -->
                 <control type="button" id="503">
+                    <include>ButtonNumpadOK</include>
                     <width>90</width>
-                    <height>70</height>
                     <font>font20</font>
-                    <align>center</align>
-                    <textcolor>FF000000</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>$INFO[Player.Paused,||,>]</label>
                     <onclick>PlayerControl(Play)</onclick>
-                    <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                    <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Forward 10s -->
                 <control type="button" id="504">
+                    <include>ButtonClose</include>
                     <width>70</width>
                     <height>70</height>
-                    <font>font14</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>+10</label>
                     <onclick>Seek(10)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Next -->
                 <control type="button" id="505">
+                    <include>ButtonClose</include>
                     <width>70</width>
                     <height>70</height>
                     <font>font16</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>>|</label>
                     <onclick>PlayerControl(Next)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
             </control>
 
             <!-- Stop Button (Left side) -->
             <control type="button" id="506">
+                <include>ButtonClose</include>
                 <posx>60</posx>
                 <posy>100</posy>
                 <width>100</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>Stop</label>
                 <onclick>PlayerControl(Stop)</onclick>
-                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onright>500</onright>
             </control>
 
@@ -244,44 +215,29 @@
 
                 <!-- Subtitles -->
                 <control type="button" id="601">
+                    <include>ButtonClose</include>
                     <width>100</width>
-                    <height>55</height>
                     <font>font12</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>Subs</label>
                     <onclick>Action(ShowSubtitles)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Audio -->
                 <control type="button" id="602">
+                    <include>ButtonClose</include>
                     <width>100</width>
-                    <height>55</height>
                     <font>font12</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>Audio</label>
                     <onclick>Action(AudioNextLanguage)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Settings -->
                 <control type="button" id="603">
+                    <include>ButtonClose</include>
                     <width>100</width>
-                    <height>55</height>
                     <font>font12</font>
-                    <align>center</align>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
                     <label>Info</label>
                     <onclick>Action(CodecInfo)</onclick>
-                    <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
             </control>
         </control>

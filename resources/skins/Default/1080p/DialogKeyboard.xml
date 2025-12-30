@@ -78,123 +78,53 @@
                     <itemgap>8</itemgap>
 
                     <control type="button" id="61">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>1</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>71</ondown>
                     </control>
                     <control type="button" id="62">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>2</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>72</ondown>
                     </control>
                     <control type="button" id="63">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>3</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>73</ondown>
                     </control>
                     <control type="button" id="64">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>4</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>74</ondown>
                     </control>
                     <control type="button" id="65">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>5</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>75</ondown>
                     </control>
                     <control type="button" id="66">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>6</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>76</ondown>
                     </control>
                     <control type="button" id="67">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>7</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>77</ondown>
                     </control>
                     <control type="button" id="68">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>8</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>78</ondown>
                     </control>
                     <control type="button" id="69">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>9</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>79</ondown>
                     </control>
                     <control type="button" id="60">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>0</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <ondown>80</ondown>
                     </control>
                 </control>
@@ -209,132 +139,62 @@
                     <itemgap>8</itemgap>
 
                     <control type="button" id="71">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>Q</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>61</onup>
                         <ondown>81</ondown>
                     </control>
                     <control type="button" id="72">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>W</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>62</onup>
                         <ondown>82</ondown>
                     </control>
                     <control type="button" id="73">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>E</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>63</onup>
                         <ondown>83</ondown>
                     </control>
                     <control type="button" id="74">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>R</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>64</onup>
                         <ondown>84</ondown>
                     </control>
                     <control type="button" id="75">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>T</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>65</onup>
                         <ondown>85</ondown>
                     </control>
                     <control type="button" id="76">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>Y</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>66</onup>
                         <ondown>86</ondown>
                     </control>
                     <control type="button" id="77">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>U</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>67</onup>
                         <ondown>87</ondown>
                     </control>
                     <control type="button" id="78">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>I</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>68</onup>
                         <ondown>88</ondown>
                     </control>
                     <control type="button" id="79">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>O</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>69</onup>
                         <ondown>89</ondown>
                     </control>
                     <control type="button" id="80">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>P</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>60</onup>
                         <ondown>90</ondown>
                     </control>
@@ -350,119 +210,56 @@
                     <itemgap>8</itemgap>
 
                     <control type="button" id="81">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>A</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>71</onup>
                         <ondown>91</ondown>
                     </control>
                     <control type="button" id="82">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>S</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>72</onup>
                         <ondown>92</ondown>
                     </control>
                     <control type="button" id="83">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>D</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>73</onup>
                         <ondown>93</ondown>
                     </control>
                     <control type="button" id="84">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>F</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>74</onup>
                         <ondown>94</ondown>
                     </control>
                     <control type="button" id="85">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>G</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>75</onup>
                         <ondown>95</ondown>
                     </control>
                     <control type="button" id="86">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>H</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>76</onup>
                         <ondown>96</ondown>
                     </control>
                     <control type="button" id="87">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>J</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>77</onup>
                         <ondown>300</ondown>
                     </control>
                     <control type="button" id="88">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>K</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>78</onup>
                         <ondown>300</ondown>
                     </control>
                     <control type="button" id="89">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>L</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>79</onup>
                         <ondown>301</ondown>
                     </control>
@@ -478,93 +275,44 @@
                     <itemgap>8</itemgap>
 
                     <control type="button" id="91">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>Z</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>81</onup>
                         <ondown>310</ondown>
                     </control>
                     <control type="button" id="92">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>X</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>82</onup>
                         <ondown>310</ondown>
                     </control>
                     <control type="button" id="93">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>C</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>83</onup>
                         <ondown>310</ondown>
                     </control>
                     <control type="button" id="94">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>V</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>84</onup>
                         <ondown>310</ondown>
                     </control>
                     <control type="button" id="95">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>B</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>85</onup>
                         <ondown>310</ondown>
                     </control>
                     <control type="button" id="96">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>N</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>86</onup>
                         <ondown>310</ondown>
                     </control>
                     <control type="button" id="97">
-                        <width>110</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKey</include>
                         <label>M</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>87</onup>
                         <ondown>310</ondown>
                     </control>
@@ -581,15 +329,8 @@
 
                     <!-- Shift -->
                     <control type="togglebutton" id="310">
-                        <width>150</width>
-                        <height>55</height>
-                        <font>font13</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKeyAction</include>
                         <label>Shift</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
                         <alttexturefocus colordiffuse="FFE50914">white.png</alttexturefocus>
                         <alttexturenofocus colordiffuse="80E50914">white.png</alttexturenofocus>
                         <onup>91</onup>
@@ -598,45 +339,25 @@
 
                     <!-- Spacebar -->
                     <control type="button" id="32">
+                        <include>ButtonKey</include>
                         <width>600</width>
-                        <height>55</height>
-                        <font>font13</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
                         <label>Space</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                         <onup>94</onup>
                         <ondown>300</ondown>
                     </control>
 
                     <!-- Backspace -->
                     <control type="button" id="8">
-                        <width>150</width>
-                        <height>55</height>
-                        <font>font13</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKeyAction</include>
                         <label>Delete</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
                         <onup>97</onup>
                         <ondown>301</ondown>
                     </control>
 
                     <!-- Clear -->
                     <control type="button" id="127">
-                        <width>150</width>
-                        <height>55</height>
-                        <font>font13</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
+                        <include>ButtonKeyAction</include>
                         <label>Clear</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
                         <onup>90</onup>
                         <ondown>301</ondown>
                     </control>
@@ -653,30 +374,17 @@
 
                     <!-- Done -->
                     <control type="button" id="300">
-                        <width>200</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FF000000</textcolor>
-                        <focusedcolor>FF000000</focusedcolor>
+                        <include>ButtonDone</include>
                         <label>Done</label>
-                        <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                        <texturenofocus colordiffuse="FFFFFFFF">white.png</texturenofocus>
                         <onup>32</onup>
                     </control>
 
                     <!-- Cancel -->
                     <control type="button" id="301">
+                        <include>ButtonNumpadCancel</include>
                         <width>200</width>
-                        <height>55</height>
-                        <font>font14</font>
-                        <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <focusedcolor>FFFFFFFF</focusedcolor>
                         <label>Cancel</label>
                         <onclick>Action(Close)</onclick>
-                        <texturefocus colordiffuse="60808080">white.png</texturefocus>
-                        <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
                         <onup>8</onup>
                     </control>
                 </control>

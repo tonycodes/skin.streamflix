@@ -75,33 +75,19 @@
 
             <!-- Cancel Button -->
             <control type="button" id="10">
+                <include>ButtonSecondary</include>
                 <posx>150</posx>
                 <posy>200</posy>
-                <width>170</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>$LOCALIZE[222]</label>
-                <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onright>11</onright>
             </control>
 
             <!-- OK Button -->
             <control type="button" id="11">
+                <include>ButtonPrimary</include>
                 <posx>380</posx>
                 <posy>200</posy>
-                <width>170</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>$LOCALIZE[186]</label>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onleft>10</onleft>
             </control>
         </control>

@@ -34,95 +34,67 @@
 
             <!-- Media -->
             <control type="button" id="9012">
+                <include>ButtonPrimary</include>
                 <width>380</width>
                 <height>60</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
                 <label>Media</label>
                 <onclick>ActivateWindow(MediaSettings)</onclick>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
 
             <!-- Player -->
             <control type="button" id="9013">
+                <include>ButtonPrimary</include>
                 <width>380</width>
                 <height>60</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
                 <label>Player</label>
                 <onclick>ActivateWindow(PlayerSettings)</onclick>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
 
             <!-- Interface -->
             <control type="button" id="9011">
+                <include>ButtonPrimary</include>
                 <width>380</width>
                 <height>60</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
                 <label>Interface</label>
                 <onclick>ActivateWindow(InterfaceSettings)</onclick>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
 
             <!-- System -->
             <control type="button" id="9010">
+                <include>ButtonPrimary</include>
                 <width>380</width>
                 <height>60</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
                 <label>System</label>
                 <onclick>ActivateWindow(SystemSettings)</onclick>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
 
             <!-- Add-ons -->
             <control type="button" id="9014">
+                <include>ButtonPrimary</include>
                 <width>380</width>
                 <height>60</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
                 <label>Add-ons</label>
                 <onclick>ActivateWindow(AddonBrowser)</onclick>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
 
             <!-- File Manager -->
             <control type="button" id="9015">
+                <include>ButtonPrimary</include>
                 <width>380</width>
                 <height>60</height>
-                <font>font14</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
                 <label>File Manager</label>
                 <onclick>ActivateWindow(FileManager)</onclick>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
             </control>
         </control>
 
         <!-- Back Button -->
         <control type="button" id="2">
+            <include>ButtonSecondary</include>
             <posx>1750</posx>
             <posy>40</posy>
             <width>100</width>
-            <height>50</height>
-            <font>font14</font>
-            <textcolor>FFFFFFFF</textcolor>
             <label>Back</label>
             <onclick>Action(Back)</onclick>
-            <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-            <texturenofocus colordiffuse="40808080">white.png</texturenofocus>
         </control>
     </controls>
 </window>

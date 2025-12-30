@@ -91,14 +91,12 @@
 
             <!-- Scrollbar -->
             <control type="scrollbar" id="60">
+                <include>SettingsScrollbarStyle</include>
                 <posx>1280</posx>
                 <posy>90</posy>
                 <width>10</width>
                 <height>650</height>
-                <orientation>vertical</orientation>
                 <onleft>5</onleft>
-                <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
-                <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
             </control>
 
             <!-- Bottom Buttons -->
@@ -114,82 +112,47 @@
 
                 <!-- OK Button -->
                 <control type="button" id="28">
+                    <include>ButtonPrimary</include>
                     <width>200</width>
-                    <height>55</height>
-                    <font>font14</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <align>center</align>
                     <label>$LOCALIZE[186]</label>
-                    <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Cancel Button -->
                 <control type="button" id="29">
+                    <include>ButtonSecondary</include>
                     <width>200</width>
-                    <height>55</height>
-                    <font>font14</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <align>center</align>
                     <label>$LOCALIZE[222]</label>
-                    <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
 
                 <!-- Reset/Defaults Button -->
                 <control type="button" id="30">
+                    <include>ButtonSecondary</include>
                     <width>200</width>
-                    <height>55</height>
-                    <font>font14</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                    <focusedcolor>FF000000</focusedcolor>
-                    <align>center</align>
                     <label>$LOCALIZE[409]</label>
-                    <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-                    <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 </control>
             </control>
         </control>
 
         <!-- Default Category Button -->
         <control type="button" id="10">
+            <include>SettingsCategoryStyle</include>
             <width>330</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
         </control>
 
         <!-- Default Button -->
         <control type="button" id="7">
+            <include>SettingsItemStyle</include>
             <width>850</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
         </control>
 
         <!-- Default RadioButton -->
         <control type="radiobutton" id="8">
+            <include>SettingsItemStyle</include>
+            <include>SettingsRadioStyle</include>
             <width>850</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
             <radiowidth>30</radiowidth>
             <radioheight>30</radioheight>
             <radioposx>800</radioposx>
@@ -197,80 +160,50 @@
 
         <!-- Default SpinControlEx -->
         <control type="spincontrolex" id="9">
+            <include>SettingsItemStyle</include>
             <width>850</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
             <aligny>center</aligny>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
         </control>
 
         <!-- Separator -->
         <control type="image" id="11">
+            <include>SettingsSeparatorStyle</include>
             <width>850</width>
-            <height>2</height>
-            <texture colordiffuse="40FFFFFF">white.png</texture>
         </control>
 
         <!-- Edit Control -->
         <control type="edit" id="12">
+            <include>SettingsItemStyle</include>
             <width>850</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
         </control>
 
         <!-- Default SliderEx -->
         <control type="sliderex" id="13">
+            <include>SettingsItemStyle</include>
+            <include>SettingsSliderStyle</include>
             <width>850</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
             <aligny>center</aligny>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
             <sliderwidth>300</sliderwidth>
             <sliderheight>15</sliderheight>
-            <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
-            <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
-            <texturesliderbarfocus colordiffuse="FFE50914">white.png</texturesliderbarfocus>
-            <textureslidernib>-</textureslidernib>
-            <textureslidernibfocus>-</textureslidernibfocus>
         </control>
 
         <!-- Label -->
         <control type="label" id="14">
+            <include>SettingsLabelStyle</include>
             <width>850</width>
             <height>35</height>
             <font>font12</font>
-            <textcolor>80FFFFFF</textcolor>
-            <align>left</align>
             <textoffsetx>15</textoffsetx>
         </control>
 
         <!-- Color Button -->
         <control type="colorbutton" id="15">
+            <include>SettingsItemStyle</include>
             <width>850</width>
             <height>50</height>
-            <font>font13</font>
-            <textcolor>FFFFFFFF</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <align>left</align>
-            <textoffsetx>15</textoffsetx>
-            <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-            <texturenofocus colordiffuse="20FFFFFF">white.png</texturenofocus>
         </control>
     </controls>
 </window>

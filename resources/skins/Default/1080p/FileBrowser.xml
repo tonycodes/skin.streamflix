@@ -216,51 +216,33 @@
 
             <!-- OK Button -->
             <control type="button" id="413">
+                <include>ButtonPrimary</include>
                 <posx>950</posx>
                 <posy>820</posy>
                 <width>200</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>$LOCALIZE[186]</label>
-                <texturefocus colordiffuse="FFE50914">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onup>451</onup>
                 <onright>414</onright>
             </control>
 
             <!-- Cancel Button -->
             <control type="button" id="414">
+                <include>ButtonSecondary</include>
                 <posx>1170</posx>
                 <posy>820</posy>
                 <width>200</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>$LOCALIZE[222]</label>
-                <texturefocus colordiffuse="60FFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onup>451</onup>
                 <onleft>413</onleft>
             </control>
 
             <!-- New Folder Button -->
             <control type="button" id="417">
+                <include>ButtonClose</include>
                 <posx>40</posx>
                 <posy>820</posy>
                 <width>200</width>
-                <height>55</height>
-                <font>font14</font>
-                <align>center</align>
-                <textcolor>FFFFFFFF</textcolor>
-                <focusedcolor>FF000000</focusedcolor>
                 <label>$LOCALIZE[20309]</label>
-                <texturefocus colordiffuse="FFFFFFFF">white.png</texturefocus>
-                <texturenofocus colordiffuse="40FFFFFF">white.png</texturenofocus>
                 <onup>450</onup>
                 <onright>413</onright>
             </control>

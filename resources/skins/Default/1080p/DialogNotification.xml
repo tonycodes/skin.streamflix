@@ -35,7 +35,7 @@
                 <width>280</width>
                 <height>30</height>
                 <font>font14_bold</font>
-                <textcolor>text_white</textcolor>
+                <textcolor>FFFFFFFF</textcolor>
                 <label>$INFO[Window.Property(Header)]</label>
             </control>
             <control type="label" id="3">
@@ -44,7 +44,7 @@
                 <width>280</width>
                 <height>30</height>
                 <font>font13</font>
-                <textcolor>text_gray</textcolor>
+                <textcolor>FFB3B3B3</textcolor>
                 <label>$INFO[Window.Property(Message)]</label>
             </control>
         </control>
