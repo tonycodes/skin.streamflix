@@ -15,7 +15,7 @@
                 <fanart>fanart.jpg</fanart>
             </assets>
             <summary lang="en_GB">Netflix-style skin for Kodi</summary>
-            <description lang="en_GB">StreamFlix brings the Netflix experience to Kodi with a dark theme, horizontal content rows, hero banners, and smooth animations. Designed for simplicity with no extra dependencies.</description>
+            <description lang="en_GB">StreamFlix brings the Netflix experience to Kodi with a dark theme, horizontal content rows, hero banners, and smooth animations.</description>
         </extension>
     </addon>
     <addon id="repository.streamflix" name="StreamFlix Repository" version="1.0.0" provider-name="StreamFlix">
@@ -32,7 +32,7 @@
         <extension point="xbmc.addon.metadata">
             <platform>all</platform>
             <summary lang="en_GB">StreamFlix Repository</summary>
-            <description lang="en_GB">Repository for StreamFlix - a Netflix-style skin for Kodi</description>
+            <description lang="en_GB">Official repository for StreamFlix skin. Install this to get automatic updates.</description>
         </extension>
     </addon>
 </addons>
