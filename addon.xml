@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.streamflix" version="1.0.3" name="StreamFlix" provider-name="StreamFlix">
+<addon id="skin.streamflix" version="1.0.5" name="StreamFlix" provider-name="StreamFlix">
   <requires>
     <import addon="xbmc.gui" version="5.17.0"/>
   </requires>

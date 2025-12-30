@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="10000" type="window">
+<window>
+    <onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
     <coordinates>
         <system>1</system>
     </coordinates>
@@ -13,14 +14,16 @@
             <texture colordiffuse="background_main">black.png</texture>
         </control>
 
-        <!-- Logo -->
-        <control type="image">
-            <posx>810</posx>
-            <posy>440</posy>
-            <width>300</width>
-            <height>100</height>
-            <texture>logo.png</texture>
-            <aspectratio>keep</aspectratio>
+        <!-- Logo Text -->
+        <control type="label">
+            <posx>0</posx>
+            <posy>480</posy>
+            <width>1920</width>
+            <height>80</height>
+            <font>font_hero</font>
+            <textcolor>FFE50914</textcolor>
+            <align>center</align>
+            <label>StreamFlix</label>
             <animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
         </control>
 
