@@ -750,21 +750,10 @@
                 <texture colordiffuse="FF0A0A0A">black.png</texture>
             </control>
 
-            <!-- Logo -->
-            <control type="label">
-                <posx>30</posx>
-                <posy>30</posy>
-                <width>200</width>
-                <height>50</height>
-                <font>font_title</font>
-                <textcolor>FFE50914</textcolor>
-                <label>StreamFlix</label>
-            </control>
-
             <!-- Menu Items -->
             <control type="grouplist" id="301">
                 <posx>20</posx>
-                <posy>120</posy>
+                <posy>40</posy>
                 <width>260</width>
                 <height>800</height>
                 <orientation>vertical</orientation>
@@ -811,7 +800,7 @@
                     <width>260</width>
                     <height>50</height>
                     <label>Search</label>
-                    <onclick>ActivateWindow(Videos,videodb://)</onclick>
+                    <onclick>RunScript(skin.streamflix)</onclick>
                 </control>
 
                 <!-- Settings -->
@@ -855,20 +844,9 @@
                 <texture colordiffuse="CC000000">gradient-top.png</texture>
             </control>
 
-            <!-- Logo -->
-            <control type="label">
-                <posx>80</posx>
-                <posy>20</posy>
-                <width>180</width>
-                <height>40</height>
-                <font>font_title</font>
-                <textcolor>FFE50914</textcolor>
-                <label>StreamFlix</label>
-            </control>
-
             <!-- Navigation -->
             <control type="grouplist" id="100">
-                <posx>220</posx>
+                <posx>80</posx>
                 <posy>25</posy>
                 <width>800</width>
                 <height>40</height>
@@ -925,7 +903,7 @@
                 <texturefocus>icons/search.png</texturefocus>
                 <texturenofocus>icons/search.png</texturenofocus>
                 <label>-</label>
-                <onclick>ActivateWindow(Videos,videodb://)</onclick>
+                <onclick>RunScript(skin.streamflix)</onclick>
             </control>
 
             <!-- Profile Icon -->

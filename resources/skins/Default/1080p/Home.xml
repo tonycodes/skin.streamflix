@@ -99,6 +99,19 @@
                 </control>
 
                 <control type="button" id="104">
+                    <width>80</width>
+                    <height>40</height>
+                    <font>font14</font>
+                    <align>center</align>
+                    <textcolor>FFB3B3B3</textcolor>
+                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <label>Search</label>
+                    <onclick>RunScript(skin.streamflix)</onclick>
+                </control>
+
+                <control type="button" id="105">
                     <width>100</width>
                     <height>40</height>
                     <font>font14</font>

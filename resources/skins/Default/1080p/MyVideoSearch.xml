@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Netflix-style Video Search Window with live results -->
+<window id="10038" type="window">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <onload>SetFocus(9000)</onload>
+
+    <controls>
+        <!-- Dark Background -->
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1920</width>
+            <height>1080</height>
+            <texture colordiffuse="FF141414">white.png</texture>
+        </control>
+
+        <!-- ============================================== -->
+        <!-- LEFT SIDE - Search Input Area -->
+        <!-- ============================================== -->
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>500</width>
+            <height>1080</height>
+
+            <!-- Left panel background -->
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>500</width>
+                <height>1080</height>
+                <texture colordiffuse="FF0A0A0A">white.png</texture>
+            </control>
+
+            <!-- Search Header -->
+            <control type="label">
+                <posx>40</posx>
+                <posy>40</posy>
+                <width>420</width>
+                <height>50</height>
+                <font>font_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>Search</label>
+            </control>
+
+            <!-- Search Input Box -->
+            <control type="group">
+                <posx>40</posx>
+                <posy>110</posy>
+                <width>420</width>
+                <height>60</height>
+
+                <!-- Input background -->
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>420</width>
+                    <height>60</height>
+                    <texture colordiffuse="FF1A1A1A">white.png</texture>
+                </control>
+
+                <!-- Search icon -->
+                <control type="image">
+                    <posx>15</posx>
+                    <posy>15</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <texture colordiffuse="FF808080">icons/search.png</texture>
+                </control>
+
+                <!-- Edit control for search input -->
+                <control type="edit" id="9000">
+                    <posx>55</posx>
+                    <posy>10</posy>
+                    <width>350</width>
+                    <height>40</height>
+                    <font>font14</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <label>Type to search...</label>
+                    <onright>50</onright>
+                </control>
+            </control>
+
+            <!-- Search Tips -->
+            <control type="label">
+                <posx>40</posx>
+                <posy>190</posy>
+                <width>420</width>
+                <height>30</height>
+                <font>font12</font>
+                <textcolor>FF808080</textcolor>
+                <label>Search for movies and TV shows</label>
+            </control>
+
+            <!-- Result count -->
+            <control type="label">
+                <posx>40</posx>
+                <posy>240</posy>
+                <width>420</width>
+                <height>30</height>
+                <font>font13</font>
+                <textcolor>FFB3B3B3</textcolor>
+                <label>$INFO[Container(50).NumItems] results found</label>
+                <visible>!String.IsEmpty(Container(50).NumItems)</visible>
+            </control>
+
+            <!-- Back Button -->
+            <control type="button" id="9001">
+                <include>ButtonSecondary</include>
+                <posx>40</posx>
+                <posy>980</posy>
+                <width>420</width>
+                <height>50</height>
+                <label>Back</label>
+                <onclick>Action(Back)</onclick>
+                <onup>9000</onup>
+            </control>
+        </control>
+
+        <!-- ============================================== -->
+        <!-- RIGHT SIDE - Search Results -->
+        <!-- ============================================== -->
+        <control type="group">
+            <posx>520</posx>
+            <posy>0</posy>
+            <width>1400</width>
+            <height>1080</height>
+
+            <!-- Results Header -->
+            <control type="label">
+                <posx>0</posx>
+                <posy>40</posy>
+                <width>600</width>
+                <height>50</height>
+                <font>font_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>Results</label>
+            </control>
+
+            <!-- Results Grid -->
+            <control type="panel" id="50">
+                <posx>0</posx>
+                <posy>110</posy>
+                <width>1350</width>
+                <height>920</height>
+                <orientation>vertical</orientation>
+                <onleft>9000</onleft>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>300</scrolltime>
+                <content>$INFO[Window.Property(search.filter)]</content>
+
+                <itemlayout width="180" height="300">
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>180</width>
+                        <height>300</height>
+
+                        <!-- Poster -->
+                        <control type="image">
+                            <posx>10</posx>
+                            <posy>10</posy>
+                            <width>160</width>
+                            <height>240</height>
+                            <texture fallback="default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Title -->
+                        <control type="label">
+                            <posx>10</posx>
+                            <posy>260</posy>
+                            <width>160</width>
+                            <height>30</height>
+                            <font>font12</font>
+                            <textcolor>FFB3B3B3</textcolor>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </itemlayout>
+
+                <focusedlayout width="180" height="300">
+                    <control type="group">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>180</width>
+                        <height>300</height>
+
+                        <!-- White border on focus -->
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>170</width>
+                            <height>250</height>
+                            <texture colordiffuse="FFFFFFFF">white.png</texture>
+                        </control>
+
+                        <!-- Poster -->
+                        <control type="image">
+                            <posx>10</posx>
+                            <posy>10</posy>
+                            <width>160</width>
+                            <height>240</height>
+                            <texture fallback="default_poster.png">$INFO[ListItem.Art(poster)]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+
+                        <!-- Title -->
+                        <control type="label">
+                            <posx>10</posx>
+                            <posy>260</posy>
+                            <width>160</width>
+                            <height>30</height>
+                            <font>font12</font>
+                            <textcolor>FFFFFFFF</textcolor>
+                            <align>center</align>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Scrollbar -->
+            <control type="scrollbar" id="60">
+                <posx>1360</posx>
+                <posy>110</posy>
+                <width>8</width>
+                <height>920</height>
+                <orientation>vertical</orientation>
+                <texturesliderbackground colordiffuse="40FFFFFF">white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="FFE50914">white.png</texturesliderbar>
+                <onleft>50</onleft>
+            </control>
+
+            <!-- No Results Message -->
+            <control type="group">
+                <posx>0</posx>
+                <posy>400</posy>
+                <visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
+
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>1350</width>
+                    <height>50</height>
+                    <font>font_title</font>
+                    <textcolor>FF808080</textcolor>
+                    <align>center</align>
+                    <label>No results found</label>
+                </control>
+
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>60</posy>
+                    <width>1350</width>
+                    <height>30</height>
+                    <font>font14</font>
+                    <textcolor>FF505050</textcolor>
+                    <align>center</align>
+                    <label>Try a different search term</label>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

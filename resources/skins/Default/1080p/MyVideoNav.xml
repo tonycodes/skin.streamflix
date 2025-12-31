@@ -64,17 +64,6 @@
                 <texture colordiffuse="80000000">white.png</texture>
             </control>
 
-            <!-- Logo -->
-            <control type="label">
-                <posx>60</posx>
-                <posy>20</posy>
-                <width>200</width>
-                <height>40</height>
-                <font>font_title</font>
-                <textcolor>FFE50914</textcolor>
-                <label>STREAMFLIX</label>
-            </control>
-
             <!-- Back Button -->
             <control type="button" id="9000">
                 <include>ButtonClose</include>
